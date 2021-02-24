@@ -24,4 +24,4 @@ const ChoreSchema = new Schema({
   },
 });
 
-module.exports = Chore = mongoose.model("Chore", ChoreSchema);
+module.exports = Chore = mongoose.model("chore", ChoreSchema);

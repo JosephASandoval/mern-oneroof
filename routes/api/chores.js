@@ -13,14 +13,14 @@ router.get("/", (req, res) => {
   Chore.find()
     .sort({ date: -1 })
     .then((chores) => res.json(chores))
-    .catch((err) => res.status(404).json({ nopostsfound: "No chores found" }));
+    .catch((err) => res.status(404).json({ nochoresfound: "No chores found" }));
 });
 
 router.get("/user/:user_id", (req, res) => {
   Chore.find({ user: req.params.user_id })
     .then((chores) => res.json(chores))
     .catch((err) =>
-      res.status(404).json({ nopostsfound: "No chores found from that user" })
+      res.status(404).json({ nochoresfound: "No chores found from that user" })
     );
 });
 
@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
   Chore.findById(req.params.id)
     .then((chore) => res.json(chore))
     .catch((err) =>
-      res.status(404).json({ nopostfound: "No chore found with that ID" })
+      res.status(404).json({ nochorefound: "No chore found with that ID" })
     );
 });
 

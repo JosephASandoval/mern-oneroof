@@ -4,14 +4,14 @@ const validText = require("./valid-text");
 module.exports = function validateChoreInput(data) {
   let errors = {};
 
-  data.text = validText(data.text) ? data.text : "";
+  data.body = validText(data.body) ? data.body : "";
 
-  if (!Validator.isLength(data.text, { min: 5, max: 300 })) {
-    errors.text = "Text must be between 5 and 300 characters";
+  if (!Validator.isLength(data.body, { min: 5, max: 300 })) {
+    errors.body = "Body must be between 5 and 300 characters";
   }
 
-  if (Validator.isEmpty(data.text)) {
-    errors.text = "Text field is required";
+  if (Validator.isEmpty(data.body)) {
+    errors.body = "Body field is required";
   }
 
   return {

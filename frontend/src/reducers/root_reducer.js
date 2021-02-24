@@ -3,12 +3,14 @@ import session from "./session_reducer";
 import errors from "./errors_reducer";
 import houses from "./houses_reducer";
 import posts from "./posts_reducer";
+import chores from "./chores_reducer";
 
 const RootReducer = combineReducers({
   errors,
   session,
   houses,
   posts,
+  chores
 });
 
 export default RootReducer;
