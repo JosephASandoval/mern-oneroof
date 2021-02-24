@@ -8,6 +8,8 @@ import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import ProfileContainer from "./profile/profile_container";
+import HouseCreateContainer from "./house/house_create_container";
+import HouseContainer from './house/house_container';
 import PostComposeContainer from "./posts/post_compose_container";
 
 const App = () => (
@@ -17,7 +19,8 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-
+      <ProtectedRoute exact path="/new_house" component={HouseCreateContainer} />
+      <ProtectedRoute exact path="/houses" component={HouseContainer} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute

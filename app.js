@@ -3,6 +3,7 @@ const app = express();
 const db = require("./config/keys").mongoURI;
 const mongoose = require("mongoose");
 const users = require("./routes/api/users");
+const houses = require("./routes/api/houses");
 const posts = require("./routes/api/posts");
 const bodyParser = require("body-parser");
 const User = require("./models/User");
@@ -36,6 +37,8 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/users", users);
+app.use("/api/houses", houses);
+
 app.use("/api/posts", posts);
 
 const port = process.env.PORT || 5000;
