@@ -6,7 +6,6 @@ class Profile extends React.Component {
         super(props);
 
         this.state = {
-            houses: [],
             posts: []
         }
     }
@@ -17,7 +16,7 @@ class Profile extends React.Component {
     }
 
     componentWillReceiveProps(newState) {
-      this.setState({ houses: newState.houses, posts: newState.posts} );
+      this.setState({ posts: newState.posts } );
   
     }   
     
