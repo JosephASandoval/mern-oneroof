@@ -32,7 +32,7 @@ router.get("/:id", (req, res) => {
     );
 });
 
-router.chore(
+router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
