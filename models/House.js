@@ -14,6 +14,10 @@ const HouseSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  residents: {
+    type: Array,
+    default: []
+  }
 });
 
 module.exports = House = mongoose.model("House", HouseSchema);

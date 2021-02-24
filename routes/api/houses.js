@@ -27,7 +27,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.post(
-  "/",
+  "/new",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validateHouseInput(req.body);
@@ -40,6 +40,8 @@ router.post(
       user: req.user.id,
       name: req.body.name,
     });
+    
+    newHouse.residents.push(newHouse.user)
 
     newHouse.save().then((house) => res.json(house));
   }
