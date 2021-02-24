@@ -6,6 +6,7 @@ class Profile extends React.Component {
         super(props);
 
         this.state = {
+            houses: [],
             posts: []
         }
     }
@@ -16,10 +17,11 @@ class Profile extends React.Component {
     }
 
     componentWillReceiveProps(newState) {
-        this.setState({ posts: newState.posts });
+      this.setState({ houses: newState.houses, posts: newState.posts} );
+  
     }   
     
-    render() {
+    render() { //add house later
         if (this.state.posts.length === 0) {
           return (<div>This user has no Posts</div>)
         } else {
