@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
   res.json({ msg: "Welcome to the invitations page" })
 })
 
-router.post("/new/:houseId",
+router.patch("/new/:houseId",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validateInvitationInput(req.body);
@@ -30,16 +30,13 @@ router.post("/new/:houseId",
       newHousemate: req.body.newHousemate.id,
       message: req.body.message
     });
-    debugger
     //reference house as well
     //<house reference>.push(newInvite.newHousemate)
     // House.houseId.residents.push(newInvite.newHousemate);
     
     // houseId.id.residents.push(newInvite.newHousemate),
     let thisHouse = House.findById(newInvite.houseId);
-    debugger
     thisHouse.residents.push(newInvite.newHousemate);
-    debugger
     newInvite.save().then(
       () => res.json({ 
         success: "You have successfully invited a new housemate!"
