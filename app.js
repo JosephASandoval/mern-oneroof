@@ -51,7 +51,6 @@ app.get("/", (req, res) => {
 });
 
 // routers
-
 app.use("/api/users", users);
 app.use("/api/houses", houses);
 app.use("/api/posts", posts);
