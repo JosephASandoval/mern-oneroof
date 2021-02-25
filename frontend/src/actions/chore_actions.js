@@ -1,4 +1,4 @@
-import { getChores, getUserChores, writeChore } from '../util/chore_api_util';
+import * as ChoreAPIUtil from '../util/chore_api_util';
 
 export const RECEIVE_CHORES = "RECEIVE_CHORES";
 export const RECEIVE_USER_CHORES = "RECEIVE_USER_CHORES";
@@ -20,31 +20,31 @@ export const receiveNewChore = chore => ({
   chore
 })
 
-export const REMOVE_CHORE = chore => ({
+export const removeChore = chore => ({
   type: REMOVE_CHORE,
   chore
 })
 
 export const fetchChores = () => dispatch => (
-  getChores()
+  ChoreAPIUtil.getChores()
     .then(chores => dispatch(receiveChores(chores)))
     .catch(err => console.log(err))
 );
 
 export const fetchUserChores = id => dispatch => (
-  getUserChores(id)
+  ChoreAPIUtil.getUserChores(id)
     .then(chores => dispatch(receiveUserChores(chores)))
     .catch(err => console.log(err))
 );
 
 export const composeChore = data => dispatch => (
-  writeChore(data)
+  ChoreAPIUtil.writeChore(data)
     .then(chore => dispatch(receiveNewChore(chore)))
     .catch(err => console.log(err))
 );
 
-export const removeChore = choreId => dispatch => (
-  deleteChore(chore)
+export const deleteChore = choreId => dispatch => (
+  ChoreAPIUtil.deleteChore(choreId)
     .then(() => dispatch(deleteChore(choreId)))
     .catch(err => console.log(err))
 )

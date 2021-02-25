@@ -4,7 +4,7 @@ class ChoreListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {detail: false};
-    // this.toggleDetail = this.toggleDetail.bind(this);
+    this.toggleBody = this.toggleBody.bind(this);
     this.toggleChore = this.toggleChore.bind(this);
   }
 
@@ -25,19 +25,19 @@ class ChoreListItem extends React.Component {
   }
 
   render() {
-    const { todo , updateChore } = this.props;
-    const { title, done } = todo;
-    let body;
-    if (this.state.body) {
-      detail = <TodoDetailViewContainer todo={ todo } />;
-    }
+    const { body, is_done } = this.props;
+    // const { body, is_done } = chore;
+    // let body;
+    // if (this.state.body) {
+    //   detail = <TodoDetailViewContainer todo={ todo } />;
+    // }
 
     return (
       <li className="todo-list-item">
         <div className="todo-header">
-          <h3><a onClick={ this.toggleDetail }>{ title }</a></h3>
+          <h3><a onClick={ this.toggleBody }>{ body }</a></h3>
           <button
-            className={ done ? "done" : "undone" }
+            className={ is_done ? "done" : "undone" }
             onClick={ this.toggleChore }>
             { is_done ? "Undo" : "Done" }
           </button>

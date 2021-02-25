@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 class ChoreForm extends React.Component {
@@ -19,7 +18,7 @@ class ChoreForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const chore = Object.assign({}, this.state, { id: new Date().getTime()});  //not sure
-    this.props.receiveTodo(todo);
+    this.props.composeChore(chore);
     this.setState({
       body: ""
     }); // reset form
@@ -30,7 +29,6 @@ class ChoreForm extends React.Component {
       <form className="chore-form" onSubmit={this.handleSubmit}>
         <label>Chores:
           <input
-            className="input"
             value={this.state.body}
             placeholder="name your chore"
             onChange={this.update('body')}

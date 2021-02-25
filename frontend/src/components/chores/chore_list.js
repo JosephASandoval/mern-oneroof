@@ -1,29 +1,29 @@
 import React from 'react';
 // Components
-import TodoListItem from './todo_list_item';
-import TodoForm from './todo_form';
+import ChoreListItem from './chore_list_item';
+import ChoreForm from './chore_form';
 
-class TodoList extends React.Component {
+class ChoreList extends React.Component {
 
   render() {
-    const { todos, receiveTodo } = this.props;
-    const todoItems = todos.map(todo => (
-        <TodoListItem
-          key={`todo-list-item${todo.id}`}
-          todo={todo}
-          receiveTodo={ receiveTodo } />
+    const { chores, receiveChore } = this.props;
+    const choreItems = chores.map(chore => (
+        <ChoreListItem
+          key={`chore-list-item${chore.id}`}
+          chore={chore}
+          receiveChore={ receiveChore } />
       )
     );
 
     return(
       <div>
-        <ul className="todo-list">
-          { todoItems }
+        <ul className="chore-list">
+          { choreItems }
         </ul>
-        <TodoForm receiveTodo={ receiveTodo }/>
+        <ChoreForm receiveChore={ receiveChore }/>
       </div>
     );
   }
 }
 
-export default TodoList;
+export default ChoreList;
