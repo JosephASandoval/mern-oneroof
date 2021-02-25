@@ -1,6 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const users = require("./routes/api/users");
+const houses = require("./routes/api/houses");
+const posts = require("./routes/api/posts");
+const invitations = require("./routes/api/invitations");
 const db = require("./config/keys").mongoURI;
 const bodyParser = require("body-parser");
 const User = require("./models/User");
@@ -52,6 +56,7 @@ const posts = require("./routes/api/posts");
 app.use("/api/users", users);
 app.use("/api/houses", houses);
 app.use("/api/posts", posts);
+app.use("/api/invitations", invitations);
 
 // listener
 app.listen(port, () => {

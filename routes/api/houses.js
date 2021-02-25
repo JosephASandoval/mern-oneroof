@@ -47,4 +47,9 @@ router.post(
   }
 );
 
+router.patch(
+  '',
+  (req,res) => {}
+)
+
 module.exports = router;
