@@ -1,12 +1,11 @@
 const express = require("express");
-const cors = require('cors')
+const cors = require("cors");
 const mongoose = require("mongoose");
 const db = require("./config/keys").mongoURI;
 const bodyParser = require("body-parser");
 const User = require("./models/User");
 const passport = require("passport");
 const path = require("path");
-
 
 // tell our server to load the static build folder in production
 if (process.env.NODE_ENV === "production") {
@@ -16,11 +15,10 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-
 // app config
+require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
-
 
 // middlewares
 app.use(cors());
@@ -30,23 +28,22 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 require("./config/passport")(passport);
 
-
 // db config
-mongoose
-  .connect(db, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-  })
-  .then(() => console.log("Connected to MongoDB successfully"))
-  .catch((err) => console.log(err));
+mongoose.connect(db, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+});
 
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB database connection established successfully");
+});
 
 // api backend routes
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
-
 
 // routers
 const users = require("./routes/api/users");
@@ -56,7 +53,6 @@ const posts = require("./routes/api/posts");
 app.use("/api/users", users);
 app.use("/api/houses", houses);
 app.use("/api/posts", posts);
-
 
 // listener
 app.listen(port, () => {
