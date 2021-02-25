@@ -21,7 +21,7 @@ class ChoreForm extends React.Component {
     this.props.composeChore(chore);
     this.setState({
       body: ""
-    }); // reset form
+    }); // reset form  
   }
 
   render() {
