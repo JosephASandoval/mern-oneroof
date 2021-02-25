@@ -23,7 +23,7 @@ export const fetchPosts = () => dispatch => (
   getPosts()
     .then(posts => dispatch(receivePosts(posts)))
     .catch(err => console.log(err))
-);
+}));
 
 export const fetchUserPosts = id => dispatch => (
   getUserPosts(id)

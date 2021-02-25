@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const mongoose = require("mongoose");
 const db = require("./config/keys").mongoURI;
 const bodyParser = require("body-parser");
@@ -20,7 +20,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // middlewares
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -48,10 +48,16 @@ app.get("/", (req, res) => {
 const users = require("./routes/api/users");
 const houses = require("./routes/api/houses");
 const posts = require("./routes/api/posts");
+const chores = require("./routes/api/chores");
+const expenses = require("./routes/api/expenses");
 
 app.use("/api/users", users);
 app.use("/api/houses", houses);
 app.use("/api/posts", posts);
+app.use("/api/chores", chores);
+app.use("/api/expenses", expenses);
+
+
 
 // listener
 app.listen(port, () => {
