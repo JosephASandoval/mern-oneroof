@@ -1,23 +1,22 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const House = mongoose.model("House");
 
 const InvitationSchema = new Schema({
   houseId: {
-    type: Schema.Types.ObjectId,
-    ref: "House",
+    type: String,
+    required: true,
   },
   houseCreator: {
     type: Schema.Types.ObjectId,
-    refPath: House.user,
+    ref: "User",
   },
   newHousemate: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+    type: String,
+    required: true,
   },
   message: {
     type: String,
-    default: "",
+    required: true,
   },
   date: {
     type: Date,
