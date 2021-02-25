@@ -33,6 +33,6 @@ export const fetchUserChores = id => dispatch => (
 
 export const composeChore = data => dispatch => (
   writeChore(data)
-    .then(chore => dispatch(receiveNewCjpre(chore)))
+    .then(chore => dispatch(receiveNewChore(chore)))
     .catch(err => console.log(err))
 );
