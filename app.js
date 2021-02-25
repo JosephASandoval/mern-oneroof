@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const users = require("./routes/api/users");
 const houses = require("./routes/api/houses");
 const posts = require("./routes/api/posts");
+const invitations = require("./routes/api/invitations");
 const bodyParser = require("body-parser");
 const User = require("./models/User");
 const passport = require("passport");
@@ -40,6 +41,7 @@ app.use("/api/users", users);
 app.use("/api/houses", houses);
 
 app.use("/api/posts", posts);
+app.use("/api/invitations", invitations);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
