@@ -13,22 +13,22 @@ class ChoreListItem extends React.Component {
     this.setState({ detail: !this.state.detail });
   }
 
-  toggleTodo(e) {
+  toggleChore(e) {
     e.preventDefault();
-    const toggledTodo = Object.assign(
+    const toggledChore = Object.assign(
       {},
-      this.props.todo,
-      { done: !this.props.todo.done }
+      this.props.chore,
+      { is_done: !this.props.chore.done }
     );
 
-     this.props.receiveTodo(toggledTodo);
+     this.props.receiveChore(toggledChore);
   }
 
   render() {
-    const { todo , updateTodo } = this.props;
+    const { todo , updateChore } = this.props;
     const { title, done } = todo;
-    let detail;
-    if (this.state.detail) {
+    let body;
+    if (this.state.body) {
       detail = <TodoDetailViewContainer todo={ todo } />;
     }
 
@@ -38,11 +38,11 @@ class ChoreListItem extends React.Component {
           <h3><a onClick={ this.toggleDetail }>{ title }</a></h3>
           <button
             className={ done ? "done" : "undone" }
-            onClick={ this.toggleTodo }>
-            { done ? "Undo" : "Done" }
+            onClick={ this.toggleChore }>
+            { is_done ? "Undo" : "Done" }
           </button>
         </div>
-        { detail }
+        { body }
       </li>
     );
   }
