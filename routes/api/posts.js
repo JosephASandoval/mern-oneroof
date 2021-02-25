@@ -5,10 +5,12 @@ const passport = require("passport");
 const Post = require("../../models/Post");
 const validatePostInput = require("../../validation/posts");
 
+// test
 router.get("/test", (req, res) => {
   res.json({ msg: "This is the posts route" });
 });
 
+// getPosts
 router.get("/", (req, res) => {
   Post.find()
     .sort({ date: -1 })
@@ -16,6 +18,7 @@ router.get("/", (req, res) => {
     .catch((err) => res.status(404).json({ nopostsfound: "No posts found" }));
 });
 
+// getUserPost
 router.get("/user/:user_id", (req, res) => {
   Post.find({ user: req.params.user_id })
     .then((posts) => res.json(posts))
@@ -24,6 +27,7 @@ router.get("/user/:user_id", (req, res) => {
     );
 });
 
+// getPost
 router.get("/:id", (req, res) => {
   Post.findById(req.params.id)
     .then((post) => res.json(post))
@@ -32,6 +36,7 @@ router.get("/:id", (req, res) => {
     );
 });
 
+// createPost
 router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
@@ -47,8 +52,34 @@ router.post(
       text: req.body.text,
     });
 
-    newPost.save().then((post) => res.json(post));
+    newPost
+      .save()
+      // .then((post) => res.json(post))
+      .then(() => res.json("Post created!"))
+      .catch((err) => res.status(400).json("Error: " + err));
   }
 );
+
+// updatePost
+router.route("/:id").patch((req, res) => {
+  Post.findById(req.params.id)
+    .then((post) => {
+      post.text = req.body.text;
+
+      post
+        .save()
+        // .then((post) => res.json(post))
+        .then(() => res.json("Post updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+// deletePost
+router.route("/:id").delete((req, res) => {
+  Post.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Post deleted!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
 
 module.exports = router;

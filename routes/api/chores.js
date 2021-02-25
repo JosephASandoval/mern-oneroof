@@ -44,7 +44,7 @@ router.post(
 
     const newChore = new Chore({
       user: req.user.id,
-      body: req.body.body
+      body: req.body.body,
     });
 
     newChore.save().then((chore) => res.json(chore));
