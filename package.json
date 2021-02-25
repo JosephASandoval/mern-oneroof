@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anyqx/mern-oneroof.git"
+    "url": "git+https://github.com/JosephASandoval/mern-oneroof.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anyqx/mern-oneroof/issues"
+    "url": "https://github.com/JosephASandoval/mern-oneroof/issues"
   },
-  "homepage": "https://github.com/anyqx/mern-oneroof#readme",
+  "homepage": "https://github.com/JosephASandoval/mern-oneroof#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
