@@ -49,8 +49,6 @@ router.post(
 
     const newPost = new Post({
       user: req.user.id,
-      title: req.body.title,
-      creator: req.body.creator,
       text: req.body.text,
     });
 
@@ -66,8 +64,6 @@ router.post(
 router.route("/:id").patch((req, res) => {
   Post.findById(req.params.id)
     .then((post) => {
-      post.title = req.body.title;
-      post.creator = req.body.creator;
       post.text = req.body.text;
 
       post

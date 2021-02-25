@@ -49,10 +49,6 @@ app.get("/", (req, res) => {
 });
 
 // routers
-const users = require("./routes/api/users");
-const houses = require("./routes/api/houses");
-const posts = require("./routes/api/posts");
-
 app.use("/api/users", users);
 app.use("/api/houses", houses);
 app.use("/api/posts", posts);
