@@ -41,7 +41,7 @@ app.use("/api/users", users);
 app.use("/api/houses", houses);
 
 app.use("/api/posts", posts);
-app.use("api/chores", chores);
+app.use("/api/chores", chores);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

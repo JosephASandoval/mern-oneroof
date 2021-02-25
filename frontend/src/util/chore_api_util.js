@@ -9,5 +9,9 @@ export const getUserChores = id => {
 };
 
 export const writeChore = data => {
-  return axios.chore('/api/chores/', data)
+  return axios.post('/api/chores/', data)
+}
+
+export const deleteChore = id => {
+  return axios.get(`/api/chores/user/${id}`)
 }

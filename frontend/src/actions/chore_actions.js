@@ -3,6 +3,7 @@ import { getChores, getUserChores, writeChore } from '../util/chore_api_util';
 export const RECEIVE_CHORES = "RECEIVE_CHORES";
 export const RECEIVE_USER_CHORES = "RECEIVE_USER_CHORES";
 export const RECEIVE_NEW_CHORE = "RECEIVE_NEW_CHORE";
+export const REMOVE_CHORE = 'REMOVE_CHORE';
 
 export const receiveChores = chores => ({
   type: RECEIVE_CHORES,
@@ -16,6 +17,11 @@ export const receiveUserChores = chores => ({
 
 export const receiveNewChore = chore => ({
   type: RECEIVE_NEW_CHORE,
+  chore
+})
+
+export const REMOVE_CHORE = chore => ({
+  type: REMOVE_CHORE,
   chore
 })
 
@@ -36,3 +42,9 @@ export const composeChore = data => dispatch => (
     .then(chore => dispatch(receiveNewChore(chore)))
     .catch(err => console.log(err))
 );
+
+export const removeChore = choreId => dispatch => (
+  deleteChore(chore)
+    .then(() => dispatch(deleteChore(choreId)))
+    .catch(err => console.log(err))
+)
