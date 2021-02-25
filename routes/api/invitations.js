@@ -25,13 +25,13 @@ router.post("/new/:houseId",
     }
 
     const houseId = req.params.houseId;
-    const houseCreator = req.body.houseCreator;
-    const newHousemate = req.body.newHousemate;
+    const houseCreatorId = req.body.houseCreatorId;
+    const newHousemateId = req.body.newHousemateId;
     const message = req.body.message;
     const newInvite = new Invitation({
       houseId,
-      houseCreator, // <= id
-      newHousemate, // <= id
+      houseCreatorId,
+      newHousemateId,
       message,
     });
     
@@ -39,7 +39,7 @@ router.post("/new/:houseId",
     
     House.findById(houseId)
       .then((house) => {
-        house.residents.push(newHousemate)
+        house.residents.push(newHousemateId)
         house.save()
         res.json(house)
       });

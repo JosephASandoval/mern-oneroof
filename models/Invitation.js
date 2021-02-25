@@ -6,11 +6,11 @@ const InvitationSchema = new Schema({
     type: String,
     required: true,
   },
-  houseCreator: {
+  houseCreatorId: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  newHousemate: {
+  newHousemateId: {
     type: String,
     required: true,
   },
