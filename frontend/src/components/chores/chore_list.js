@@ -1,19 +1,19 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 // Components
-import ChoreListItem from './chore_list_item';
-import ChoreFormContainer from './chore_form_container';
+import ChoreListItem from "./chore_list_item";
+import ChoreFormContainer from "./chore_form_container";
 import "../../styles/chore_list.css";
 import "../../styles/chore_list_item.css";
 // import ChoreBox from './chore_box';
 
 class ChoreList extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
-    this.state ={
-      chores: []
-    }
+    this.state = {
+      chores: [],
+    };
   }
 
   // when adding new chore, not added to all, added to new slice of state
@@ -23,9 +23,9 @@ class ChoreList extends React.Component {
   }
 
   componentWillReceiveProps(newState) {
-    this.setState({ chores: newState.chores })
+    this.setState({ chores: newState.chores });
   }
-  
+
   render() {
     const { chores, composeChore } = this.props;
     // debugger
@@ -33,16 +33,16 @@ class ChoreList extends React.Component {
       return (
         <>
           <div className="nothing">There are no chores</div>
-          <ChoreFormContainer composeChore={ composeChore }/>
+          <ChoreFormContainer composeChore={composeChore} />
         </>
-      )
+      );
     } else {
-      return(
+      return (
         <div>
-          <ChoreFormContainer composeChore={ composeChore }/>
+          <ChoreFormContainer composeChore={composeChore} />
           <h2>My Chores</h2>
-          <ul className="chore-list">
-            {this.props.chores.map(chore => (
+          <ul>
+            {this.props.chores.map((chore) => (
               <ChoreListItem key={chore._id} body={chore.body} />
             ))}
           </ul>
