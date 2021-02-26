@@ -2,14 +2,19 @@ import { connect } from 'react-redux';
 import ChoreList from './chore_list';
 
 // Actions
-import { fetchUserChores } from '../../actions/chore_actions';
+import { fetchAllChores, composeChore } from '../../actions/chore_actions';
 
-const mapStateToProps = state => ({
-  chores: Object.values(state.chores.all)
-});
+const mapStateToProps = state => {
+  debugger
+  return {
+    currentUser: state.session.user,
+    chores: Object.values(state.chores.all)
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
-  fetchUserChores: (id) => dispatch(fetchUserChores(id))
+  composeChore: data => dispatch(composeChore(data)),
+  fetchAllChores: () => dispatch(fetchAllChores())
 });
 
 export default connect(
