@@ -8,24 +8,33 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin: 100px 100px 200px 100px;
+    background-color: #d6E4F0;
+    border-radius: 10px;
 }
 
-h1 {
+.main-page-container p {
     color: #163172;
-    margin: 20px 100px 200px;
+    text-align: center;
+    font-size: 50px;
 }
 
 .welcome-msg {
     justify-content: center;
+    background-color: #d6E4F0;
 }
 
-.welcome-msg li {
-    
+.welcome-msg > li {
+    list-style: none;
+    line-height: 1.5;
+    margin: 20px;
+    font-size: larger;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    background-color: #d6E4F0;
 }
 
-img { 
-    size: 300px;
-}
 
 footer {
     /* display: flex; */

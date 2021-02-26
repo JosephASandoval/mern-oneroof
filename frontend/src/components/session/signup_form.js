@@ -49,7 +49,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className='session-errors-container'>
         {Object.keys(this.state.errors).map((error, i) => (
           <li className='session-errors' key={`error-${i}`}>
             {this.state.errors[error]}
@@ -78,6 +78,8 @@ class SignupForm extends React.Component {
                 placeholder="Last Name"
               />
 
+              <br/>
+
               <input className='form-input' type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -89,18 +91,19 @@ class SignupForm extends React.Component {
                 onChange={this.update('email')}
                 placeholder="Email"
               />
-            <br/>
+              <br/>
               <input className='form-input' type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-            <br/>
+            
               <input className='form-input' type="password"
                 value={this.state.password2}
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               />
+            <br/>
             <br/>
             <input className='submit-button' type="submit" value="Submit" />
             {this.renderErrors()}

@@ -7,13 +7,12 @@ class MainPage extends React.Component {
     return (
       <>
       <div className='main-page-container'>
-        <h1> Welcome to OneRoof</h1>
+        <p> Welcome to ONEROOF</p>
         <ul className='welcome-msg'>
           <li>OneRoof, a housemate organization tool, is an online application 
-            for users create a home and invite housemates. With this app, 
-            housemates can better coordinate house chores, expenses, and communication.
+            for users create a home and invite housemates. With this app, housemates can better coordinate house chores, expenses, and communication.
           </li>
-          <li><img src='logo_word.png' alt='LOGO' className='logo-img-word'/></li>
+          {/* <li><img src='logo_word.png' alt='LOGO' className='logo-img-word'/></li> */}
         </ul>
       </div>
       <div>

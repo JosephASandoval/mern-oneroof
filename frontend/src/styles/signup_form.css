@@ -70,10 +70,14 @@
      margin: 5px;
  }
 
+ .session-errors-container{
+    background-color: #d6e4f0;
+ }
 
  .session-errors{
     justify-content: center;
     align-items: center;
     color: #1E56A0;
-    font-size: 15px;
+    font-size: 20px;
+    background-color: #d6e4f0;
  }

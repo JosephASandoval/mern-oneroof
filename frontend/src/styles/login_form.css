@@ -13,6 +13,7 @@
     margin: 5px 300px 5px;
     background-color: #d6e4f0;
     padding: 5px 100px 50px;
+    border-radius: 10px;
 }
 
  h2 {
@@ -74,10 +75,15 @@
      margin: 5px;
  }
 
+ .session-errors-container{
+    background-color: #d6e4f0;
+ }
+
 
  .session-errors{
     justify-content: center;
     align-items: center;
     color: #1E56A0;
-    font-size: 15px;
+    font-size: 20px;
+    background-color: #d6e4f0;
  }
