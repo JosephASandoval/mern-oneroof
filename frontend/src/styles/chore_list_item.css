@@ -1,0 +1,7 @@
+.todo-list-item {
+  display: flex;
+}
+
+.todo-list-item > h3 {
+  background-color: #1e56a0;
+}

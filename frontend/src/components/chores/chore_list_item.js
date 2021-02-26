@@ -1,4 +1,5 @@
 import React from 'react';
+import "../../styles/chore_list_item.css";
 
 class ChoreListItem extends React.Component {
   constructor(props) {
