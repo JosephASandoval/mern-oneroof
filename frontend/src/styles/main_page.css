@@ -1,0 +1,37 @@
+*{
+    color: #163172;
+    background: #f6f6f6;
+}
+
+
+.main-page-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: #163172;
+    margin: 20px 100px 200px;
+}
+
+.welcome-msg {
+    justify-content: center;
+}
+
+.welcome-msg li {
+    
+}
+
+img { 
+    size: 300px;
+}
+
+footer {
+    /* display: flex; */
+    margin: 50px;
+}
+
+footer p{ 
+    text-align: end;
+}
