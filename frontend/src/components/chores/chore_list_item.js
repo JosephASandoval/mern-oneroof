@@ -21,8 +21,7 @@ class ChoreListItem extends React.Component {
       this.props.chore,
       { is_done: !this.props.chore.done }
     );
-
-     this.props.receiveNewChore(toggledChore);
+    this.props.receiveNewChore(toggledChore);
   }
 
   render() {
@@ -36,14 +35,14 @@ class ChoreListItem extends React.Component {
     return (
       <li className="todo-list-item">
         <div className="todo-header">
-          <h3><a href onClick={ this.toggleBody }>{ body }</a></h3>
+          {/* <h3><a href onClick={ this.toggleBody }>{ body }</a></h3> */}
+          <h3>{ body }</h3>
           <button
             className={ is_done ? "done" : "undone" }
             onClick={ this.toggleChore }>
             { is_done ? "Undo" : "Done" }
           </button>
         </div>
-        { body }
       </li>
     );
   }

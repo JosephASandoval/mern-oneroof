@@ -4,10 +4,9 @@ import { composeChore } from '../../actions/chore_actions';
 
 const mSTP = state => {
   return {
-    chore: {
-      body: "",
-      is_done: false
-    }
+    currentUser: state.session.user,
+    // newChore: state.chores.new
+    chores: Object.values(state.chores.all)
   }
 }
 

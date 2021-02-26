@@ -1,5 +1,7 @@
 .todo-list-item {
   display: flex;
+  font-family: "Courier New";
+  background-color: #1e56a0;
 }
 
 .todo-list-item > h3 {
