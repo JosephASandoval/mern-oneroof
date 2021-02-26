@@ -1,5 +1,5 @@
 import React from 'react';
-import './post_box.css';
+import '../../styles/post_box.css';
 
 class PostBox extends React.Component {
   render() {
