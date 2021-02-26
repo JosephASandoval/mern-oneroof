@@ -5,7 +5,6 @@ import ChoreList from './chore_list';
 import { fetchAllChores, composeChore } from '../../actions/chore_actions';
 
 const mapStateToProps = state => {
-  debugger
   return {
     currentUser: state.session.user,
     chores: Object.values(state.chores.all)
