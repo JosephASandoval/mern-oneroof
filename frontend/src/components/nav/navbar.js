@@ -26,9 +26,9 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+        <div className = 'link-container'>
+          <Link className='link-word' to={"/signup"}>Signup</Link>
+          <Link className='link-word' to={"/login"}>Login</Link>
         </div>
       );
     }
@@ -36,10 +36,10 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <img id='logo' src={window.logoWordURL} /><p>testing</p>
+      <header className='main-nav'>
+        <img src='logo_word.png' alt='LOGO' className='logo-img-word'/>
         {this.getLinks()}
-      </div>
+      </header>
     );
   }
 }
