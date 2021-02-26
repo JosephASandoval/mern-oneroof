@@ -1,12 +1,9 @@
-.NavBar {
+.nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.NavBar button {
-    height: 20px;
-}
 
 .Links1 {
     width: 100px;
@@ -18,4 +15,17 @@
     width: 400px;
     display: flex;
     justify-content: space-between;
+}
+
+.logout-button {
+    border: none;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+    background-color: gray;
 }

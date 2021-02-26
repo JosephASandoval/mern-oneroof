@@ -17,11 +17,11 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
+        <div className='nav-bar'>
           <Link to={"/posts"}>All Posts</Link>
           <Link to={"/profile"}>Profile</Link>
           <Link to={"/new_post"}>Write a Post</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+          <button className='logout-button' onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {

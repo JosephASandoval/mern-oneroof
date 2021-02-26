@@ -1,0 +1,19 @@
+* {
+    background: #eaf5ff;
+}
+
+.postbox-container {
+    display: flex;
+    margin: 2vw 10vw 2vw 10vw;
+    justify-content: center;
+    background-color: #163172;
+    border-radius: 5px;
+}
+
+p {
+    text-align: center;
+    padding: 0px 15px 0px 15px;
+    text-align: center;
+    color: #d6e4f0;
+    background: transparent;
+}
