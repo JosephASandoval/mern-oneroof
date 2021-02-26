@@ -48,8 +48,6 @@ class ChoreForm extends React.Component {
           </div>
         </form>
         <br />
-        <ChoreBox body={this.state.all} />
-        {/* <ChoreBox body={this.state.newChore} /> */}
       </div>
     );
   }
