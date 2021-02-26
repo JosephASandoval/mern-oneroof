@@ -1,10 +1,11 @@
 import React from 'react';
+import './post_box.css';
 
 class PostBox extends React.Component {
   render() {
     return (
-        <div>
-            <h3>{this.props.text}</h3>
+        <div className='Postbox-Container'>
+            <p>{this.props.text}</p>
         </div>
     );
   }
