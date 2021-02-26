@@ -6,6 +6,7 @@ class Profile extends React.Component {
         super(props);
 
         this.state = {
+            houses: [],
             posts: []
         }
     }

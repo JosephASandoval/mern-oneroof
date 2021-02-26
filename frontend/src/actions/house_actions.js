@@ -32,7 +32,6 @@ export const fetchUserHouses = id => dispatch => (
 );
 
 export const createHouse = data => dispatch => {
-    debugger;
   return makeHouse(data)
     .then(house => dispatch(receiveNewHouse(house)))
     .catch(err => console.log(err))

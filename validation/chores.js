@@ -7,11 +7,11 @@ module.exports = function validateChoreInput(data) {
   data.body = validText(data.body) ? data.body : "";
 
   if (!Validator.isLength(data.body, { min: 5, max: 300 })) {
-    errors.text = "Body must be between 5 and 300 characters";
+    errors.body = "Body must be between 5 and 300 characters";
   }
 
   if (Validator.isEmpty(data.body)) {
-    errors.text = "Body field is required";
+    errors.body = "Body field is required";
   }
 
   return {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navbar.css";
+import "../../styles/navbar.css";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -17,18 +17,18 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
-          <Link to={"/posts"}>All Posts</Link>
-          <Link to={"/profile"}>Profile</Link>
-          <Link to={"/new_post"}>Write a Post</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+        <div className='nav-bar-container'>
+          <Link id='link' to={"/posts"}>All Posts</Link>
+          <Link id='link' to={"/profile"}>Profile</Link>
+          <Link id='link' to={"/new_post"}>Write a Post</Link>
+          <button className='logout-button' onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
-        <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+        <div className = 'link-container'>
+          <Link className='link-word' to={"/signup"}>Signup</Link>
+          <Link className='link-word' to={"/login"}>Login</Link>
         </div>
       );
     }
@@ -36,10 +36,10 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>OneRoof</h1>
+      <header className='main-nav'>
+        <img src='logo_word.png' alt='LOGO' className='logo-img-word'/>
         {this.getLinks()}
-      </div>
+      </header>
     );
   }
 }
