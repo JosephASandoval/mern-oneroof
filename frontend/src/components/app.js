@@ -25,7 +25,7 @@ const App = () => (
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/new_post" component={PostComposeContainer}/>
-      <ProtectedRoute exeact path='/chores' component={ChoreListContainer}/>
+      <ProtectedRoute exact path='/chores' component={ChoreListContainer}/>
     </Switch>
   </div>
 );

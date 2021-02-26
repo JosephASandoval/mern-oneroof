@@ -25,7 +25,7 @@ export const removeChore = chore => ({
   chore
 })
 
-export const fetchChores = () => dispatch => (
+export const fetchAllChores = () => dispatch => (
   ChoreAPIUtil.getChores()
     .then(chores => dispatch(receiveChores(chores)))
     .catch(err => console.log(err))

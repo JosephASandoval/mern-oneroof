@@ -17,11 +17,7 @@ class Profile extends React.Component {
     }
 
     componentWillReceiveProps(newState) {
-<<<<<<< HEAD
-      this.setState({ houses: newState.houses, posts: newState.posts} );
-=======
       this.setState({ posts: newState.posts } );
->>>>>>> main
   
     }   
     

@@ -1,7 +1,7 @@
 import React from 'react';
 // Components
 import ChoreListItem from './chore_list_item';
-import ChoreForm from './chore_form';
+import ChoreFormContainer from './chore_form_container';
 
 class ChoreList extends React.Component {
 
@@ -20,7 +20,7 @@ class ChoreList extends React.Component {
         <ul className="chore-list">
           { choreItems }
         </ul>
-        <ChoreForm receiveChore={ receiveChore }/>
+        <ChoreFormContainer receiveChore={ receiveChore }/>
       </div>
     );
   }

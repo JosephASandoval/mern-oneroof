@@ -18,6 +18,7 @@ class ChoreForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const chore = Object.assign({}, this.state, { id: new Date().getTime()});  //not sure
+    debugger
     this.props.composeChore(chore);
     this.setState({
       body: ""

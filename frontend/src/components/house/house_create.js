@@ -13,17 +13,14 @@ class HouseCreate extends React.Component {
   } 
 
   componentWillReceiveProps(nextProps) {
-      debugger;
       this.setState({newHouse: nextProps.newHouse.name});
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
     let house = {
       name: this.state.name
     };
-    debugger;
     this.props.createHouse(house); 
     this.setState({name: ''})
   }
