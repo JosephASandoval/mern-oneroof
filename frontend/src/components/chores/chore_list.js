@@ -5,7 +5,6 @@ import ChoreListItem from "./chore_list_item";
 import ChoreFormContainer from "./chore_form_container";
 import "../../styles/chore_list.css";
 import "../../styles/chore_list_item.css";
-// import ChoreBox from './chore_box';
 
 class ChoreList extends React.Component {
   constructor(props) {
@@ -22,8 +21,8 @@ class ChoreList extends React.Component {
     this.props.fetchAllChores();
   }
 
-  componentWillReceiveProps(newState) {
-    this.setState({ chores: newState.chores });
+  componentWillReceiveProps(newChore) {
+    this.state.chores.push(newChore)
   }
 
   render() {
@@ -41,9 +40,11 @@ class ChoreList extends React.Component {
           <ChoreFormContainer composeChore={composeChore} />
           <h2>My Chores</h2>
           <ul>
-            {this.props.chores.map((chore) => (
-              <ChoreListItem key={chore._id} body={chore.body} />
-            ))}
+            <li>
+              {this.props.chores.map((chore) => (
+                <ChoreListItem key={chore._id} body={chore.body} ></ChoreListItem>
+              ))}
+            </li>
           </ul>
         </div>
       );

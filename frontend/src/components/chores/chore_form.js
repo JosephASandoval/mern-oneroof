@@ -1,6 +1,5 @@
 import React from 'react';
 import "../../styles/chore_form.css";
-import ChoreBox from './chore_box';
 
 class ChoreForm extends React.Component {
   constructor(props) {

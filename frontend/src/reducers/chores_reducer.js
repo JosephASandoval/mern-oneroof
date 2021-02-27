@@ -11,7 +11,7 @@ import { RECEIVE_CHORES, RECEIVE_USER_CHORES, RECEIVE_NEW_CHORE, REMOVE_CHORE } 
         newState.user = action.chores.data;
         return newState;
       case RECEIVE_NEW_CHORE:
-        newState.new = action.chore.data
+        newState.all.unshift(action.chore.data);
         return newState;
       case REMOVE_CHORE:
         newState = Object.assign({}, state)

@@ -7,6 +7,7 @@ class ChoreListItem extends React.Component {
     this.state = {detail: false};
     this.toggleBody = this.toggleBody.bind(this);
     this.toggleChore = this.toggleChore.bind(this);
+    this.deleteChore = this.deleteChore.bind(this);
   }
 
   toggleBody(e) {
@@ -15,6 +16,7 @@ class ChoreListItem extends React.Component {
   }
 
   toggleChore(e) {
+    
     e.preventDefault();
     const toggledChore = Object.assign(
       {},
@@ -24,6 +26,18 @@ class ChoreListItem extends React.Component {
     this.props.receiveNewChore(toggledChore);
   }
 
+  deleteChore(e) {
+    debugger
+    e.preventDefault();
+    const arr = this.props.chores;
+    debugger
+    let idx = arr.indexOf(e.target.value);
+    if (idx !== -1) {
+      arr.splice(idx, 1)
+      this.setState({ chores: arr })
+    }
+  }
+
   render() {
     const { body, is_done } = this.props;
     // const { body, is_done } = chore;
@@ -31,7 +45,6 @@ class ChoreListItem extends React.Component {
     // if (this.state.body) {
     //   detail = <TodoDetailViewContainer todo={ todo } />;
     // }
-
     return (
       <li className="todo-list-item">
         <div className="todo-header">
@@ -42,6 +55,7 @@ class ChoreListItem extends React.Component {
             onClick={ this.toggleChore }>
             { is_done ? "Undo" : "Done" }
           </button>
+          <button deleteChore={this.props.deleteChore} className="delete">Delete this chore</button>
         </div>
       </li>
     );
