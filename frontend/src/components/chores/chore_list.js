@@ -25,7 +25,6 @@ class ChoreList extends React.Component {
 
   render() {
     const { chores, composeChore, removeChore } = this.props;
-    // debugger
     if (chores.length === 0) {
       return (
         <>
