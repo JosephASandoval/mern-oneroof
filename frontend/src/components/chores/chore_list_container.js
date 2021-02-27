@@ -14,6 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   composeChore: data => dispatch(composeChore(data)),
   fetchAllChores: () => dispatch(fetchAllChores()),
+  removeChore: chore => dispatch(removeChore(chore))
 });
 
 export default connect(

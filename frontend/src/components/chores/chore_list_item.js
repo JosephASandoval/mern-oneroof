@@ -1,65 +1,23 @@
 import React from 'react';
 import "../../styles/chore_list_item.css";
 
-class ChoreListItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {detail: false};
-    this.toggleBody = this.toggleBody.bind(this);
-    this.toggleChore = this.toggleChore.bind(this);
-    this.deleteChore = this.deleteChore.bind(this);
-  }
 
-  toggleBody(e) {
-    e.preventDefault();
-    this.setState({ detail: !this.state.detail });
-  }
-
-  toggleChore(e) {
-    
-    e.preventDefault();
-    const toggledChore = Object.assign(
-      {},
-      this.props.chore,
-      { is_done: !this.props.chore.done }
-    );
-    this.props.receiveNewChore(toggledChore);
-  }
-
-  deleteChore(e) {
-    debugger
-    e.preventDefault();
-    const arr = this.props.chores;
-    debugger
-    let idx = arr.indexOf(e.target.value);
-    if (idx !== -1) {
-      arr.splice(idx, 1)
-      this.setState({ chores: arr })
-    }
-  }
-
-  render() {
-    const { body, is_done } = this.props;
-    // const { body, is_done } = chore;
-    // let body;
-    // if (this.state.body) {
-    //   detail = <TodoDetailViewContainer todo={ todo } />;
-    // }
-    return (
-      <li className="todo-list-item">
-        <div className="todo-header">
-          {/* <h3><a href onClick={ this.toggleBody }>{ body }</a></h3> */}
-          <h3>{ body }</h3>
-          <button
-            className={ is_done ? "done" : "undone" }
-            onClick={ this.toggleChore }>
-            { is_done ? "Undo" : "Done" }
-          </button>
-          <button deleteChore={this.props.deleteChore} className="delete">Delete this chore</button>
-        </div>
-      </li>
-    );
-  }
+const ChoreListItem = props => {
+  return (
+    <li className="todo-list-item">
+      <div className="todo-header">
+        {/* <h3><a href onClick={ this.toggleBody }>{ body }</a></h3> */}
+        <h3>{ props.chore.body }</h3>
+        <button
+          className={ props.is_done ? "done" : "undone" }
+          // onClick={ this.toggleChore }>
+          >
+          { props.is_done ? "Undo" : "Done" }
+        </button>
+        <button onClick={() => props.removeChore(props.chore)} className="delete">Delete this chore</button>
+      </div>
+    </li>
+  )
 }
 
 export default ChoreListItem;
