@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/JosephASandoval/mern-oneroof#readme",
   "dependencies": {
+    "aws-sdk": "^2.853.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^6.0.0",
@@ -30,6 +31,9 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
+    "multer-s3": "^2.9.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^13.5.2"
