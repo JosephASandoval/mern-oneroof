@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../styles/post_box.css';
 
-class PostBox extends React.Component {
-  render() {
-    return (
-        <div className='Postbox-Container'>
-            <p>{this.props.text}</p>
-        </div>
-    );
-  }
+const PostBox = props => {
+  return (
+    <div className='Postbox-Container'>
+        <button className={ props.is_expired? "expired" : 'active' }>{props.is_expired? "Expired" : "Active" }</button>
+        <p>{props.text}</p>
+        <button className='delete' onClick={() => props.removePost(props.post)}>Delete Post</button>
+    </div>
+  );
 }
 
 export default PostBox;
