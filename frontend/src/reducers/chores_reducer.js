@@ -11,11 +11,14 @@ import { RECEIVE_CHORES, RECEIVE_USER_CHORES, RECEIVE_NEW_CHORE, REMOVE_CHORE } 
         newState.user = action.chores.data;
         return newState;
       case RECEIVE_NEW_CHORE:
-        newState.new = action.chore.data
+        newState.all.unshift(action.chore.data);
         return newState;
       case REMOVE_CHORE:
-        newState = Object.assign({}, state)
-        delete newState[action.chore.id]
+        let idx = newState.all.indexOf(action.chore);
+        debugger
+        if (idx !== -1) {
+          newState.all.splice(idx, 1)
+        }
         return newState;
       default:
         return state;

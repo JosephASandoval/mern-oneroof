@@ -51,4 +51,10 @@ router.post(
   }
 );
 
+router.route('/:id').delete((req, res) => {
+  Chore.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Chore deleted!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+})
+
 module.exports = router;
