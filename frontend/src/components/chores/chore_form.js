@@ -1,6 +1,5 @@
 import React from 'react';
 import "../../styles/chore_form.css";
-import ChoreBox from './chore_box';
 
 class ChoreForm extends React.Component {
   constructor(props) {
@@ -48,8 +47,6 @@ class ChoreForm extends React.Component {
           </div>
         </form>
         <br />
-        <ChoreBox body={this.state.all} />
-        {/* <ChoreBox body={this.state.newChore} /> */}
       </div>
     );
   }
