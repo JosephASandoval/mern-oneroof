@@ -15,7 +15,6 @@ import { RECEIVE_CHORES, RECEIVE_USER_CHORES, RECEIVE_NEW_CHORE, REMOVE_CHORE } 
         return newState;
       case REMOVE_CHORE:
         let idx = newState.all.indexOf(action.chore);
-        debugger
         if (idx !== -1) {
           newState.all.splice(idx, 1)
         }

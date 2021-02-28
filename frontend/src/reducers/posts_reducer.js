@@ -20,13 +20,14 @@ const PostsReducer = (
       newState.user = action.posts.data;
       return newState;
     case RECEIVE_NEW_POST:
-      newState.new = action.post.data;
+      newState.all.unshift(action.post.data)
       return newState;
     case RECEIVE_POST:
       newState.all.push(action.post.data);
       return newState;
     case REMOVE_POST:
-      delete newState.new;
+      let idx = newState.all.indexOf(action.post);
+      if (idx !== -1) newState.all.splice(idx, 1)
       return newState;
     default:
       return state;

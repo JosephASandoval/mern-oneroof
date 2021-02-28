@@ -23,12 +23,12 @@ export const receiveNewPost = (post) => ({
   post,
 });
 
-const receivePost = (post) => ({
+export const receivePost = (post) => ({
   type: RECEIVE_POST,
   post,
 });
 
-const removePost = (post) => ({
+export const removePost = (post) => ({
   type: REMOVE_POST,
   post,
 });
@@ -53,9 +53,9 @@ export const composePost = (data) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const deletePost = (id) => (dispatch) => {
-  return PostAPIUtil.destroyPost(id)
-    .then((post) => dispatch(removePost(post)))
+export const deletePost = (postId) => (dispatch) => {
+  return PostAPIUtil.destroyPost(postId)
+    .then(() => dispatch(removePost(postId)))
     .catch((err) => console.log(err));
 };
 
