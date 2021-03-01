@@ -25,6 +25,7 @@ export const removeChore = chore => ({
   chore
 })
 
+// thunk actions
 export const fetchAllChores = () => dispatch => (
   ChoreAPIUtil.getChores()
     .then(chores => dispatch(receiveChores(chores)))
@@ -45,6 +46,6 @@ export const composeChore = data => dispatch => (
 
 export const deleteChore = choreId => dispatch => (
   ChoreAPIUtil.deleteChore(choreId)
-    .then(() => dispatch(deleteChore(choreId)))
+    .then(() => dispatch(removeChore(choreId)))
     .catch(err => console.log(err))
 )

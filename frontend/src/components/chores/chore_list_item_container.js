@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { removeChore } from '../../actions/chore_actions';
+import { deleteChore } from '../../actions/chore_actions';
 import ChoreListItem from './chore_list_item';
 
 const mSTP = state => {
@@ -10,7 +10,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
-    removeChore: chore => dispatch(removeChore(chore))
+    deleteChore: choreId => dispatch(deleteChore(choreId))
   };
 };
 

@@ -24,7 +24,7 @@ class ChoreList extends React.Component {
   }
 
   render() {
-    const { chores, composeChore, removeChore } = this.props;
+    const { chores, composeChore, deleteChore } = this.props;
     if (chores.length === 0) {
       return (
         <>
@@ -39,7 +39,7 @@ class ChoreList extends React.Component {
           <h2>My Chores</h2>
           <ul>
             {chores.map((chore) => (
-              <ChoreListItem removeChore={removeChore} key={chore._id} chore={chore} />
+              <ChoreListItem deleteChore={deleteChore} key={chore._id} chore={chore} />
             ))}
           </ul>
         </div>

@@ -5,13 +5,13 @@ export const getChores = () => {
 };
 
 export const getUserChores = id => {
-  return axios.get(`/api/chores/user/${id}`)
+  return axios.get(`/api/chores/${id}`)
 };
 
 export const writeChore = data => {
   return axios.post('/api/chores/', data)
 }
 
-export const deleteChore = id => {
-  return axios.get(`/api/chores/user/${id}`)
+export const deleteChore = choreId => {
+  return axios.delete(`/api/chores/${choreId}`)
 }
