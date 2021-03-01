@@ -68,7 +68,6 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <h2> LOG IN </h2>
-        <div>
           <form className="entry-form" onSubmit={this.handleSubmit}>
             <br />
             <input
@@ -92,13 +91,11 @@ class LoginForm extends React.Component {
             <button
               className="submit-button input-field"
               onClick={this.handleGuest}
-            >
-              Guest Login
+            >Guest Login
             </button>
 
-            <div className="">{this.renderErrors()}</div>
+            <div className="session-errors">{this.renderErrors()}</div>
           </form>
-        </div>
       </div>
     );
   }
