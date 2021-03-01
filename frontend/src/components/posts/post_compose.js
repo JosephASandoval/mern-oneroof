@@ -1,5 +1,6 @@
 import React from 'react';
 import PostBox from './post_box';
+import '../../styles/post_compose.css'
 
 class PostCompose extends React.Component {
   constructor(props) {
@@ -35,15 +36,17 @@ class PostCompose extends React.Component {
 
   render() {
     return (
-        <div>
+        <div className='create-container'>
             <form onSubmit={this.handleSubmit}>
-                <div>
-                    <input type="textarea"
+                <div className='entry-form'>
+                    <p>New Post</p>
+                    <input className='form-input'
+                        type="textarea"
                         value={this.state.text}
                         onChange={this.update()}
                         placeholder="Write your post..."
                     />
-                    <input type="submit" value="Submit" />
+                    <input className='submit-button' type="submit" value="Create Post" />
                 </div>
             </form>
             <br />

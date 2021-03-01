@@ -58,7 +58,6 @@
     border-style: none;
     border-radius: 5px;
     background: transparent;
-
 }
 
 .submit-button:hover{
@@ -69,11 +68,11 @@
 
 
 
- .other-form-link {
+ /* .other-form-link {
      display: flex;
      justify-content: center;
      margin: 5px;
- }
+ } */
 
  .session-errors-container{
     background-color: #d6e4f0;

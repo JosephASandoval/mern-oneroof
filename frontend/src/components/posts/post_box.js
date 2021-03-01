@@ -9,7 +9,7 @@ const PostBox = (props) => {
       </button>
       <p>{props.text}</p>
       <button className="delete" onClick={() => props.removePost(props.post)}>
-        Delete Post
+        Delete
       </button>
     </div>
   );
