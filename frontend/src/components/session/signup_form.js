@@ -170,7 +170,7 @@ class SignupForm extends React.Component {
               />
             </label> */}
             <br />
-            <input className="submit-button" type="submit" value="Submit" />
+            <button className="submit-button input-field">Sign Up</button>
             <br />
             {/* <button
               className="submit-button input-field"
