@@ -1,7 +1,7 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 import { uploadPhoto } from "../../util/photo_api_util";
-import '../../styles/signup_form.css'
+import "../../styles/signup_form.css";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -13,12 +13,15 @@ class SignupForm extends React.Component {
       email: "",
       password: "",
       password2: "",
+      photoId: "",
+      photoUrl: "",
+      photoFile: null,
       errors: {},
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
-
+    this.handlePhotoFile = this.handlePhotoFile.bind(this);
     this.clearedErrors = false;
   }
 
@@ -39,16 +42,43 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let user = {
-      username: this.state.username,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      email: this.state.email,
-      password: this.state.password,
-      password2: this.state.password2,
-    };
 
-    this.props.signup(user, this.props.history);
+    if (this.state.photoFile) {
+      const data = new FormData(e.target);
+      data.append("file", this.state.photoFile);
+      uploadPhoto(data).then((res) => {
+        let user = {
+          username: this.state.username,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          email: this.state.email,
+          photoId: res.data.newData.photoId,
+          photoUrl: res.data.newData.Location,
+          password: this.state.password,
+          password2: this.state.password2,
+        };
+        this.props.signup(user, this.props.history);
+      });
+    } else {
+      let user = {
+        username: this.state.username,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        photoId: this.state.photoId,
+        photoUrl: this.state.photoUrl,
+        password: this.state.password,
+        password2: this.state.password2,
+      };
+      this.props.signup(user, this.props.history);
+    }
+  }
+
+  handlePhotoFile(e) {
+    e.preventDefault();
+    this.setState({
+      photoFile: e.target.files[0],
+    });
   }
 
   handleGuest(e) {
@@ -129,15 +159,25 @@ class SignupForm extends React.Component {
               placeholder="Confirm Password"
             />
             <br />
+            {/* <label>
+              Upload Profile Picture:&nbsp;
+              <input
+                type="file"
+                className="form-input"
+                name=""
+                id=""
+                onChange={this.handlePhotoFile}
+              />
+            </label> */}
             <br />
             <input className="submit-button" type="submit" value="Submit" />
             <br />
-            <button
+            {/* <button
               className="submit-button input-field"
               onClick={this.handleGuest}
             >
               Guest Login
-            </button>
+            </button> */}
 
             <div className="">{this.renderErrors()}</div>
           </div>

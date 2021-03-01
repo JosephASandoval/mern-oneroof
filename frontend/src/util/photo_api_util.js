@@ -3,17 +3,17 @@ import axios from 'axios';
 
 // data is FormData
 export const uploadPhoto = (data) => {
-  return axios.post('/api/images/upload', data)
+  return axios.post('/api/photos/upload', data)
 }
 
 export const getPhotos = () => {
-  return axios.get('/api/images')
+  return axios.get('/api/photos')
 }
 
 export const getPhoto = (photoId) => {
-  return axios.get(`/api/images/${photoId}`)
+  return axios.get(`/api/photos/${photoId}`)
 }
 
 export const deletePhoto = (photoId) => {
-  return axios.delete(`/api/images/delete/${photoId}`)
+  return axios.delete(`/api/photos/delete/${photoId}`)
 }
