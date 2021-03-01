@@ -17,10 +17,9 @@ class ChoreListItem extends React.Component {
     const chore = this.props.chore;
 
     return (
-      <li className="todo-list-item">
-        <div className="todo-header">
+        <div className="Postbox-Container">
           {/* <h3><a href onClick={ this.toggleBody }>{ body }</a></h3> */}
-          <h3>{chore.body}</h3>
+          <p>{chore.body}</p>
           {/* <button
             className={props.is_done ? "done" : "undone"}
             // onClick={ this.toggleChore }>
@@ -30,11 +29,9 @@ class ChoreListItem extends React.Component {
           <button
             onClick={() => this.handleDelete(chore._id)}
             className="delete"
-          >
-            Delete this chore
+          >Delete
           </button>
         </div>
-      </li>
     );
   }
 }
