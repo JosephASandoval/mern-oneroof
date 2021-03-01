@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const passport = require("passport");
-const Expense = require("../../models/expense");
+const Expense = require("../../models/Expense");
 const validateExpenseInput = require("../../validation/expenses");
 
 router.get("/test", (req, res) => {
