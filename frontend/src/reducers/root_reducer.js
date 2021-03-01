@@ -1,12 +1,18 @@
 import { combineReducers } from "redux";
-import session from "./session_reducer";
 import errors from "./errors_reducer";
-import entities from "./entities_reducer";
+import session from "./session_reducer";
+import houses from "./houses_reducer";
+import posts from "./posts_reducer";
+import chores from "./chores_reducer";
+import photos from "./photo_reducer";
 
 const RootReducer = combineReducers({
   errors,
   session,
-  entities,
+  houses,
+  posts,
+  chores,
+  photos,
 });
 
 export default RootReducer;
