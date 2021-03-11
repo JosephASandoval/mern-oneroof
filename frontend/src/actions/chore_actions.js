@@ -20,9 +20,9 @@ export const receiveNewChore = chore => ({
   chore
 })
 
-export const removeChore = chore => ({
+export const removeChore = choreId => ({
   type: REMOVE_CHORE,
-  chore
+  choreId
 })
 
 // thunk actions
