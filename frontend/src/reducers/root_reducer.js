@@ -5,6 +5,7 @@ import houses from "./houses_reducer";
 import posts from "./posts_reducer";
 import chores from "./chores_reducer";
 import photos from "./photo_reducer";
+import expenses from "./expenses_reducer";
 
 const RootReducer = combineReducers({
   errors,
@@ -13,6 +14,7 @@ const RootReducer = combineReducers({
   posts,
   chores,
   photos,
+  expenses
 });
 
 export default RootReducer;
