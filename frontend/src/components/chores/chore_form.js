@@ -33,17 +33,16 @@ class ChoreForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form className="chore-form" onSubmit={this.handleSubmit}>
-          <div>
-            <label>Chores:
-              <input
+      <div className='create-container'>
+        <form onSubmit={this.handleSubmit}>
+          <div className='entry-form'>
+            <p>World of Chores </p>
+              <input className='form-input'
                 value={this.state.body}
                 placeholder="name your chore"
                 onChange={this.update('body')}
                 required/>
-            </label>
-            <button className='create-button'>Create Chore!</button>
+            <button className='submit-button'>Create Chore!</button>
           </div>
         </form>
         <br />

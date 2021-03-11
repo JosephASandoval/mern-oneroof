@@ -179,7 +179,7 @@ class SignupForm extends React.Component {
               Guest Login
             </button> */}
 
-            <div className="">{this.renderErrors()}</div>
+            <div className="session-errors">{this.renderErrors()}</div>
           </div>
         </form>
       </div>

@@ -15,7 +15,7 @@ module.exports = function validateExpenseInput(data) {
   }
 
   if (Validator.isEmpty(data.amount)) {
-    errors.body = "Amount field is required";
+    errors.amount = "Amount field is required";
   }
 
   return {

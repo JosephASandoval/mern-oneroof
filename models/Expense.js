@@ -6,10 +6,10 @@ const ExpenseSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    house: {
-        type: Schema.Types.ObjectId,
-        ref: "House"
-    },
+    // house: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "House"
+    // },
     body: {
         type: String,
         required: true,
