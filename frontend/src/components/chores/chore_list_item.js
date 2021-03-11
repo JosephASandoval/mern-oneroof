@@ -28,10 +28,9 @@ class ChoreListItem extends React.Component {
             {props.is_done ? "Undo" : "Done"}
           </button> */}
           <button
-            onClick={() => this.handleDelete(chore._id)}
+            onClick={() => this.props.deleteChore(chore._id)}
             className="delete"
-          >
-            Delete this chore
+          >Delete this chore
           </button>
         </div>
       </li>
