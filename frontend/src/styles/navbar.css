@@ -1,14 +1,17 @@
+*{
+    font-family: 'Inder', sans-serif;
+}
 .nav-bar-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background: #1e56a0;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .main-nav {
     display:flex;
     justify-content: space-between;
-    background-color:transparent;
+    background: #D6e4f0;
     height: 150px;
     margin: 30px 200px 30px;
     align-items: center;
@@ -34,13 +37,15 @@
 }
 
 .logout-button {
-    border: none;
-    color: #f6f6f6;
+    width: 100px;
     text-decoration: none;
+    background: transparent;
+    color:#f6f6f6;
+    font-weight:900;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
-    font-size: 15px;
-    border-radius: 5px;
-    background: none;
 }
 
 .logout-button:hover {
@@ -52,11 +57,13 @@
 
 .logo-img-word{
     height: 150px;
+    background: transparent;
 }
 
 .link-container {
     display: flex;
     margin: 20px;
+    background: #D6e4f0;
 }
 
 
@@ -65,8 +72,9 @@
     text-transform: uppercase;
     text-align: center;
     padding: 20px 12px 0px 12px;
-
-    background: #163172;
+    font-family: 'Inder', sans-serif;
+    background: #00728d;
+    /* letter-spacin; */
     color:#f6f6f6;
     margin: 10px;
     font-size: 16px;

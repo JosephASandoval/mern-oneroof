@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../styles/main_page.css'
+import '../../styles/main_page.css';
+
 
 class MainPage extends React.Component {
 
@@ -7,6 +8,8 @@ class MainPage extends React.Component {
     return (
       <>
       <div className='main-page-container'>
+        <img src='splash.png' alt='splash-img' className='splash-img'/>
+
         <p> Welcome to ONEROOF</p>
         <ul className='welcome-msg'>
           <li>OneRoof, a housemate organization tool, is an online application 
