@@ -8,8 +8,9 @@ class MainPage extends React.Component {
     return (
       <>
       <div className='main-page-container'>
-        <img src='splash.png' alt='splash-img' className='splash-img'/>
-
+        <div className='splash-img-container'>
+          <img src='splash.png' alt='splash-img' className='splash-img'/>
+        </div>
         <p> Welcome to ONEROOF</p>
         <ul className='welcome-msg'>
           <li>OneRoof, a housemate organization tool, is an online application 

@@ -13,8 +13,13 @@
     border-radius: 10px;
 }
 
-.splash-img {
+.splash-img-container {
     display: flex;
+}
+.splash-img {
+    min-height: 100vh;
+    width: 100vw;
+    background-size: 100% 100%;
 }
 
 .main-page-container p {
