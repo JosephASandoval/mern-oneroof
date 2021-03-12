@@ -1,9 +1,9 @@
 *{
     font-family: 'Inder', sans-serif;
+    background: #D6e4f0;
+
 }
-header  .main-nav{
-    background:#D6e4f0;;
-}
+
 .loggedin-navbar-container {
     display: flex;
     flex-direction: row;
@@ -16,7 +16,7 @@ header  .main-nav{
     justify-content: space-between;
     background: #D6e4f0;
     height: 150px;
-    margin: 30px 200px 30px;
+    padding: 20px 50px 20px;
     align-items: center;
 }
 
@@ -68,7 +68,6 @@ header  .main-nav{
     /* margin: 20px; */
     background: #D6e4f0;
 }
-
 
 .link-word {
     text-decoration: none;
