@@ -12,6 +12,7 @@ import HouseCreateContainer from "./house/house_create_container";
 import HouseContainer from './house/house_container';
 import PostComposeContainer from "./posts/post_compose_container";
 import ChoreListContainer from './chores/chore_list_container';
+import ExpensesContainer from './expenses/expenses_container';
 
 const App = () => (
   <div>
@@ -26,6 +27,7 @@ const App = () => (
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/new_post" component={PostComposeContainer}/>
       <ProtectedRoute exact path='/chores' component={ChoreListContainer}/>
+      <ProtectedRoute exact path='/expenses' component={ExpensesContainer}/>
     </Switch>
   </div>
 );
