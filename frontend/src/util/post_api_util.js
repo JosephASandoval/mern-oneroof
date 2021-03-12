@@ -27,5 +27,5 @@ export const changePost = (data) => {
 
 // delete a post
 export const destroyPost = (id) => {
-  return axios.get(`/api/posts/${id}`);
+  return axios.delete(`/api/posts/${id}`);
 };

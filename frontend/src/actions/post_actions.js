@@ -28,9 +28,9 @@ export const receivePost = (post) => ({
   post,
 });
 
-export const removePost = (post) => ({
+export const removePost = (postId) => ({
   type: REMOVE_POST,
-  post,
+  postId,
 });
 
 

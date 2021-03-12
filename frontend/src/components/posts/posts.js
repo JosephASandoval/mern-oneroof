@@ -20,7 +20,7 @@ class Post extends React.Component {
   }
 
   render() {
-    const { posts, removePost } = this.props; 
+    const { posts, deletePost } = this.props; 
 
     if (posts.length === 0) {
       return (<div>There are no Posts</div>)
@@ -29,7 +29,7 @@ class Post extends React.Component {
         <div>
           <h2>All Posts</h2>
           {this.state.posts.map(post => (
-            <PostBox post={post} removePost={removePost} key={post._id} text={post.text} />
+            <PostBox post={post} deletePost={deletePost} key={post._id} text={post.text} />
           ))}
         </div>
       );

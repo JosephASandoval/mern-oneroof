@@ -8,7 +8,7 @@ const PostBox = (props) => {
         {props.is_expired ? "Expired" : "Active"}
       </button>
       <p>{props.text}</p>
-      <button className="delete" onClick={() => props.removePost(props.post)}>
+      <button className="delete" onClick={() => props.deletePost(props.post._id)}>
         Delete
       </button>
     </div>

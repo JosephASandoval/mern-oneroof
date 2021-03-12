@@ -1,6 +1,6 @@
 import { startSession } from 'mongoose';
 import { connect } from 'react-redux';
-import { fetchPosts, removePost } from '../../actions/post_actions';
+import { fetchPosts, deletePost } from '../../actions/post_actions';
 import Posts from './posts';
 
 const mapStateToProps = (state) => {
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    removePost: post => dispatch(removePost(post))
+    deletePost: post => dispatch(deletePost(post))
   };
 };
 
