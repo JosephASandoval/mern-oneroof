@@ -17,7 +17,7 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div className='nav-bar-container'>
+        <div className='loggedin-navbar-container'>
           <Link id='link' to={"/posts"}>All Posts</Link>
           <Link id='link' to={"/profile"}>Profile</Link>
           <Link id='link' to={"/new_post"}>Write a Post</Link>
@@ -27,7 +27,7 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div className = 'link-container'>
+        <div className = 'splash-navbar-container'>
           <Link className='link-word' to={"/signup"}>Signup</Link>
           <Link className='link-word' to={"/login"}>Login</Link>
         </div>
