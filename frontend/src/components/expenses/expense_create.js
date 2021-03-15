@@ -1,4 +1,6 @@
 import React from 'react'
+import "../../styles/expense_create.css";
+
 
 class ExpenseCreate extends React.Component {
     constructor(props) {
@@ -39,7 +41,7 @@ class ExpenseCreate extends React.Component {
                     />
                 </label>
 
-                <button value="submit">{this.props.formType}</button>
+                <button class="create" value="submit">{this.props.formType}</button>
 
             </form>
         )
