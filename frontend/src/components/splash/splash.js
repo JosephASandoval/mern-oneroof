@@ -1,13 +1,13 @@
 import React from 'react';
-import '../../styles/main_page.css';
+import '../../styles/splash.css';
 
 
-class MainPage extends React.Component {
+class Splash extends React.Component {
 
   render() {
     return (
       <>
-      <div className='main-page-container'>
+      <div className='splash-container'>
         <div className='splash-img-container'>
           <img src='splash.png' alt='splash-img' className='splash-img'/>
         </div>
@@ -29,4 +29,4 @@ class MainPage extends React.Component {
   }
 }
 
-export default MainPage;
+export default Splash;
