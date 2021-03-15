@@ -17,7 +17,7 @@ class ExpenseCreate extends React.Component {
 
     handleSubmit() {
         this.props.createExpense(this.state);
-        // debugger
+        console.log(this.state)
     }
 
     render() {
