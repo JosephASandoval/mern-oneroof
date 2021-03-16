@@ -54,9 +54,9 @@ router.post(
 
     newPost
       .save()
-      // .then((post) => res.json(post))
-      .then(() => res.json("Post created!"))
-      .catch((err) => res.status(400).json("Error: " + err));
+      .then((post) => res.json(post))
+      // .then(() => res.json("Post created!"))
+      // .catch((err) => res.status(400).json("Error: " + err));
   }
 );
 

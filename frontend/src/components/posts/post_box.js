@@ -1,14 +1,16 @@
 import React from "react";
 import "../../styles/post_box.css";
 
-const PostBox = (props) => {
+const PostBox = ({ is_expired, text, deletePost, post,}) => {
+
+
   return (
     <div className="Postbox-Container">
-      <button className={props.is_expired ? "expired" : "active"}>
-        {props.is_expired ? "Expired" : "Active"}
+      <button className={is_expired ? "expired" : "active"}>
+        {is_expired ? "Expired" : "Active"}
       </button>
-      <p>{props.text}</p>
-      <button className="delete" onClick={() => props.deletePost(props.post._id)}>
+      <p>{text}</p>
+      <button className="delete" onClick={() => deletePost(post._id)}>
         Delete
       </button>
     </div>
