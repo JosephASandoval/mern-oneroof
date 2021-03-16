@@ -22,8 +22,8 @@ class ExpenseCreate extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <h1>{this.props.formType}</h1>
+            <form className="expense-create-form" onSubmit={this.handleSubmit}>
+                <h1 className="expense-create-title">{this.props.formType}</h1>
 
                 <label>Expense:
                     <input 
