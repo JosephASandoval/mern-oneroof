@@ -4,7 +4,7 @@
 }
 
 
-.main-page-container {
+.splash-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -17,9 +17,8 @@
     display: flex;
 }
 .splash-img {
-    min-height: 100vh;
-    width: 100vw;
-    background-size: 100% 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .main-page-container p {
