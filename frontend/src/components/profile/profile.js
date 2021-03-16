@@ -21,7 +21,7 @@ class Profile extends React.Component {
     }   
     
     render() { //add house later
-      const { posts, removePost } = this.props;
+      const { posts, deletePost } = this.props;
       console.log(posts)
       const sortedPosts = [...posts].reverse();
       console.log(sortedPosts)
@@ -34,7 +34,7 @@ class Profile extends React.Component {
               <h2>All of This User's Posts</h2>
               <ul>
               {sortedPosts.map(post => (
-                <PostBox removePost={removePost} post={post} key={post._id} text={post.text} date={post.date} />
+                <PostBox deletePost={deletePost} post={post} key={post._id} text={post.text} />
               ))}
               </ul>
             </div>
