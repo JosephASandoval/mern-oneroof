@@ -26,12 +26,15 @@ const PostsReducer = (
       newState.all.push(action.post.data);
       return newState;
     case REMOVE_POST:
-      let postToDelete = newState.all.filter(post => {
+      if (newState.all.length !== 0) {
+        let postToDelete = newState.all.filter(post => {
         return post._id === action.postId
       })[0];
       let idx = newState.all.indexOf(postToDelete);
       if (idx !== -1) newState.all.splice(idx, 1);
-      if (newState.user.includes(postToDelete)) {
+      }
+      
+      if (newState.user.length !== 0) {
         let userPostToDelete = newState.user.filter(post => {
         return post._id === action.postId
       })[0];
