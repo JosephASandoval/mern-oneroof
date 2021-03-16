@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PostBox from './post_box';
+import PostComposeContainer from './post_compose_container';
 
 class Post extends React.Component {
   constructor(props) {
@@ -26,12 +27,17 @@ class Post extends React.Component {
       return (<div>There are no Posts</div>)
     } else {
       return (
-        <div>
-          <h2>All Posts</h2>
-          {this.state.posts.map(post => (
-            <PostBox post={post} deletePost={deletePost} key={post._id} text={post.text} />
-          ))}
-        </div>
+        <>
+          <div>
+            <PostComposeContainer posts={this.props.posts} postCompose={this.props.postCompose} />
+          </div>
+          <div>
+            <h2>All Posts</h2>
+            {this.state.posts.map(post => (
+              <PostBox post={post} deletePost={deletePost} key={post._id} text={post.text} />
+            ))}
+          </div>
+        </>
       );
     }
   }

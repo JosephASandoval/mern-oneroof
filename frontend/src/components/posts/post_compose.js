@@ -14,24 +14,31 @@ class PostCompose extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
   } 
 
-  componentWillReceiveProps(nextProps) {
-      this.setState({newPost: nextProps.newPost.text});
-  }
+  // componentWillReceiveProps(nextProps) {
+  //     this.setState({newPost: nextProps.newPost.text});
+  // }
 
   handleSubmit(e) {
-    e.preventDefault();
-    let post = {
-      text: this.state.text
-    };
+    // e.preventDefault();
+    // let post = {
+    //   text: this.state.text
+    // };
 
-    this.props.composePost(post); 
-    this.setState({text: ''})
+    // this.props.composePost(post); 
+    // this.setState({text: ''})
+    e.preventDefault();
+    const post = Object.assign({}, this.state, { id: new Date().getTime()});  //not sure
+    this.props.composePost(post);
+    this.setState({
+      text: "",
+      newPost: ""
+    }); // reset form  
   }
 
-  update() {
-    return e => this.setState({
-      text: e.currentTarget.value
-    });
+  update(field) {
+    return e => {
+      this.setState({[field]: e.currentTarget.value})
+    };
   }
 
   render() {
@@ -43,7 +50,7 @@ class PostCompose extends React.Component {
                     <input className='form-input'
                         type="textarea"
                         value={this.state.text}
-                        onChange={this.update()}
+                        onChange={this.update('text')}
                         placeholder="Write your post..."
                     />
                     <input className='submit-button' type="submit" value="Create Post" />

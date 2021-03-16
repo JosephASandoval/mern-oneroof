@@ -20,7 +20,7 @@ class NavBar extends React.Component {
         <div className='loggedin-navbar-container'>
           <Link id='link' to={"/posts"}>All Posts</Link>
           <Link id='link' to={"/profile"}>Profile</Link>
-          <Link id='link' to={"/new_post"}>Write a Post</Link>
+          {/* <Link id='link' to={"/new_post"}>Write a Post</Link> */}
           <Link id='link' to={"/chores"}>Chores</Link>
           <Link id='link' to={"/expenses"}>Expenses</Link>
           <button className='logout-button' onClick={this.logoutUser}>Logout</button>
