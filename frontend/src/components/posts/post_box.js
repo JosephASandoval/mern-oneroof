@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/post_box.css";
 
-const PostBox = ({ is_expired, text, deletePost, post, date}) => {
+const PostBox = ({ is_expired, text, deletePost, post,}) => {
 
 
   return (
@@ -10,7 +10,6 @@ const PostBox = ({ is_expired, text, deletePost, post, date}) => {
         {is_expired ? "Expired" : "Active"}
       </button>
       <p>{text}</p>
-      <p>{date}</p>
       <button className="delete" onClick={() => deletePost(post._id)}>
         Delete
       </button>
