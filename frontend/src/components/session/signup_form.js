@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { uploadPhoto } from "../../util/photo_api_util";
+import { uploadPhoto } from "../../util/image_api_util";
 import "../../styles/signup_form.css";
 
 class SignupForm extends React.Component {
