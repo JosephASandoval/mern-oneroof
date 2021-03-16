@@ -1,5 +1,6 @@
 import React from 'react';
-import PostBox from './post_box';
+import { withRouter } from "react-router-dom";
+import PostComposeContainer from "./post_compose_container";
 import '../../styles/post_compose.css'
 
 class PostCompose extends React.Component {
@@ -14,9 +15,9 @@ class PostCompose extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
   } 
 
-  componentWillReceiveProps(nextProps) {
-      this.setState({newPost: nextProps.newPost.text});
-  }
+  // componentWillReceiveProps(nextProps) {
+  //     this.setState({newPost: nextProps.newPost.text});
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -54,4 +55,4 @@ class PostCompose extends React.Component {
   }
 }
 
-export default PostCompose;
+export default withRouter(PostCompose);
