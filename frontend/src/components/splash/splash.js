@@ -14,7 +14,7 @@ class Splash extends React.Component {
         <p> Welcome to ONEROOF</p>
         <ul className='welcome-msg'>
           <li>OneRoof, a housemate organization tool, is an online application 
-            for users create a home and invite housemates. With this app, housemates can better coordinate house chores, expenses, and communication.
+            for users to create a home and invite housemates. With this app, housemates can better coordinate house chores, expenses, and communication.
           </li>
           {/* <li><img src='logo_word.png' alt='LOGO' className='logo-img-word'/></li> */}
         </ul>
