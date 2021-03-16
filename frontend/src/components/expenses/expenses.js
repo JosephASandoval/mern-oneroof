@@ -1,6 +1,7 @@
 import React from 'react';
 import ExpenseCreateContainer from './expense_create_container'
 import ExpenseListItem from './expense_list_item'
+import "../../styles/expenses.css"
 
 class Expenses extends React.Component {
     constructor(props) {
@@ -23,11 +24,11 @@ class Expenses extends React.Component {
         return (
             <>
                 <ExpenseCreateContainer expenses={this.props.expenses} createExpense={this.props.createExpense}/>
-                <ul>
+                <ul className="expense-list">
                     {
                         this.props.expenses.map(expense => {
                             if (expense) {
-                                 return <ExpenseListItem expense={expense} key={expense._id} destroyExpense={this.props.destroyExpense}  />
+                                 return <ExpenseListItem expense={expense} key={expense._id} destroyExpense={this.props.destroyExpense} />
                             }
                         })
                     }

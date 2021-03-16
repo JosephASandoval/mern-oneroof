@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchExpenses: () => dispatch(fetchExpenses()),
-    destroyExpense: expenseId => dispatch(destroyExpense(expenseId))
+    destroyExpense: expenseId => dispatch(destroyExpense(expenseId)),
+    
   };
 };
 
