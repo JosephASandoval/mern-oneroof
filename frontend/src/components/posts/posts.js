@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PostBox from './post_box';
 
-class Post extends React.Component {
+class Posts extends React.Component {
   constructor(props) {
     super(props);
 
@@ -37,4 +37,4 @@ class Post extends React.Component {
   }
 }
 
-export default withRouter(Post);
+export default withRouter(Posts);
