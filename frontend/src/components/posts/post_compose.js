@@ -49,8 +49,6 @@ class PostCompose extends React.Component {
                     <input className='submit-button' type="submit" value="Create Post" />
                 </div>
             </form>
-            <br />
-            <PostBox text={this.state.newPost} />
         </div>
     )
   }

@@ -21,17 +21,22 @@ class Profile extends React.Component {
     }   
     
     render() { //add house later
-      const { posts, removePost } = this.props;
+      const { posts, deletePost } = this.props;
+      console.log(posts)
+      const sortedPosts = [...posts].reverse();
+      console.log(sortedPosts)
       
-        if (posts.length === 0) {
+        if (sortedPosts.length === 0) {
           return (<div>This user has no Posts</div>)
         } else {
           return (
             <div>
               <h2>All of This User's Posts</h2>
-              {posts.map(post => (
-                <PostBox removePost={removePost} post={post} key={post._id} text={post.text} />
+              <ul>
+              {sortedPosts.map(post => (
+                <PostBox deletePost={deletePost} post={post} key={post._id} text={post.text} />
               ))}
+              </ul>
             </div>
           );
         }
