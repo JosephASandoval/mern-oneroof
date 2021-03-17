@@ -18,6 +18,11 @@ const ChoreSchema = new Schema({
     type: String,
     required: true,
   },
+
+  imageUrl: {
+    type: String,
+  },
+
   date: {
     type: Date,
     default: Date.now,
