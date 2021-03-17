@@ -4,7 +4,6 @@ const app = express();
 const mongoose = require("mongoose");
 const users = require("./routes/api/users");
 const houses = require("./routes/api/houses");
-const images = require("./routes/api/images"); // upload
 const posts = require("./routes/api/posts");
 const chores = require("./routes/api/chores");
 const expenses = require("./routes/api/expenses");
@@ -14,6 +13,9 @@ const bodyParser = require("body-parser");
 const User = require("./models/User");
 const passport = require("passport");
 const path = require("path");
+const images = require("./routes/api/images"); // upload
+
+app.use("/api/images", images); // upload
 
 // tell our server to load the static build folder in production
 if (process.env.NODE_ENV === "production") {
@@ -52,7 +54,6 @@ app.get("/", (req, res) => {
 });
 
 // routers
-app.use("/api/images", images); // upload
 app.use("/api/users", users);
 app.use("/api/houses", houses);
 app.use("/api/posts", posts);

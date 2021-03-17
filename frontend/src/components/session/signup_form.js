@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { uploadPhoto } from "../../util/image_api_util";
+import { uploadImage } from "../../util/image_api_util";
 import "../../styles/signup_form.css";
 
 class SignupForm extends React.Component {
@@ -13,15 +13,15 @@ class SignupForm extends React.Component {
       email: "",
       password: "",
       password2: "",
-      photoId: "",
-      photoUrl: "",
-      photoFile: null,
+      // imageId: "",
+      // imageUrl: "",
+      // imageFile: null,
       errors: {},
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
-    this.handlePhotoFile = this.handlePhotoFile.bind(this);
+    this.handleImageFile = this.handleImageFile.bind(this);
     this.clearedErrors = false;
   }
 
@@ -43,17 +43,17 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    if (this.state.photoFile) {
+    if (this.state.imageFile) {
       const data = new FormData(e.target);
-      data.append("file", this.state.photoFile);
-      uploadPhoto(data).then((res) => {
+      data.append("file", this.state.imageFile);
+      uploadImage(data).then((res) => {
         let user = {
           username: this.state.username,
           firstName: this.state.firstName,
           lastName: this.state.lastName,
           email: this.state.email,
-          photoId: res.data.newData.photoId,
-          photoUrl: res.data.newData.Location,
+          // // imageId: res.data.newData.imageId,
+          imageUrl: res.data.newData.Location,
           password: this.state.password,
           password2: this.state.password2,
         };
@@ -65,8 +65,8 @@ class SignupForm extends React.Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
-        photoId: this.state.photoId,
-        photoUrl: this.state.photoUrl,
+        // // imageId: this.state.imageId,
+        imageUrl: this.state.imageUrl,
         password: this.state.password,
         password2: this.state.password2,
       };
@@ -74,10 +74,10 @@ class SignupForm extends React.Component {
     }
   }
 
-  handlePhotoFile(e) {
+  handleImageFile(e) {
     e.preventDefault();
     this.setState({
-      photoFile: e.target.files[0],
+      imageFile: e.target.files[0],
     });
   }
 
@@ -166,7 +166,7 @@ class SignupForm extends React.Component {
                 className="form-input"
                 name=""
                 id=""
-                onChange={this.handlePhotoFile}
+                onChange={this.handleImageFile}
               />
             </label> */}
             <br />
