@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PostBox from '../posts/post_box';
 
 class Profile extends React.Component {
@@ -27,17 +28,25 @@ class Profile extends React.Component {
       console.log(sortedPosts)
       
         if (sortedPosts.length === 0) {
-          return (<div>This user has no Posts</div>)
+          return (
+            <>
+              <Link id='link' to='/houses'>House</Link>
+              <div>This user has no Posts</div>
+            </>
+          )
         } else {
           return (
-            <div>
-              <h2>All of This User's Posts</h2>
-              <ul>
-              {sortedPosts.map(post => (
-                <PostBox deletePost={deletePost} post={post} key={post._id} text={post.text} />
-              ))}
-              </ul>
-            </div>
+            <>
+              <Link id='link' to='/houses'>House</Link>
+              <div>
+                <h2>All of This User's Posts</h2>
+                <ul>
+                  {sortedPosts.map(post => (
+                    <PostBox deletePost={deletePost} post={post} key={post._id} text={post.text} />
+                  ))}
+                </ul>
+              </div>
+            </>
           );
         }
       }
