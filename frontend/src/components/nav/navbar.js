@@ -22,6 +22,7 @@ class NavBar extends React.Component {
           <Link id='link' to={"/profile"}>Profile</Link>
           <Link id='link' to={"/chores"}>Chores</Link>
           <Link id='link' to={"/expenses"}>Expenses</Link>
+          <Link id='link' to={"/houses"}>House</Link>
           <button className='logout-button' onClick={this.logoutUser}>Logout</button>
         </div>
       );

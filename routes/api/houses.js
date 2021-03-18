@@ -9,7 +9,6 @@ router.get("/test", (req, res) => {
   res.json({ msg: "This is the house route" });
 });
 
-
 router.get("/user/:user_id", (req, res) => {
   House.find({ user: req.params.user_id })
     .then((houses) => res.json(houses))

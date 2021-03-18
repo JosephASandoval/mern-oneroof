@@ -10,7 +10,8 @@ class House extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
+  // componentWillMount() {
     this.props.fetchUserHouses();
   }
 
@@ -20,19 +21,26 @@ class House extends React.Component {
 
   render() {
     if (this.state.houses.length === 0) {
-      return (<div>There are no houses</div>)
+      return (
+        <>
+          <div>There are no houses</div>
+          <div>
+              <Link to='/new_house'>Create a new House!</Link>
+          </div>
+        </>
+      )
     } else {
       return (
         <>
-        <div>
-          <h2>All Houses</h2>
-          {this.state.houses.map(house => (
-              <li>{house.name}</li>
-          ))}
-        </div>
-        <div>
-            <Link to='/new_house'>Create a new House!</Link>
-        </div>
+          <div>
+            <h2>All Houses</h2>
+            {this.state.houses.map(house => (
+                <li>{house.name}</li>
+            ))}
+          </div>
+          <div>
+              <Link to='/new_house'>Create a new House!</Link>
+          </div>
         </>
       );
     }

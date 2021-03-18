@@ -2,27 +2,21 @@ import React from 'react';
 
 class HouseCreate extends React.Component {
   constructor(props) {
-      super(props);
+    super(props);
 
-      this.state = {
-          name: "",
-          newHouse: ""
-      }
-
-      this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      name: "",
+      newHouse: ""
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
   } 
 
-  componentWillReceiveProps(nextProps) {
-      this.setState({newHouse: nextProps.newHouse.name});
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({newHouse: nextProps.newHouse.name});
+  // }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    let house = {
-      name: this.state.name
-    };
-    this.props.createHouse(house); 
-    this.setState({name: ''})
+  handleSubmit() {
+    this.props.createHouse(this.state);
   }
 
   update() {
@@ -34,20 +28,20 @@ class HouseCreate extends React.Component {
   render() {
     return (
         <>
-        <div>Create Your House!</div>
-        <div>
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <input type="text"
+          <div>Create Your House!</div>
+          <div>
+              <form onSubmit={this.handleSubmit}>
+                  <div>
+                      <input type="text"
                         value={this.state.name}
                         onChange={this.update()}
                         placeholder="Your house name"
-                    />
-                    <input type="submit" value="Create" />
-                </div>
-            </form>
-            <br />
-        </div>
+                      />
+                      <input type="submit" value="Create" />
+                  </div>
+              </form>
+              <br />
+          </div>
         </>
     )
   }
