@@ -1,9 +1,10 @@
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey("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");
+const keys = require('../../../../config/keys');
+sgMail.setApiKey(keys.sendGridAPIKey);
 
 const msg = {
   to: 'estanob@gmail.com',
-  from: 'josephasandoval17@gmail.com',
+  from: 'oneroof.mern@gmail.com',
   subject: 'Testing Node Email Service',
   text: 'This is awesome email sent from node app',
 };
