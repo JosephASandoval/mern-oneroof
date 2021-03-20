@@ -11,12 +11,13 @@ class HouseCreate extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   } 
 
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({newHouse: nextProps.newHouse.name});
-  // }
+  componentWillReceiveProps(nextProps) {
+    this.setState({newHouse: nextProps.newHouse.name});
+  }
 
   handleSubmit() {
-    this.props.createHouse(this.state);
+    debugger
+    this.props.createHouse(this.state.name);
   }
 
   update() {
@@ -30,17 +31,17 @@ class HouseCreate extends React.Component {
         <>
           <div>Create Your House!</div>
           <div>
-              <form onSubmit={this.handleSubmit}>
-                  <div>
-                      <input type="text"
-                        value={this.state.name}
-                        onChange={this.update()}
-                        placeholder="Your house name"
-                      />
-                      <input type="submit" value="Create" />
-                  </div>
-              </form>
-              <br />
+            <form onSubmit={this.handleSubmit}>
+                <div>
+                  <input type="text"
+                    value={this.state.name}
+                    onChange={this.update()}
+                    placeholder="Your house name"
+                  />
+                  <input type="submit" value="Create" />
+                </div>
+            </form>
+            <br />
           </div>
         </>
     )

@@ -6,14 +6,14 @@ class House extends React.Component {
     super(props);
 
     this.state = {
-      houses: []
-    }
+      houses: [],
+    };
   }
 
   componentDidMount() {
   // componentWillMount() {
     this.props.fetchUserHouses();
-  }
+  };
 
   componentWillReceiveProps(newState) {
     this.setState({ houses: newState.houses });
@@ -45,6 +45,6 @@ class House extends React.Component {
       );
     }
   }
-}
+};
 
 export default withRouter(House);

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { createHouse } from '../../actions/house_actions';
 import HouseCreate from './house_create';
+import { createHouse } from '../../actions/house_actions';
 
 const mapStateToProps = (state) => {
   return {

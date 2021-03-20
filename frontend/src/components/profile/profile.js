@@ -30,14 +30,14 @@ class Profile extends React.Component {
         if (sortedPosts.length === 0) {
           return (
             <>
-              <Link id='link' to='/houses'>House</Link>
+              <Link to='/houses'>House</Link>
               <div>This user has no Posts</div>
             </>
           )
         } else {
           return (
             <>
-              <Link id='link' to='/houses'>House</Link>
+              <Link to='/houses'>House</Link>
               <div>
                 <h2>All of This User's Posts</h2>
                 <ul>

@@ -42,7 +42,9 @@ router.post(
     
     newHouse.residents.push(newHouse.user)
 
-    newHouse.save().then((house) => res.json(house));
+    newHouse
+      .save()
+      .then((house) => res.json(house));
   }
 );
 
