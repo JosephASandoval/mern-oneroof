@@ -1,120 +1,60 @@
-const keys = require("../../config/keys");
 const express = require("express");
 const router = express.Router();
+// const passport = require("passport");
 const Photo = require("../../models/Photo");
-const multer = require("multer");
-var AWS = require("aws-sdk");
+const upload = require("./photo_upload_aws");
+const singleUpload = upload.single("photo");
 
-// Multer ships with storage engines DiskStorage and MemoryStorage
-// And Multer adds a body object and a file or files object to the request object. The body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form.
-
-var storage = multer.memoryStorage();
-var upload = multer({ storage: storage });
-
-AWS.config.update({
-  credentials: {
-    accessKeyId: keys.AWS_ACCESS_KEY_ID,
-    secretAccessKey: keys.AWS_SECRET_ACCESS_KEY,
-    region: keys.AWS_REGION,
-  },
+// test
+router.get("/test", (req, res) => {
+  res.json({ msg: "This is the photo route" });
 });
 
-// Get all photos
-router.get("/", (req, res, next) => {
-  Photo.find().then((photos) => {
-    if (photos) {
-      return res.json(photos);
-    } else {
-      return res.status(404).json({ noPhotosFound: "No Photos Found" });
-    }
-  });
+router.get("/", (req, res) => {
+  Photo.find()
+    .sort({ date: "asc" })
+    .then((photos) => {
+      let payload = {};
+      photos.map((photo) => (payload[photo._id] = photo));
+      return res.json(payload);
+    })
+    .catch((err) => res.status(400).json(err));
 });
 
-// Get single Photo data
-router.get("/:id", (req, res, next) => {
-  Photo.findById(req.params.id, (err, go) => {
+router.get("/posts/:post_id", (req, res) => {
+  Photo.find({ postId: req.params.post_id })
+    .then((photos) => res.json(photos))
+    .catch((err) => res.status(400).json(err));
+});
+
+// upload photo here
+router.post("/uploadPhoto", (req, res) => {
+  console.log(req.body)
+  singleUpload(req, res, function (err) {
     if (err) {
-      return next(err);
+      console.log(err.field);
+      return res.status(422).json({ errors: err });
     }
-    res.json(go);
-  });
-});
-
-// Route to upload file
-router.post("/upload", upload.single("file"), function (req, res) {
-  const file = req.file;
-  const s3FileURL = keys.AWS_Uploaded_File_URL_LINK;
-
-  let s3bucket = new AWS.S3({
-    accessKeyId: keys.AWS_ACCESS_KEY_ID,
-    secretAccessKey: keys.AWS_SECRET_ACCESS_KEY,
-    region: keys.AWS_REGION,
-  });
-
-
-  // where we want to store the file
-  var params = {
-    Bucket: keys.AWS_BUCKET_NAME,
-    Key: file.originalname,
-    Body: file.buffer,
-    ContentType: file.mimetype,
-    ACL: "public-read",
-  };
-
-  s3bucket.upload(params, function (err, data) {
-    if (err) {
-      res.status(500).json({ error: true, Message: err });
-    } else {
-      // res.send({data});
-
-      let newFileUploaded = {
-        description: req.body.description,
-        fileLink: s3FileURL + file.originalname,
-        s3_key: params.Key,
-      };
-      var photo = new Photo(newFileUploaded);
-      photo.save(function (error, newFile) {
-        if (error) {
-          throw error;
-        }
-      });
-      let newData = Object.assign({}, data, { photoId: photo._id });
-      res.send({ newData });
-    }
-  });
-});
-
-// Route to delete a photo file
-router.delete("/delete/:id", (req, res, next) => {
-  Photo.findByIdAndDelete(req.params.id, (err, result) => {
-    if (err) {
-      return next(err);
-    }
-
-    // Deleting file from s3
-    let s3bucket = new AWS.S3({
-      accessKeyId: keys.AWS_ACCESS_KEY_ID,
-      secretAccessKey: keys.AWS_SECRET_ACCESS_KEY,
-      region: keys.AWS_REGION,
-    });
-
-    let params = {
-      Bucket: keys.AWS_BUCKET_NAME,
-      Key: result.s3_key,
-    };
-
-    s3bucket.deleteObject(params, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send({
-          status: "200",
-          responseType: "string",
-          response: "success",
-        });
-      }
+    // const newPhoto = new Photo({
+    //   postId: req.body.data.postId,
+    //   fileName: req.body.data.fileName,
+    //   src: req.body.data.photoUrl,
+    // });
+    return res.json({
+      photoUrl: req.file.location,
+      postId: req.body.postId,
+      fileName: req.file.originalname,
     });
   });
+});
+
+router.post("/uploadPhotoDB", (req, res) => {
+  const newPhoto = new Photo({
+    postId: req.body.data.postId,
+    fileName: req.body.data.fileName,
+    src: req.body.data.photoUrl,
+  });
+  newPhoto.save().then((photo) => res.json(photo));
 });
 
 module.exports = router;

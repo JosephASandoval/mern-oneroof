@@ -1,15 +1,24 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let PhotoSchema = new Schema(
-  {
-    description: { type: String },
-    fileLink: { type: String },
-    s3_key: { type: String },
+const PhotoSchema = new Schema({
+  postId: {
+    type: Schema.Types.ObjectId,
+    ref: "post",
   },
-  {
-    timestamps: true,
-  }
-);
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+  src: {
+    type: String,
+    required: true,
+  },
+  fileName: {
+    type: String,
+    required: true,
+  },
+});
 
-module.exports = Photo = mongoose.model("Photo", PhotoSchema);
+const Photo = mongoose.model("photos", PhotoSchema);
+module.exports = Photo;
