@@ -1,60 +1,59 @@
 const express = require("express");
 const router = express.Router();
 // const passport = require("passport");
-const Photo = require("../../models/Photo");
-const upload = require("./photo_upload_aws");
-const singleUpload = upload.single("photo");
+const Image = require("../../models/Image");
+const upload = require("./image_upload_aws");
+const singleUpload = upload.single("image");
 
 // test
 router.get("/test", (req, res) => {
-  res.json({ msg: "This is the photo route" });
+  res.json({ msg: "This is the image route" });
 });
 
 router.get("/", (req, res) => {
-  Photo.find()
+  Image.find()
     .sort({ date: "asc" })
-    .then((photos) => {
+    .then((images) => {
       let payload = {};
-      photos.map((photo) => (payload[photo._id] = photo));
+      images.map((image) => (payload[image._id] = image));
       return res.json(payload);
     })
     .catch((err) => res.status(400).json(err));
 });
 
 router.get("/posts/:post_id", (req, res) => {
-  Photo.find({ postId: req.params.post_id })
-    .then((photos) => res.json(photos))
+  Image.find({ postId: req.params.post_id })
+    .then((images) => res.json(images))
     .catch((err) => res.status(400).json(err));
 });
 
-// upload photo here
-router.post("/uploadPhoto", (req, res) => {
-  console.log(req.body)
+// upload image here
+router.post("/uploadImage", (req, res) => {
+  console.log(req.body);
   singleUpload(req, res, function (err) {
     if (err) {
       console.log(err.field);
       return res.status(422).json({ errors: err });
     }
-    // const newPhoto = new Photo({
+    // const newImage = new Image({
     //   postId: req.body.data.postId,
     //   fileName: req.body.data.fileName,
-    //   src: req.body.data.photoUrl,
+    //   src: req.body.data.imageUrl,
     // });
     return res.json({
-      photoUrl: req.file.location,
-      postId: req.body.postId,
+      imageUrl: req.file.location,
       fileName: req.file.originalname,
     });
   });
 });
 
-router.post("/uploadPhotoDB", (req, res) => {
-  const newPhoto = new Photo({
+router.post("/uploadImageDB", (req, res) => {
+  const newImage = new Image({
     postId: req.body.data.postId,
     fileName: req.body.data.fileName,
-    src: req.body.data.photoUrl,
+    src: req.body.data.imageUrl,
   });
-  newPhoto.save().then((photo) => res.json(photo));
+  newImage.save().then((image) => res.json(image));
 });
 
 module.exports = router;
