@@ -5,7 +5,20 @@ sgMail.setApiKey(keys.sendGridAPIKey);
 
 const InvitationForm = () => {
   return (
-    <h1>Hello World</h1>
+    <div>
+      <h1>Hello World</h1>
+      <form>
+        <label>To:
+          <input type="text" placeholder="Recipient email here" />
+        </label>
+        <br/>
+        <label>Message:
+          <input type="textarea" placeholder={`You've been invited to {}!`} />
+        </label>
+        <br/>
+        <button className='invitation-send-button'>Send Invitation</button>
+      </form>
+    </div>
   )
 }
 
