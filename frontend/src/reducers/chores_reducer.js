@@ -1,4 +1,4 @@
-import { RECEIVE_CHORES, RECEIVE_USER_CHORES, RECEIVE_NEW_CHORE, REMOVE_CHORE } from '../actions/chore_actions';
+import { RECEIVE_CHORES, RECEIVE_USER_CHORES, RECEIVE_NEW_CHORE, REMOVE_CHORE, RECEIVE_FILTERED_CHORES } from '../actions/chore_actions';
   
   const choresReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     Object.freeze(state);
@@ -11,6 +11,7 @@ import { RECEIVE_CHORES, RECEIVE_USER_CHORES, RECEIVE_NEW_CHORE, REMOVE_CHORE } 
         newState.user = action.chores.data;
         return newState;
       case RECEIVE_NEW_CHORE:
+        debugger
         newState.all.unshift(action.chore.data);
         return newState;
       case REMOVE_CHORE:
@@ -22,6 +23,9 @@ import { RECEIVE_CHORES, RECEIVE_USER_CHORES, RECEIVE_NEW_CHORE, REMOVE_CHORE } 
           newState.all.splice(idx, 1)
         };
         return newState;
+      case RECEIVE_FILTERED_CHORES:
+        newState.all = action.filteredChores;
+        return newState
       default:
         return state;
     }

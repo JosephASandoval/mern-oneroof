@@ -37,7 +37,6 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validateChoreInput(req.body);
-
     if (!isValid) {
       return res.status(400).json(errors);
     }
@@ -45,8 +44,8 @@ router.post(
     const newChore = new Chore({
       user: req.user.id,
       body: req.body.body,
+      priority: req.body.priority
     });
-
     newChore.save().then((chore) => res.json(chore));
   }
 );
