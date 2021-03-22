@@ -4,8 +4,8 @@ import Chat from './chat'
 
 
 const mSTP = state => {
-    debugger
-    const name = state.session.user.firstName
+    // debugger
+    const name = state.session.user.username
     return({
       name,
     })

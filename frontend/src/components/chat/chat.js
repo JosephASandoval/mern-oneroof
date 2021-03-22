@@ -1,8 +1,8 @@
 import React from 'react';
 import io from 'socket.io-client';
 
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+// import Paper from '@material-ui/core/Paper';
+// import Typography from '@material-ui/core/Typography';
 
 import BottomBar from './BottomBar';
 import '../../styles/chat.css';
@@ -45,11 +45,11 @@ class Chat extends React.Component {
   }
 
   //
-  handleName(event) {
-    this.setState({
-      name: event.target.value,
-    });
-  }
+  // handleName(event) {
+  //   this.setState({
+  //     name: event.target.value,
+  //   });
+  // }
 
   handleSubmit(event) {
     // Prevent the form to reload the current page.
@@ -81,25 +81,21 @@ class Chat extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Paper id="chat" elevation={3}>
+      <div className="chat-container">
+        <div id="chat" elevation={3}>
           {this.state.chat.map((el, index) => {
             return (
-              <div key={index}>
-                <Typography variant="caption" className="name">
-                  {el.name}
-                </Typography>
-                <Typography variant="body1" className="content">
-                  {el.content}
-                </Typography>
+              <div key={index} className='msg'>
+                <span className='msg-author'>{el.name}</span> 
+                <span>{el.content}</span>
               </div>
             );
           })}
-        </Paper>
+        </div>
         <BottomBar
           content={this.state.content}
           handleContent={this.handleContent.bind(this)}
-          handleName={this.handleName.bind(this)}
+          // handleName={this.handleName.bind(this)}
           handleSubmit={this.handleSubmit.bind(this)}
           name={this.state.name}
         />
