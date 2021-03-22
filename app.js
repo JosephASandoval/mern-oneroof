@@ -7,7 +7,7 @@ const houses = require("./routes/api/houses");
 const posts = require("./routes/api/posts");
 const chores = require("./routes/api/chores");
 const expenses = require("./routes/api/expenses");
-const images = require("./routes/api/images");
+const photos = require("./routes/api/photos");
 const invitations = require("./routes/api/invitations");
 const db = require("./config/keys").mongoURI;
 const bodyParser = require("body-parser");
@@ -52,7 +52,7 @@ app.get("/", (req, res) => {
 });
 
 // routers
-app.use("/api/images", images);
+app.use("/api/photos", photos);
 app.use("/api/users", users);
 app.use("/api/houses", houses);
 app.use("/api/posts", posts);
