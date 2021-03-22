@@ -13,6 +13,7 @@ import HouseContainer from './house/house_container';
 import PostComposeContainer from "./posts/post_compose_container";
 import ChoreListContainer from './chores/chore_list_container';
 import ExpensesContainer from './expenses/expenses_container';
+import InvitationForm from './invitation/invite_form';
 
 const App = () => (
   <div>
@@ -23,6 +24,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/new_house" component={HouseCreateContainer} />
       <ProtectedRoute exact path="/houses" component={HouseContainer} />
+      <ProtectedRoute exact path="/invite" component={InvitationForm} />
       <ProtectedRoute exact path="/posts">
         <PostComposeContainer />
         <PostsContainer />
