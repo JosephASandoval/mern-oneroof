@@ -9,5 +9,5 @@ export const getUserHouses = id => {
 };
 
 export const makeHouse = data => {
-  return axios.post('/api/houses/', data)
+  return axios.post('/api/houses/new_house', data)
 }

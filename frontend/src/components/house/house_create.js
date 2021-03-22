@@ -12,7 +12,7 @@ class HouseCreate extends React.Component {
   } 
 
   componentWillReceiveProps(nextProps) {
-    this.setState({newHouse: nextProps.newHouse.name});
+    this.setState({state: nextProps.state.name});
   }
 
   handleSubmit() {
