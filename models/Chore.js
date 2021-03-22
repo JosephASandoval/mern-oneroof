@@ -22,6 +22,10 @@ const ChoreSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  priority: {
+    type: String,
+    default: null
+  }
 });
 
 module.exports = Chore = mongoose.model("chore", ChoreSchema);
