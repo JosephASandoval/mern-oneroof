@@ -1,7 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+
 const mongoose = require("mongoose");
+
+/// socket.io inconjunction with Express
+const http = require('http').Server(app); 
+const io = require('socket.io')(http);
+
 const users = require("./routes/api/users");
 const houses = require("./routes/api/houses");
 const posts = require("./routes/api/posts");
@@ -14,6 +20,7 @@ const User = require("./models/User");
 const passport = require("passport");
 const path = require("path");
 const images = require("./routes/api/images"); // upload
+const { Socket } = require("dgram");
 
 app.use("/api/images", images); // upload
 
@@ -48,21 +55,30 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
-// api backend routes
-app.get("/", (req, res) => {
-  res.send("Hello World");
+  // api backend routes
+  app.get("/", (req, res) => {
+    res.send("Hello World");
+  });
+  
+  // routers
+  app.use("/api/users", users);
+  app.use("/api/houses", houses);
+  app.use("/api/posts", posts);
+  app.use("/api/invitations", invitations);
+  app.use("/api/chores", chores);
+  app.use("/api/expenses", expenses);
+
+//socket.io
+io.on('connection', (socket) => {
+  console.log('a user connected');
 });
 
-// routers
-app.use("/api/users", users);
-app.use("/api/houses", houses);
-app.use("/api/posts", posts);
-app.use("/api/invitations", invitations);
-app.use("/api/chores", chores);
-app.use("/api/expenses", expenses);
+http.listen(3000, ()=> {
+  console.log('listening on *:3000');
+});
 
 
-// listener
+listener
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
