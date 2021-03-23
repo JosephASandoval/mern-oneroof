@@ -101,9 +101,3 @@ io.on('connection', (socket) => {
 http.listen(port, () => {
   console.log('listening on *:' + port);
 });
-
-
-// // listener
-// app.listen(port, () => {
-//   console.log(`Server is running on port: ${port}`);
-// });
