@@ -151,6 +151,10 @@
   cursor: pointer;
 }
 
+.button-container {
+  margin-right: 300px;
+}
+
 .event-index-description-list {
   width: 54%;
 }

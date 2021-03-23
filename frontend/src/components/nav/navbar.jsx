@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./navbar.css";
 
 class NavBar extends React.Component {
@@ -20,6 +20,7 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+    this.props.history.push("/");
   }
 
   componentDidMount() {
@@ -69,7 +70,6 @@ class NavBar extends React.Component {
         .then((res) => res.json())
         .then((results) => {
           this.setState({ ["queryResults"]: results.task });
-          // this.setState({ ["queryResults"]: results});
         });
     }
   }
@@ -122,34 +122,49 @@ class NavBar extends React.Component {
   }
 
   render() {
-    return (
-      <div className="navbar-parent">
-        <div className="NavBar">
-          <div className="navbar-left">
-            <Link to="/">
-              <img src="logo_word.png" alt="LOGO" className="logo-img-word" />
-            </Link>
-            <div className="search-parent">
-              <input
-                type="text"
-                value={this.state.query}
-                placeholder="Search Task Names"
-                onChange={(e) => this.fetchTasks(e.target.value)}
-              />
-              <ul
-                className={`search-results ${
-                  this.state.query.length > 0 ? "block" : ""
-                }`}
-              >
-                {this.queryList()}
-              </ul>
+    if (this.props.loggedIn) {
+      return (
+        <div className="navbar-parent">
+          <div className="NavBar">
+            <div className="navbar-left">
+              <Link to="/">
+                <img src="logo_word.png" alt="LOGO" className="logo-img-word" />
+              </Link>
+              <div className="search-parent">
+                <input
+                  type="text"
+                  value={this.state.query}
+                  placeholder="Search Task Names"
+                  onChange={(e) => this.fetchTasks(e.target.value)}
+                />
+                <ul
+                  className={`search-results ${
+                    this.state.query.length > 0 ? "block" : ""
+                  }`}
+                >
+                  {this.queryList()}
+                </ul>
+              </div>
             </div>
+            {this.getLinks()}
           </div>
-          {this.getLinks()}
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="navbar-parent">
+          <div className="NavBar">
+            <div className="navbar-left">
+              <Link to="/">
+                <img src="logo_word.png" alt="LOGO" className="logo-img-word" />
+              </Link>
+            </div>
+            {this.getLinks()}
+          </div>
+        </div>
+      );
+    }
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

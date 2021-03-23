@@ -23,10 +23,14 @@ button {
 
 .category-navbar-component {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   background-color: #d6e4f0;
+}
+
+.MuiTabs-scroller {
+  margin-right: 500px;
 }
 
 .MuiTab-wrapper {

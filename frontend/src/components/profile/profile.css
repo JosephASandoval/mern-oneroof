@@ -11,23 +11,8 @@
   margin-right: auto;
 }
 
-.profile-picture {
-  border-radius: 50%;
-  height: 295px;
-  width: 315px;
-  margin-left: 460px;
-  padding: 20px;
-  object-fit: cover;
-}
-
-.profile-pic-container {
-  margin-top: 50px;
-  height: 275px;
-}
-
 .profile-username {
   padding: 20px;
-  border-top: 1px solid black;
   margin-top: 100px;
   display: flex;
   justify-content: center;

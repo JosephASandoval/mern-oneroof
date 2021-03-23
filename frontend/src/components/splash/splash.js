@@ -1,13 +1,11 @@
 import React from "react";
 import "../../styles/splash.css";
-import CategoryNavBar from "../category-nav/category_navbar";
 
 class Splash extends React.Component {
   render() {
     return (
       <>
         <div className="splash-container">
-          <CategoryNavBar />
           <div className="splash-img-container">
             <img src="splash.png" alt="splash-img" className="splash-img" />
           </div>
