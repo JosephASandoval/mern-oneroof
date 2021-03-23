@@ -19,11 +19,11 @@ export const receiveNewHouse = house => ({
   house
 })
 
-export const fetchHouses = () => dispatch => (
-  getHouses()
+export const fetchHouses = () => dispatch => {
+  return getHouses()
     .then(houses => dispatch(receiveHouses(houses)))
     .catch(err => console.log(err))
-);
+};
 
 export const fetchUserHouses = id => dispatch => (
   getUserHouses(id)

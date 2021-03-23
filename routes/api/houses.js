@@ -9,6 +9,12 @@ router.get("/test", (req, res) => {
   res.json({ msg: "This is the house route" });
 });
 
+router.get("/", (req, res) => {
+  House.find()
+    .sort({ date: -1 })
+    .then((houses) => res.json(houses))
+    .catch((err) => res.status(404).json({ nohousesfound: "No houses found" }));
+});
 
 router.get("/user/:user_id", (req, res) => {
   House.find({ user: req.params.user_id })
@@ -27,7 +33,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.post(
-  "/new",
+  "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validateHouseInput(req.body);

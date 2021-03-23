@@ -11,7 +11,7 @@ class House extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchUserHouses();
+    this.props.fetchHouses();
   }
 
   componentWillReceiveProps(newState) {
@@ -20,7 +20,13 @@ class House extends React.Component {
 
   render() {
     if (this.state.houses.length === 0) {
-      return (<div>There are no houses</div>)
+      return (
+        <>
+        <div>There are no houses</div>
+        <div>
+            <Link to='/new_house'>Create a new House!</Link>
+        </div>
+        </>)
     } else {
       return (
         <>
