@@ -1,7 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { uploadPhoto } from "../../util/photo_api_util";
-import "../../styles/signup_form.css";
+import { Link } from "react-router-dom";
+import "./css_reset.css";
+import "./session_forms.css";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -20,17 +22,21 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleGuest = this.handleGuest.bind(this);
-    this.handlePhotoFile = this.handlePhotoFile.bind(this);
     this.clearedErrors = false;
+    this.handlePhotoFile = this.handlePhotoFile.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.signedIn === true) {
-      this.props.history.push("/login");
+      this.props.history.push("/");
     }
 
-    this.setState({ errors: nextProps.errors });
+    return { errors: nextProps.errors };
   }
 
   update(field) {
@@ -81,22 +87,22 @@ class SignupForm extends React.Component {
     });
   }
 
-  handleGuest(e) {
+  handleDemoLogin(e) {
     e.preventDefault();
     let user = {
-      email: "guest@gmail.com",
-      password: "guest",
+      email: "demouser@gmail.com",
+      password: "demouser",
     };
-    this.props.login(user);
+    this.props
+      .login(user)
+      .then(() => this.props.history.push(this.props.redirectLink));
   }
 
   renderErrors() {
     return (
-      <ul className="session-errors-container">
+      <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li className="session-errors" key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
+          <li key={`error-${i}`}>{this.state.errors[error]}</li>
         ))}
       </ul>
     );
@@ -104,84 +110,111 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
-        <h2> Sign Up </h2>
+      <div className="form-container-session-sign">
+        <h1>Oneroof</h1>
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br />
-            <input
-              className="form-input"
-              type="text"
-              value={this.state.firstName}
-              onChange={this.update("firstName")}
-              placeholder="First Name"
-            />
+          <div className="form">
+            <h2>Sign Up</h2>
 
-            <input
-              className="form-input"
-              type="text"
-              value={this.state.lastName}
-              onChange={this.update("lastName")}
-              placeholder="Last Name"
-            />
+            <div className="signup-inputs">
+              <label>
+                Email:&nbsp;
+                <input
+                  type="text"
+                  className="input-field"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+              </label>
 
-            <br />
+              <label>
+                First Name:&nbsp;
+                <input
+                  type="text"
+                  className="input-field"
+                  value={this.state.firstName}
+                  onChange={this.update("firstName")}
+                  placeholder="First Name"
+                />
+              </label>
 
-            <input
-              className="form-input"
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              placeholder="Username"
-            />
+              <label>
+                Last Name:&nbsp;
+                <input
+                  type="text"
+                  className="input-field"
+                  value={this.state.lastName}
+                  onChange={this.update("lastName")}
+                  placeholder="Last Name"
+                />
+              </label>
 
-            <input
-              className="form-input"
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <br />
-            <input
-              className="form-input"
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
+              <label>
+                Username:&nbsp;
+                <input
+                  type="text"
+                  className="input-field"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
+                />
+              </label>
 
-            <input
-              className="form-input"
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-            <br />
-            {/* <label>
-              Upload Profile Picture:&nbsp;
-              <input
-                type="file"
-                className="form-input"
-                name=""
-                id=""
-                onChange={this.handlePhotoFile}
-              />
-            </label> */}
-            <br />
-            <button className="submit-button input-field">Sign Up</button>
-            <br />
-            {/* <button
-              className="submit-button input-field"
-              onClick={this.handleGuest}
+              <label>
+                Password:&nbsp;
+                <input
+                  type="password"
+                  className="input-field"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+              </label>
+
+              <label>
+                Confirm Password:&nbsp;
+                <input
+                  type="password"
+                  className="input-field"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                />
+              </label>
+
+              <label>
+                Upload Profile Picture:&nbsp;
+                <input
+                  type="file"
+                  className="input-field upload-pic"
+                  name=""
+                  id=""
+                  onChange={this.handlePhotoFile}
+                />
+              </label>
+            </div>
+
+            <button className="submit-button">Submit</button>
+            <button
+              className="login-demo-button"
+              onClick={this.handleDemoLogin}
             >
-              Guest Login
-            </button> */}
-
+              Demo Login
+            </button>
             <div className="session-errors">{this.renderErrors()}</div>
           </div>
         </form>
+
+        <br></br>
+        <div className="signup-option">
+          <label>Already a User?</label>
+          <br></br>
+          <Link to="/login">
+            {" "}
+            <button className="login-button input-field">Login</button>
+          </Link>
+        </div>
       </div>
     );
   }
