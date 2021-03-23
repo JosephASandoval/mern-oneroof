@@ -27,13 +27,13 @@ const App = () => (
       <ProtectedRoute exact path="/posts">
         <PostComposeContainer />
         <PostsContainer />
-        <ChatContainer />
       </ProtectedRoute>
       <ProtectedRoute exact path="/profile" component={ProfileContainer}/>
       <ProtectedRoute exact path='/chores' component={ChoreListContainer}/>
       <ProtectedRoute exact path='/expenses' component={ExpensesContainer}/>
     </Switch>
-    {/* <ProtectedRoute path='' component={Chat} /> */}
+      <ProtectedRoute exact path='' component={ChatContainer}/>
+  
   </div>
 );
 

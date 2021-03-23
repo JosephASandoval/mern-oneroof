@@ -3,16 +3,44 @@ body {
   padding: 16px;
 }
 
+.chat-container {
+  border: rgba(0, 0, 0, 0.54) solid 2px;
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+h1{
+  font-size: x-large;
+}
+
 #chat {
   max-height: calc(100vh - 128px);
   overflow: scroll;
   padding: 16px;
 }
 
-.name {
-  color: rgba(0, 0, 0, 0.54);
+#msg{
+  padding: 5px;
+}
+#msg-author{
+  padding-right: 5px;
 }
 
-.content {
-  margin-bottom: 8px;
+/* BottomBar */
+.send-box{
+  display: flex;
+  justify-content: left;
+}
+
+#chat-type-box{
+  margin-left: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+#msg-reminder{
+  font-size:small;
+  /* padding: 0px; */
+  margin-left: 4px;
 }

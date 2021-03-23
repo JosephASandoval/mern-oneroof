@@ -1,10 +1,7 @@
 import React from 'react';
 import io from 'socket.io-client';
 
-// import Paper from '@material-ui/core/Paper';
-// import Typography from '@material-ui/core/Typography';
-
-import BottomBar from './BottomBar';
+import BottomBar from './bottom_bar';
 import '../../styles/chat.css';
 
 class Chat extends React.Component {
@@ -82,12 +79,13 @@ class Chat extends React.Component {
   render() {
     return (
       <div className="chat-container">
-        <div id="chat" elevation={3}>
+        <h1>Live Chat</h1>
+        <div id="chat" >
           {this.state.chat.map((el, index) => {
             return (
-              <div key={index} className='msg'>
-                <span className='msg-author'>{el.name}</span> 
-                <span>{el.content}</span>
+              <div key={index} id='msg'>
+                <span id='msg-author'>{el.name}: </span> 
+                <span id='msg-content'>{el.content}</span>
               </div>
             );
           })}
