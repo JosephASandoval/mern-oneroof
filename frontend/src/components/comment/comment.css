@@ -40,7 +40,7 @@
 
 .comment-submit {
   border: 1px black solid;
-  background-color: rgb(0, 121, 125);
+  background-color: #163172;
   color: #fff;
   height: 42.22px;
   width: 80px;
@@ -53,7 +53,7 @@
 }
 
 .comment-submit:hover {
-  background-color: rgb(2, 169, 175);
+  background-color: #1e56a0;
 }
 
 .comment-delete-btn {

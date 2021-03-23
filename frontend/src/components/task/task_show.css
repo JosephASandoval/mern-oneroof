@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(0, 121, 125);
+  background-color: #163172;
   border: 1px #333 solid;
   color: #fff;
   border-radius: 5px;
@@ -71,7 +71,7 @@
 }
 
 .user-only-btn-edit:hover {
-  background-color: rgb(2, 169, 175);
+  background-color: #1e56a0;
 }
 
 .user-only-btn-delete {
@@ -182,7 +182,6 @@
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
   padding: 15px;
   border-radius: 10px;
-  /* border: 1px black solid; */
 }
 
 .task-show-owner {
@@ -229,21 +228,20 @@
   font-size: 15px;
   padding: 10px;
   border-radius: 5px;
-  color: black;
+  color: white;
   width: 400px;
   cursor: pointer;
   border: none;
-  background-color: rgb(121, 163, 94);
+  background-color: #163172;
 }
 
 .task-show-go-back-btn:hover {
-  background-color: rgb(151, 179, 138);
-  color: #fff;
+  background-color: #1e56a0;
 }
 
 .task-show-go-back-btn-text {
   text-decoration: none;
-  color: black;
+  color: white;
   font-family: sans-serif;
   font-size: 16px;
 }

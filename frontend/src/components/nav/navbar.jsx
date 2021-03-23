@@ -46,12 +46,9 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div className="navbar-right">
-          <Link to={`/events`}>&nbsp;&nbsp;Events&nbsp;&nbsp;</Link>&nbsp;&nbsp;
-          <Link to="/login">Login&nbsp;&nbsp;</Link>&nbsp;&nbsp;
-          <div className="navbar-signup-button">
-            <Link to="/signup">Signup</Link>
-          </div>
+        <div className = 'splash-navbar-container'>
+          <Link className='link-word' to={"/signup"}>Signup</Link>
+          <Link className='link-word' to={"/login"}>Login</Link>
         </div>
       );
     }

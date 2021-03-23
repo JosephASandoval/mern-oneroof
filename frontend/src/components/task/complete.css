@@ -9,13 +9,13 @@
   width: 95px;
   height: 35px;
   font-weight: bolder;
-  color: rgb(255, 220, 103);
-  background: rgb(241, 86, 96);
+  color: white;
+  background-color: #163172;
   cursor: pointer;
   border-radius: 4px;
   outline: 0;
 }
 
 .complete-btns:hover {
-  background: rgb(230, 32, 105);
+  background-color: #1e56a0;
 }
