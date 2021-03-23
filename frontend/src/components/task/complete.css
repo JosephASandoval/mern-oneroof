@@ -1,0 +1,21 @@
+* {
+  outline: none;
+  font-family: sans-serif;
+}
+
+.complete-btns {
+  font-family: sans-serif;
+  font-size: 16px;
+  width: 95px;
+  height: 35px;
+  font-weight: bolder;
+  color: rgb(255, 220, 103);
+  background: rgb(241, 86, 96);
+  cursor: pointer;
+  border-radius: 4px;
+  outline: 0;
+}
+
+.complete-btns:hover {
+  background: rgb(230, 32, 105);
+}

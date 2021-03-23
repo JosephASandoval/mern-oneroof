@@ -2,6 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
+const db = require("./config/keys").mongoURI;
+const bodyParser = require("body-parser");
+const User = require("./models/User");
+const passport = require("passport");
+const path = require("path");
+
+// required routes
 const users = require("./routes/api/users");
 const houses = require("./routes/api/houses");
 const posts = require("./routes/api/posts");
@@ -9,11 +16,11 @@ const chores = require("./routes/api/chores");
 const expenses = require("./routes/api/expenses");
 const photos = require("./routes/api/photos");
 const invitations = require("./routes/api/invitations");
-const db = require("./config/keys").mongoURI;
-const bodyParser = require("body-parser");
-const User = require("./models/User");
-const passport = require("passport");
-const path = require("path");
+const joins = require("./routes/api/joins");
+const tasks = require("./routes/api/tasks");
+const events = require("./routes/api/events");
+const completes = require("./routes/api/completes");
+const comments = require("./routes/api/comment");
 
 // tell our server to load the static build folder in production
 if (process.env.NODE_ENV === "production") {
@@ -59,7 +66,11 @@ app.use("/api/posts", posts);
 app.use("/api/invitations", invitations);
 app.use("/api/chores", chores);
 app.use("/api/expenses", expenses);
-
+app.use("/api/tasks", tasks);
+app.use("/api/events", events);
+app.use("/api/completes", completes);
+app.use("/api/joins", joins);
+app.use("/api/comments", comments);
 
 // listener
 app.listen(port, () => {

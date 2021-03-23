@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="form-container-session">
-        <h1>Oneroof</h1>
+        <h1>OneRoof</h1>
 
         <form onSubmit={this.handleSubmit}>
           <div className="form">
@@ -92,7 +92,7 @@ class LoginForm extends React.Component {
               />
             </label>
 
-            <button className="submit-button input-field">Login</button>
+            <button className="submit-button-login input-field">Login</button>
             <button
               className="login-demo-button"
               onClick={this.handleDemoLogin}

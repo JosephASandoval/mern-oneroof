@@ -1,6 +1,6 @@
 import { RECEIVE_HOUSES, RECEIVE_USER_HOUSES, RECEIVE_NEW_HOUSE } from '../actions/house_actions';
   
-  const HousesReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+  const housesReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch(action.type) {
@@ -18,4 +18,4 @@ import { RECEIVE_HOUSES, RECEIVE_USER_HOUSES, RECEIVE_NEW_HOUSE } from '../actio
     }
   };
   
-  export default HousesReducer;
+  export default housesReducer;

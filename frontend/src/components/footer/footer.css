@@ -1,25 +1,19 @@
 * {
-    outline: none;
-    font-family: sans-serif;
+  outline: none;
+  font-family: sans-serif;
 }
 
 .main-app-div {
   min-width: 1280px;
   min-height: 100%;
   margin-bottom: -30px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
 .main-app-div:after {
   content: "";
   display: block;
 }
 
-
-
-.footer, .main-app-div:after {
+.main-app-div:after {
   height: 30px;
 }
 
@@ -32,7 +26,6 @@
 .footer-list {
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 1px solid rgb(232, 231, 231);
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -44,8 +37,5 @@
 }
 
 .footer-list a {
-  color: #ef5d5d;
+  color: #163172;
 }
-
-
-

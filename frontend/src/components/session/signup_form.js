@@ -111,7 +111,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="form-container-session-sign">
-        <h1>Oneroof</h1>
+        <h1>OneRoof</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form">
             <h2>Sign Up</h2>

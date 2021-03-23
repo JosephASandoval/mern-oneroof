@@ -1,0 +1,12 @@
+.tab {
+  margin-left: -260px;
+}
+
+.tab-header {
+  margin-left: 130px;
+}
+
+* {
+  outline: none;
+  font-family: sans-serif;
+}

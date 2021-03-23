@@ -5,9 +5,6 @@ const Photo = require("../../models/Photo");
 const multer = require("multer");
 var AWS = require("aws-sdk");
 
-// Multer ships with storage engines DiskStorage and MemoryStorage
-// And Multer adds a body object and a file or files object to the request object. The body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form.
-
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
@@ -24,7 +21,7 @@ router.get("/test", (req, res) => {
   res.json({ msg: "This is the photo route" });
 });
 
-// Get all photos
+// get all photos
 router.get("/", (req, res, next) => {
   Photo.find().then((photos) => {
     if (photos) {
@@ -35,7 +32,7 @@ router.get("/", (req, res, next) => {
   });
 });
 
-// Get single Photo data
+// get single photo data
 router.get("/:id", (req, res, next) => {
   Photo.findById(req.params.id, (err, go) => {
     if (err) {
@@ -45,7 +42,7 @@ router.get("/:id", (req, res, next) => {
   });
 });
 
-// Route to upload file
+// route to upload file
 router.post("/upload", upload.single("file"), function (req, res) {
   const file = req.file;
   const s3FileURL = keys.AWS_Uploaded_File_URL_LINK;
@@ -55,7 +52,6 @@ router.post("/upload", upload.single("file"), function (req, res) {
     secretAccessKey: keys.AWS_SECRET_ACCESS_KEY,
     region: keys.AWS_REGION,
   });
-
 
   // where we want to store the file
   var params = {
@@ -89,14 +85,14 @@ router.post("/upload", upload.single("file"), function (req, res) {
   });
 });
 
-// Route to delete a photo file
+// route to delete a photo file
 router.delete("/delete/:id", (req, res, next) => {
   Photo.findByIdAndDelete(req.params.id, (err, result) => {
     if (err) {
       return next(err);
     }
 
-    // Deleting file from s3
+    // deleting file from s3
     let s3bucket = new AWS.S3({
       accessKeyId: keys.AWS_ACCESS_KEY_ID,
       secretAccessKey: keys.AWS_SECRET_ACCESS_KEY,

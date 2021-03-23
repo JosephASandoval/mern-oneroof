@@ -26,7 +26,30 @@ router.get(
   }
 );
 
-router.post("/register", (req, res) => {
+//get all users
+router.get("/", (req, res) => {
+  User.find()
+    .then((users) => res.json(users))
+    .catch((err) => console.log(err));
+});
+
+// get user
+router.get("/:id", (req, res) => {
+  User.findById(req.params.id)
+    .then((user) => res.json(user))
+    .catch((err) => console.log(err));
+});
+
+// edit a user
+router.patch("/edit/:id", (req, res) => {
+  mongoose.set("useFindAndModify", false);
+  User.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((user) =>
+    res.json(user)
+  );
+});
+
+// signup
+router.post("/signup", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
   if (!isValid) {
@@ -35,9 +58,9 @@ router.post("/register", (req, res) => {
 
   User.findOne({ email: req.body.email }).then((user) => {
     if (user) {
-      return res
-        .status(400)
-        .json({ email: "A user is already registered with that email" });
+      // if user exists
+      errors.email = "Email already exists";
+      return res.status(400).json(errors);
     } else {
       const newUser = new User({
         photoId: req.body.photoId,
@@ -55,7 +78,21 @@ router.post("/register", (req, res) => {
           newUser.password = hash;
           newUser
             .save()
-            .then((user) => res.json(user))
+            .then((user) => {
+              const payload = { user };
+              jwt.sign(
+                payload,
+                keys.secretOrKey,
+                { expiresIn: 999999 },
+                (err, token) => {
+                  res.json({
+                    user: user,
+                    success: true,
+                    token: "Bearer " + token,
+                  });
+                }
+              );
+            })
             .catch((err) => console.log(err));
         });
       });
@@ -63,6 +100,7 @@ router.post("/register", (req, res) => {
   });
 });
 
+// login
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
@@ -73,18 +111,20 @@ router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  User.findOne({ email: email }).then((user) => {
+  User.findOne({ email }).then((user) => {
     if (!user) {
-      return res.status(404).json({ email: "This user does not exist." });
+      errors.username = "Incorrect email address";
+      return res.status(404).json(errors);
     }
 
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
-        const payload = {
-          id: user.id,
-          username: user.username,
-          email: user.email,
-        };
+        // const payload = {
+        //   id: user.id,
+        //   username: user.username,
+        //   email: user.email,
+        // };
+        const payload = { user };
         jwt.sign(
           payload,
           keys.secretOrKey,

@@ -6,7 +6,7 @@ import {
   REMOVE_POST,
 } from "../actions/post_actions";
 
-const PostsReducer = (
+const postsReducer = (
   state = { all: {}, user: {}, new: undefined },
   action
 ) => {
@@ -48,4 +48,4 @@ const PostsReducer = (
   }
 };
 
-export default PostsReducer;
+export default postsReducer;

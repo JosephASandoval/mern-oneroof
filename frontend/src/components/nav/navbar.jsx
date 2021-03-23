@@ -37,18 +37,6 @@ class NavBar extends React.Component {
             ></img>
             Profile&nbsp;&nbsp;
           </Link>
-          <Link id="link" to={"/posts"}>
-            All Posts
-          </Link>
-          <Link id="link" to={"/profile"}>
-            Profile
-          </Link>
-          <Link id="link" to={"/chores"}>
-            Chores
-          </Link>
-          <Link id="link" to={"/expenses"}>
-            Expenses
-          </Link>
           <Link to={`/events`}>&nbsp;&nbsp;Events&nbsp;&nbsp;</Link>&nbsp;&nbsp;
           <button className="logout-btn" onClick={this.logoutUser}>
             &nbsp;&nbsp;Logout&nbsp;

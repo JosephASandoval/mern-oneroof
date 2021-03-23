@@ -1,0 +1,42 @@
+.navbar-profile {
+  margin-left: 260px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  height: 295px;
+  width: 315px;
+  margin-left: 460px;
+  padding: 20px;
+  object-fit: cover;
+}
+
+.profile-pic-container {
+  margin-top: 50px;
+  height: 275px;
+}
+
+.profile-username {
+  padding: 20px;
+  border-top: 1px solid black;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  font-family: "roboto", sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+* {
+  outline: none;
+  font-family: sans-serif;
+}
