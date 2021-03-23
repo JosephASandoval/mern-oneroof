@@ -7,13 +7,13 @@ const InvitationForm = () => {
   return (
     <div>
       <h1>Hello World</h1>
-      <form>
+      <form onSubmit={console.log("Success!")}>
         <label>To:
           <input type="text" placeholder="Recipient email here" />
         </label>
         <br/>
         <label>Message:
-          <input type="textarea" placeholder={`You've been invited to {}!`} />
+          <textarea>You've been invited to !</textarea>
         </label>
         <br/>
         <button className='invitation-send-button'>Send Invitation</button>
