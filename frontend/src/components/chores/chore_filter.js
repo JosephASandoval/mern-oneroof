@@ -24,7 +24,6 @@ class ChoreFilter extends React.Component {
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
               </select>
-              <input type="submit" value="Apply" />
         </form>
     )
   };

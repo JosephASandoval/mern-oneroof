@@ -11,6 +11,7 @@ class ChoreListItem extends React.Component {
     return (
         <div className="Postbox-Container">
           <p>{chore.body}</p>
+          <p>Priority: {chore.priority}</p>
           <button
             onClick={() => this.props.deleteChore(chore._id)}
             className="delete"

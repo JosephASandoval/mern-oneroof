@@ -48,12 +48,14 @@ class ChoreForm extends React.Component {
                 placeholder="name your chore"
                 onChange={this.update('body')}
                 required/>
+              <div className='priority-select'>
               <label for="priority">Set priority:</label>
               <select name="priority" id="priority">
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
               </select>
+              </div>
             <button className='submit-button'>Create Chore!</button>
           </div>
         </form>

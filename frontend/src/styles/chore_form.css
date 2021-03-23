@@ -9,14 +9,25 @@
 /* same as login_form.css */
 .entry-form {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   flex-direction: column;
   height: 200px;
   font-size: 16px;
   background:#d6e4f0;
   margin-left: 200px;
   margin-right: 200px;
+}
+
+.priority-select {
+  display: flex;
+  background-color: #d6e4f0;
+}
+
+.priority-select label {
+  background-color: #d6e4f0;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .form-input {
@@ -46,6 +57,7 @@
     width: 320px;
     border-style: none;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .submit-button:hover{
