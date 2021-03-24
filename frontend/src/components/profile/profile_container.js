@@ -1,21 +1,17 @@
-import { connect } from 'react-redux';
-import { fetchUserHouses } from '../../actions/house_actions';
-import { fetchUserPosts, deletePost } from '../../actions/post_actions';
-import Profile from './profile';
+import { connect } from "react-redux";
+import { fetchUsers } from "../../actions/user_actions";
+import { withRouter } from "react-router-dom";
+import Profile from "./profile";
 
 const mapStateToProps = (state) => {
   return {
-    houses: Object.values(state.houses.user),
-    posts: Object.values(state.posts.user),
-    currentUser: state.session.user
+    currentUser: state.session.currentUser.user,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUserHouses: id => dispatch(fetchUserHouses(id)),
-    fetchUserPosts: id => dispatch(fetchUserPosts(id)),
-    deletePost: post => dispatch(deletePost(post))
+    fetchUsers: () => dispatch(fetchUsers()),
   };
 };
 

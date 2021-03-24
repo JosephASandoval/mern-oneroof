@@ -1,47 +1,52 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
-import NavBarContainer from "./nav/navbar_container";
-
-import PostsContainer from "./posts/posts_container";
-import Splash from "./splash/splash";
+import { Route, Switch } from "react-router-dom";
+import Modal from "./modal/modal";
+import SplashContainer from "./splash/splash_container";
+import MainNavBarContainer from "./main_navbar/main_navbar_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
+import Footer from "./footer/footer";
 import ProfileContainer from "./profile/profile_container";
-import HouseCreateContainer from "./house/house_create_container";
-import HouseContainer from './house/house_container';
-import PostComposeContainer from "./posts/post_compose_container";
-import ChoreListContainer from './chores/chore_list_container';
-import ExpensesContainer from './expenses/expenses_container';
-import ChatContainer from './chat/chat_container';
-
-import ChoreFilter from "./chores/chore_filter";
+import MeetingContainer from "./meeting/meeting_create_container";
+import MeetingShowContainer from "./meeting/meeting_show_container";
+import MeetingEditContainer from "./meeting/meeting_edit_container";
+import TaskFormContainer from "./task/task_form_container";
+import TaskShowContainer from "./task/task_show_container";
+import TaskEditContainer from "./task/task_edit_container";
+import MeetingIndexContainer from "./meeting/meeting_index_container";
+import "./session/css_reset.css";
 
 const App = () => (
   <div>
-    <NavBarContainer />
+    <Modal />
+    <MainNavBarContainer />
     <Switch>
-      <AuthRoute exact path="/" component={Splash} />
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute exact path="/tasks/new" component={TaskFormContainer} />
+      <ProtectedRoute exact path="/meetings/new" component={MeetingContainer} />
+      <Route
+        exact
+        path="/meetings/:meetingId"
+        component={MeetingShowContainer}
+      />
+      <Route exact path="/tasks/:taskId" component={TaskShowContainer} />
+      <Route exact path="/meetings" component={MeetingIndexContainer} />
       <ProtectedRoute
         exact
-        path="/new_house"
-        component={HouseCreateContainer}
+        path="/meetings/:meetingId/edit"
+        component={MeetingEditContainer}
       />
-      <ProtectedRoute exact path="/houses" component={HouseContainer} />
-      <ProtectedRoute exact path="/posts">
-        <PostComposeContainer />
-        <PostsContainer />
-      </ProtectedRoute>
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
-      <ProtectedRoute exact path="/chores" component={ChoreListContainer}>
-        <ChoreListContainer />
-      </ProtectedRoute>
-      <ProtectedRoute exact path="/chores" component={ChoreListContainer} />
-      <ProtectedRoute exact path="/expenses" component={ExpensesContainer} />
+      <ProtectedRoute
+        exact
+        path="/tasks/:taskId/edit"
+        component={TaskEditContainer}
+      />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/" component={SplashContainer} />
     </Switch>
-    <ProtectedRoute exact path="" component={ChatContainer} />
+    <Footer />
   </div>
 );
 

@@ -6,12 +6,12 @@ const MessageSchema = new Schema({
     type: String,
   },
   name: {
-      type: String,
+    type: String,
   },
   date: {
     type: Date,
-    default: Date.now
-  }
-})
+    default: Date.now,
+  },
+});
 
 module.exports = Message = mongoose.model("Message", MessageSchema);

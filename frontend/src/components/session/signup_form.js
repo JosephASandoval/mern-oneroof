@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { uploadImage } from "../../util/image_api_util";
-import "../../styles/signup_form.css";
+import { uploadPhoto } from "../../util/photo_api_util";
+import "./session_forms.css";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -13,24 +13,28 @@ class SignupForm extends React.Component {
       email: "",
       password: "",
       password2: "",
-      // imageId: "",
-      // imageUrl: "",
-      // imageFile: null,
+      photoId: "",
+      photoUrl: "",
+      photoFile: null,
       errors: {},
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleGuest = this.handleGuest.bind(this);
-    this.handleImageFile = this.handleImageFile.bind(this);
     this.clearedErrors = false;
+    this.handlePhotoFile = this.handlePhotoFile.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.signedIn === true) {
-      this.props.history.push("/login");
+      this.props.history.push("/");
     }
 
-    this.setState({ errors: nextProps.errors });
+    return { errors: nextProps.errors };
   }
 
   update(field) {
@@ -43,17 +47,17 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    if (this.state.imageFile) {
+    if (this.state.photoFile) {
       const data = new FormData(e.target);
-      data.append("file", this.state.imageFile);
-      uploadImage(data).then((res) => {
+      data.append("file", this.state.photoFile);
+      uploadPhoto(data).then((res) => {
         let user = {
           username: this.state.username,
           firstName: this.state.firstName,
           lastName: this.state.lastName,
           email: this.state.email,
-          // // imageId: res.data.newData.imageId,
-          imageUrl: res.data.newData.Location,
+          photoId: res.data.newData.photoId,
+          photoUrl: res.data.newData.Location,
           password: this.state.password,
           password2: this.state.password2,
         };
@@ -65,8 +69,8 @@ class SignupForm extends React.Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
-        // // imageId: this.state.imageId,
-        imageUrl: this.state.imageUrl,
+        photoId: this.state.photoId,
+        photoUrl: this.state.photoUrl,
         password: this.state.password,
         password2: this.state.password2,
       };
@@ -74,29 +78,29 @@ class SignupForm extends React.Component {
     }
   }
 
-  handleImageFile(e) {
+  handlePhotoFile(e) {
     e.preventDefault();
     this.setState({
-      imageFile: e.target.files[0],
+      photoFile: e.target.files[0],
     });
   }
 
-  handleGuest(e) {
+  handleDemoLogin(e) {
     e.preventDefault();
     let user = {
-      email: "guest@gmail.com",
-      password: "guest",
+      email: "demouser@gmail.com",
+      password: "demouser",
     };
-    this.props.login(user);
+    this.props
+      .login(user)
+      .then(() => this.props.history.push(this.props.redirectLink));
   }
 
   renderErrors() {
     return (
-      <ul className="session-errors-container">
+      <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li className="session-errors" key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
+          <li key={`error-${i}`}>{this.state.errors[error]}</li>
         ))}
       </ul>
     );
@@ -104,81 +108,97 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
-        <h2> Sign Up </h2>
+      <div className="form-container-session-sign">
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br />
-            <input
-              className="form-input"
-              type="text"
-              value={this.state.firstName}
-              onChange={this.update("firstName")}
-              placeholder="First Name"
-            />
+          <div className="form">
+            <h2>Sign Up</h2>
 
-            <input
-              className="form-input"
-              type="text"
-              value={this.state.lastName}
-              onChange={this.update("lastName")}
-              placeholder="Last Name"
-            />
+            <div className="signup-inputs">
+              <label>
+                Email:&nbsp;
+                <input
+                  type="text"
+                  className="input-field"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+              </label>
 
-            <br />
+              <label>
+                First Name:&nbsp;
+                <input
+                  type="text"
+                  className="input-field"
+                  value={this.state.firstName}
+                  onChange={this.update("firstName")}
+                  placeholder="First Name"
+                />
+              </label>
 
-            <input
-              className="form-input"
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              placeholder="Username"
-            />
+              <label>
+                Last Name:&nbsp;
+                <input
+                  type="text"
+                  className="input-field"
+                  value={this.state.lastName}
+                  onChange={this.update("lastName")}
+                  placeholder="Last Name"
+                />
+              </label>
 
-            <input
-              className="form-input"
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <br />
-            <input
-              className="form-input"
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
+              <label>
+                Username:&nbsp;
+                <input
+                  type="text"
+                  className="input-field"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
+                />
+              </label>
 
-            <input
-              className="form-input"
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-            <br />
-            {/* <label>
-              Upload Profile Picture:&nbsp;
-              <input
-                type="file"
-                className="form-input"
-                name=""
-                id=""
-                onChange={this.handleImageFile}
-              />
-            </label> */}
-            <br />
-            <button className="submit-button input-field">Sign Up</button>
-            <br />
-            {/* <button
-              className="submit-button input-field"
-              onClick={this.handleGuest}
+              <label>
+                Password:&nbsp;
+                <input
+                  type="password"
+                  className="input-field"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+              </label>
+
+              <label>
+                Confirm Password:&nbsp;
+                <input
+                  type="password"
+                  className="input-field"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                />
+              </label>
+
+              <label>
+                Upload Profile Picture:&nbsp;
+                <input
+                  type="file"
+                  className="input-field upload-pic"
+                  name=""
+                  id=""
+                  onChange={this.handlePhotoFile}
+                />
+              </label>
+            </div>
+
+            <button className="submit-button-login input-field">Submit</button>
+            <button
+              className="login-demo-button"
+              onClick={this.handleDemoLogin}
             >
-              Guest Login
-            </button> */}
-
+              Demo Login
+            </button>
             <div className="session-errors">{this.renderErrors()}</div>
           </div>
         </form>

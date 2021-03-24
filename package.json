@@ -23,13 +23,16 @@
   },
   "homepage": "https://github.com/JosephASandoval/mern-oneroof#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "@sendgrid/mail": "^7.4.2",
     "aws-sdk": "^2.853.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^6.0.0",
     "cors": "^2.8.5",
+    "date-fns": "^2.19.0",
     "express": "^4.17.1",
+    "express-validator": "^6.10.0",
     "http-proxy-middleware": "^1.0.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
@@ -38,8 +41,16 @@
     "multer-s3": "^2.9.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-calendar": "^3.3.1",
+    "react-datepicker": "^3.6.0",
+    "react-day-picker": "^7.4.10",
+    "react-icons": "^4.2.0",
+    "react-nice-dates": "^3.1.0",
     "socket.io": "^4.0.0",
     "validator": "^13.5.2"
+  },
+  "engines": {
+    "node": "10.x"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

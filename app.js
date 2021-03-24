@@ -1,28 +1,26 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-
 const mongoose = require("mongoose");
-
-/// socket.io inconjunction with Express
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
-const Message = require("./models/Message");
-//
-
-const users = require("./routes/api/users");
-const houses = require("./routes/api/houses");
-const posts = require("./routes/api/posts");
-const chores = require("./routes/api/chores");
-const expenses = require("./routes/api/expenses");
-const invitations = require("./routes/api/invitations");
 const db = require("./config/keys").mongoURI;
 const bodyParser = require("body-parser");
 const User = require("./models/User");
 const passport = require("passport");
 const path = require("path");
-const images = require("./routes/api/images"); // upload
-// const { Socket } = require("dgram");
+
+/// socket.io inconjunction with Express
+const http = require("http").Server(app);
+const io = require("socket.io")(http);
+const Message = require("./models/Message");
+
+// required routes
+const users = require("./routes/api/users");
+const photos = require("./routes/api/photos");
+const joins = require("./routes/api/joins");
+const tasks = require("./routes/api/tasks");
+const meetings = require("./routes/api/meetings");
+const completes = require("./routes/api/completes");
+const comments = require("./routes/api/comment");
 
 // tell our server to load the static build folder in production
 if (process.env.NODE_ENV === "production") {
@@ -61,13 +59,13 @@ app.get("/", (req, res) => {
 });
 
 // routers
-app.use("/api/images", images);
+app.use("/api/photos", photos);
 app.use("/api/users", users);
-app.use("/api/houses", houses);
-app.use("/api/posts", posts);
-app.use("/api/invitations", invitations);
-app.use("/api/chores", chores);
-app.use("/api/expenses", expenses);
+app.use("/api/tasks", tasks);
+app.use("/api/meetings", meetings);
+app.use("/api/completes", completes);
+app.use("/api/joins", joins);
+app.use("/api/comments", comments);
 
 //socket.io
 io.on("connection", (socket) => {
@@ -101,6 +99,5 @@ io.on("connection", (socket) => {
 });
 
 http.listen(port, () => {
-  console.log("listening on *:" + port);
+  console.log(`Server is running on port ${port}`);
 });
-//

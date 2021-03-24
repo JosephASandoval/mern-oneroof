@@ -1,0 +1,43 @@
+* {
+  outline: none;
+  font-family: sans-serif;
+}
+
+#add-meeting-button {
+  background-color: #004485;
+  padding: 10px;
+  color: white;
+  width: 70%;
+  border-radius: 5px;
+  margin-left: 185px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#add-meeting-button:hover {
+  background-color: #014f99;
+}
+
+.hosting-button {
+  margin-right: 170px;
+  background-color: rgb(29, 49, 228);
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  font-family: "roboto", sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hosting-button:hover {
+  background-color: rgb(29, 49, 228);
+}
+
+.hosting-meeting-txt {
+  color: white;
+}
+
+.participating-meeting-txt {
+  color: white;
+}

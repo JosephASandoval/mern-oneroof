@@ -1,19 +1,15 @@
+import { connect } from "react-redux";
+import Chat from "./chat";
 
-import { connect } from 'react-redux'; 
-import Chat from './chat'
+const mSTP = (state) => {
+  const name = state.session.currentUser.user.username;
+  return {
+    name,
+  };
+};
 
+const mDTP = (dispatch) => {
+  return {};
+};
 
-const mSTP = state => {
-    const name = state.session.user.username
-    return({
-      name,
-    })
-}
-
-const mDTP = dispatch => {
-    return ({
-
-    })
-}
-
-export default connect(mSTP, mDTP)(Chat)
+export default connect(mSTP, mDTP)(Chat);

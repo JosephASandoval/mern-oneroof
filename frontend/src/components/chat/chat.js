@@ -1,8 +1,7 @@
-import React from 'react';
-import io from 'socket.io-client';
-
-import BottomBar from './bottom_bar';
-import '../../styles/chat.css';
+import React from "react";
+import io from "socket.io-client";
+import BottomBar from "./bottom_bar";
+import "./chat.css";
 
 class Chat extends React.Component {
   constructor(props) {
@@ -10,27 +9,33 @@ class Chat extends React.Component {
 
     this.state = {
       chat: [],
-      content: '',
+      content: "",
       name: this.props.name,
     };
   }
 
   componentDidMount() {
     // this.socket = io(config[process.env.NODE_ENV].endpoint);
-    this.socket = io()
+    this.socket = io();
     // Load the last 10 messages in the window.
-    this.socket.on('init', (msg) => {
+    this.socket.on("init", (msg) => {
       let msgReversed = msg.reverse();
-      this.setState((state) => ({
-        chat: [...state.chat, ...msgReversed],
-      }), this.scrollToBottom);
+      this.setState(
+        (state) => ({
+          chat: [...state.chat, ...msgReversed],
+        }),
+        this.scrollToBottom
+      );
     });
 
     // Update the chat if a new message is broadcasted.
-    this.socket.on('push', (msg) => {
-      this.setState((state) => ({
-        chat: [...state.chat, msg],
-      }), this.scrollToBottom);
+    this.socket.on("push", (msg) => {
+      this.setState(
+        (state) => ({
+          chat: [...state.chat, msg],
+        }),
+        this.scrollToBottom
+      );
     });
   }
 
@@ -46,7 +51,7 @@ class Chat extends React.Component {
     event.preventDefault();
 
     // Send the new message to the server.
-    this.socket.emit('message', {
+    this.socket.emit("message", {
       name: this.state.name,
       content: this.state.content,
     });
@@ -54,18 +59,21 @@ class Chat extends React.Component {
     this.setState((state) => {
       // Update the chat with the user's message and remove the current message.
       return {
-        chat: [...state.chat, {
-          name: state.name,
-          content: state.content,
-        }],
-        content: '',
+        chat: [
+          ...state.chat,
+          {
+            name: state.name,
+            content: state.content,
+          },
+        ],
+        content: "",
       };
     }, this.scrollToBottom);
   }
 
   // Always make sure the window is scrolled down to the last message.
   scrollToBottom() {
-    const chat = document.getElementById('chat');
+    const chat = document.getElementById("chat");
     chat.scrollTop = chat.scrollHeight;
   }
 
@@ -73,12 +81,12 @@ class Chat extends React.Component {
     return (
       <div className="chat-container">
         <h1>Live Chat</h1>
-        <div id="chat" >
+        <div id="chat">
           {this.state.chat.map((el, index) => {
             return (
-              <div key={index} id='msg'>
-                <span id='msg-author'>{el.name}: </span> 
-                <span id='msg-content'>{el.content}</span>
+              <div key={index} id="msg">
+                <span id="msg-author">{el.name}: </span>
+                <span id="msg-content">{el.content}</span>
               </div>
             );
           })}
@@ -92,6 +100,6 @@ class Chat extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default Chat;
