@@ -5,6 +5,7 @@ module.exports = function validateChoreInput(data) {
   let errors = {};
 
   data.body = validText(data.body) ? data.body : "";
+  data.priority = validText(data.priority) ? data.priority : "";
 
   data.priority = validText(data.priority) ? data.priority : "";
 
@@ -20,4 +21,5 @@ module.exports = function validateChoreInput(data) {
     errors,
     isValid: Object.keys(errors).length === 0,
   };
+
 };

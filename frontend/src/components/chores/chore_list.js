@@ -14,7 +14,9 @@ class ChoreList extends React.Component {
     this.state = {
       chores: [],
     };
+          
   }
+
 
   componentWillMount() {
     this.props.fetchAllChores();
@@ -25,7 +27,10 @@ class ChoreList extends React.Component {
   }
 
   render() {
+
     const { chores, composeChore, deleteChore } = this.props;
+
+       
     if (chores.length === 0) {
       return (
         <>
@@ -35,12 +40,16 @@ class ChoreList extends React.Component {
         </>
       );
     } else {
+
+
       return (
         <div>
           <ChoreFilter />
           <ChoreFormContainer composeChore={composeChore} />
+          
           <h2>My Chores</h2>
           <ul>
+            
             {chores.map((chore) => (
               <ChoreListItem
                 deleteChore={deleteChore}

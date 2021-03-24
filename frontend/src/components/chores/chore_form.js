@@ -36,6 +36,7 @@ class ChoreForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="create-container">
         <form onSubmit={this.handleSubmit}>

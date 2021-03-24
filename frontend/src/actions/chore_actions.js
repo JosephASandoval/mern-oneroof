@@ -1,30 +1,30 @@
-import * as ChoreAPIUtil from '../util/chore_api_util';
+import * as ChoreAPIUtil from "../util/chore_api_util";
 
 export const RECEIVE_CHORES = "RECEIVE_CHORES";
 export const RECEIVE_USER_CHORES = "RECEIVE_USER_CHORES";
 export const RECEIVE_NEW_CHORE = "RECEIVE_NEW_CHORE";
-export const REMOVE_CHORE = 'REMOVE_CHORE';
+export const REMOVE_CHORE = "REMOVE_CHORE";
 export const RECEIVE_FILTERED_CHORES = "RECEIVE_FILTERED_CHORES";
 
-export const receiveChores = chores => ({
+export const receiveChores = (chores) => ({
   type: RECEIVE_CHORES,
-  chores
+  chores,
 });
 
-export const receiveUserChores = chores => ({
+export const receiveUserChores = (chores) => ({
   type: RECEIVE_USER_CHORES,
-  chores
+  chores,
 });
 
-export const receiveNewChore = chore => ({
+export const receiveNewChore = (chore) => ({
   type: RECEIVE_NEW_CHORE,
-  chore
-})
+  chore,
+});
 
-export const removeChore = choreId => ({
+export const removeChore = (choreId) => ({
   type: REMOVE_CHORE,
-  choreId
-})
+  choreId,
+});
 
 export const receiveFilteredChores = (priority, chores) => {
   return {
@@ -37,29 +37,10 @@ export const receiveFilteredChores = (priority, chores) => {
 };
 
 // thunk actions
-export const fetchAllChores = () => dispatch => (
+export const fetchAllChores = () => (dispatch) =>
   ChoreAPIUtil.getChores()
-    .then(chores => dispatch(receiveChores(chores)))
-    .catch(err => console.log(err))
-);
-
-export const fetchUserChores = id => dispatch => (
-  ChoreAPIUtil.getUserChores(id)
-    .then(chores => dispatch(receiveUserChores(chores)))
-    .catch(err => console.log(err))
-);
-
-export const composeChore = data => dispatch => (
-  ChoreAPIUtil.writeChore(data)
-    .then(chore => dispatch(receiveNewChore(chore)))
-    .catch(err => console.log(err))
-);
-
-export const deleteChore = choreId => dispatch => (
-  ChoreAPIUtil.deleteChore(choreId)
-    .then(() => dispatch(removeChore(choreId)))
-    .catch(err => console.log(err))
-)
+    .then((chores) => dispatch(receiveChores(chores)))
+    .catch((err) => console.log(err));
 
 export const fetchFilteredChores = (priority) => (dispatch) => {
   return ChoreAPIUtil.getChores()
@@ -68,3 +49,18 @@ export const fetchFilteredChores = (priority) => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
+
+export const fetchUserChores = (id) => (dispatch) =>
+  ChoreAPIUtil.getUserChores(id)
+    .then((chores) => dispatch(receiveUserChores(chores)))
+    .catch((err) => console.log(err));
+
+export const composeChore = (data) => (dispatch) =>
+  ChoreAPIUtil.writeChore(data)
+    .then((chore) => dispatch(receiveNewChore(chore)))
+    .catch((err) => console.log(err));
+
+export const deleteChore = (choreId) => (dispatch) =>
+  ChoreAPIUtil.deleteChore(choreId)
+    .then(() => dispatch(removeChore(choreId)))
+    .catch((err) => console.log(err));
