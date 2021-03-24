@@ -20,6 +20,7 @@ https://github.com/socketio/socket.io
 Using the technology of socket.io, users are able to send live messages to other housemates who are also currently logged on to the app. 
 
 ### CRUD Tasks
+Users can upload chores to be completed for the house. Once created, users have the ability to edit chores and delete them as needed. 
 
 ### Meeting
 Users are able to set up and join/unjoin meetings. Meetings have specific details such as beginning and end times, location, image, and subject.
