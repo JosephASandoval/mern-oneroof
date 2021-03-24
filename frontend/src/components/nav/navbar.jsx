@@ -32,13 +32,13 @@ class NavBar extends React.Component {
       return (
         <div className="right-navbar-loggedin">
           <Link to={`/profile`}>
-            <img
-              className="navbar-profile-pic"
-              src={this.props.currentUser.user.photoUrl}
-            ></img>
-            Profile&nbsp;&nbsp;
+            <span>
+              <img
+                className="navbar-profile-pic"
+                src={this.props.currentUser.user.photoUrl}
+              ></img>
+            </span>
           </Link>
-          <Link to={`/events`}>&nbsp;&nbsp;Events&nbsp;&nbsp;</Link>&nbsp;&nbsp;
           <button className="logout-btn" onClick={this.logoutUser}>
             &nbsp;&nbsp;Logout&nbsp;
           </button>
@@ -46,9 +46,13 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div className = 'splash-navbar-container'>
-          <Link className='link-word' to={"/signup"}>Signup</Link>
-          <Link className='link-word' to={"/login"}>Login</Link>
+        <div className="splash-navbar-container">
+          <Link className="link-word" to={"/signup"}>
+            Signup
+          </Link>
+          <Link className="link-word" to={"/login"}>
+            Login
+          </Link>
         </div>
       );
     }
@@ -96,7 +100,7 @@ class NavBar extends React.Component {
                 <img src={item.photoUrl}></img>
                 <div className="search-item-name">
                   <li>
-                    <span id="result-1">Name:</span> {item.name}
+                    <span id="result-1">Name: </span> {item.name}
                   </li>
                   <li>
                     <span id="result-1">Difficulty: </span> {item.difficulty}
@@ -139,7 +143,7 @@ class NavBar extends React.Component {
                     this.state.query.length > 0 ? "block" : ""
                   }`}
                 >
-                  {this.queryList()}
+                  <div className="search-pics">{this.queryList()}</div>
                 </ul>
               </div>
             </div>

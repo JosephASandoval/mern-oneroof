@@ -20,7 +20,6 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser,
     events: state.entities.events,
     users: state.entities.users,
-    // user: state.entities.users[state.session.currentUser.user._id],
     auth: state.session.currentUser,
     joins: state.entities.joins,
     count: countSelector(state),

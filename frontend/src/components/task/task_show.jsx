@@ -128,7 +128,7 @@ class TaskShow extends React.Component {
                 </h4>
               </li>
               <li>
-                <h4>Completes:&nbsp;&nbsp;{peopleCompleted.length}</h4>
+                <h4>Number Completed:&nbsp;&nbsp;{peopleCompleted.length}</h4>
               </li>
               {completeBtn}
               {userOnlyBtns}

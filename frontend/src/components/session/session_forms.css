@@ -62,7 +62,7 @@ h2 {
   padding-bottom: 5px;
   font-size: 21px;
   font-family: "Roboto", sans-serif;
-  border: rgb(250, 245, 245) solid 5px;
+  border: #d6e4f0 solid 5px;
 }
 
 .form-modal {
@@ -75,7 +75,7 @@ h2 {
   padding-right: 30px;
   font-size: 21px;
   font-family: "Roboto", sans-serif;
-  border: rgb(250, 245, 245) solid 5px;
+  border: #d6e4f0 solid 5px;
 }
 
 .input-field {

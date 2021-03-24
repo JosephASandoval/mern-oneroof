@@ -39,3 +39,7 @@
 .footer-list a {
   color: #163172;
 }
+
+body {
+  overflow-x: hidden;
+}

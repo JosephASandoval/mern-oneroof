@@ -54,7 +54,7 @@
 .home-page-middle-container {
   padding-bottom: 20px;
   padding-top: 20px;
-  border: rgb(250, 245, 245) solid 5px;
+  border: #d6e4f0 solid 5px;
   margin-bottom: 30px;
 }
 
@@ -62,7 +62,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border: rgb(250, 245, 245) solid 5px;
+  border: #d6e4f0 solid 5px;
   padding: 20px;
 }
 
@@ -81,7 +81,7 @@
   align-content: center;
 
   padding-right: 20px;
-  border-right: 2px solid rgb(250, 245, 245);
+  border-right: 2px solid #d6e4f0;
   font-size: 20px;
 }
 
@@ -137,7 +137,7 @@
 .home-page-event-details-box {
   display: flex;
   justify-content: space-between;
-  border: rgb(250, 245, 245) solid 5px;
+  border: #d6e4f0 solid 5px;
   padding: 20px;
   margin-top: 0px;
   width: 700px;

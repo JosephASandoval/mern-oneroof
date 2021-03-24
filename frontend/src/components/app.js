@@ -27,7 +27,7 @@ import EventIndexContainer from "./event/event_index_container";
 import "./session/css_reset.css";
 
 const App = () => (
-  <div className="main-app-div">
+  <div>
     <Modal />
     <NavBarContainer />
     <Switch>
