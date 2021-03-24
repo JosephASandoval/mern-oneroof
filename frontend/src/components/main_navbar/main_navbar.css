@@ -164,7 +164,6 @@ NavBar {
 
 .search-item-name {
   display: flex;
-  /* align-items: center; */
   width: 100%;
   justify-content: center;
   overflow-wrap: normal;
@@ -190,7 +189,6 @@ NavBar {
 }
 
 .result-item-parent {
-  /* width: 600px; */
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;

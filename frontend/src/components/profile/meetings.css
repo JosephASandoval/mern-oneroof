@@ -21,7 +21,7 @@
 
 .hosting-button {
   margin-right: 170px;
-  background-color: rgb(29, 102, 85);
+  background-color: rgb(29, 49, 228);
   color: white;
   padding: 20px;
   font-size: 16px;
@@ -31,7 +31,7 @@
 }
 
 .hosting-button:hover {
-  background-color: rgb(30, 144, 117);
+  background-color: rgb(29, 49, 228);
 }
 
 .hosting-meeting-txt {

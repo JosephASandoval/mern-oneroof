@@ -25,7 +25,7 @@
   color: #fff;
   background-color: #163172;
   border-radius: 5px;
-  border: rgb(28, 121, 104) solid 1px;
+  border: rgb(34, 28, 121) solid 1px;
   height: 35px;
   margin: 40px auto 20px;
   cursor: pointer;
@@ -64,8 +64,6 @@
   margin: 0 auto;
   width: 950px;
 }
-
-/* Top Content */
 
 .task-top {
   display: flex;

@@ -168,24 +168,6 @@ h2 {
   background-color: #1e56a0;
 }
 
-.checkbox-container {
-  display: flex;
-  margin-bottom: 12px;
-  justify-content: center;
-}
-
-.checkbox-col-1 {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.checkbox-col-2 {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
 /* signup container */
 
 .form-container-session-sign {

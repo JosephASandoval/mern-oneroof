@@ -1,7 +1,7 @@
 import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
-import HomePageModalLoginContainer from "../category_navbar/home_page_modal_login_container";
+import HomePageModalLoginContainer from "./home_page_modal_login_container";
 import MeetingLoginContainer from "../meeting/meeting_modal_login_container";
 
 function Modal({ modal, closeModal }) {

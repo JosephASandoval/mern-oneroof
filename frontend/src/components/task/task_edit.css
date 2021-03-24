@@ -83,7 +83,7 @@
 }
 
 .task-edit-save {
-  background-color: rgba(0, 121, 125);
+  background-color: rgb(3, 39, 201);
   border-radius: 4px;
   color: white;
   width: 100px;
@@ -96,7 +96,7 @@
 }
 
 .task-edit-save:hover {
-  background-color: rgb(2, 169, 175);
+  background-color: rgb(33, 71, 240);
 }
 
 .task-edit-bottom {

@@ -2,7 +2,7 @@ import React from "react";
 import io from "socket.io-client";
 
 import BottomBar from "./bottom_bar";
-import "../../styles/chat.css";
+import "./chat.css";
 
 class Chat extends React.Component {
   constructor(props) {

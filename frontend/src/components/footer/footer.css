@@ -3,20 +3,6 @@
   font-family: sans-serif;
 }
 
-.main-app-div {
-  min-width: 1280px;
-  min-height: 100%;
-  margin-bottom: -30px;
-}
-.main-app-div:after {
-  content: "";
-  display: block;
-}
-
-.main-app-div:after {
-  height: 30px;
-}
-
 .footer-list-div {
   height: 100%;
   width: 100%;
