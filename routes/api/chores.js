@@ -45,6 +45,7 @@ router.post(
     const newChore = new Chore({
       user: req.user.id,
       body: req.body.body,
+      priority: req.body.priority,
     });
 
     newChore.save().then((chore) => res.json(chore));

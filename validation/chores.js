@@ -6,6 +6,8 @@ module.exports = function validateChoreInput(data) {
 
   data.body = validText(data.body) ? data.body : "";
 
+  data.priority = validText(data.priority) ? data.priority : "";
+
   if (!Validator.isLength(data.body, { min: 5, max: 300 })) {
     errors.body = "Body must be between 5 and 300 characters";
   }

@@ -11,8 +11,8 @@ const ChoreSchema = new Schema({
     ref: "House",
   },
   is_done: {
-      type: Boolean,
-      default: false,
+    type: Boolean,
+    default: false,
   },
   body: {
     type: String,
@@ -24,6 +24,10 @@ const ChoreSchema = new Schema({
   date: {
     type: Date,
     default: Date.now,
+  },
+  priority: {
+    type: String,
+    default: null,
   },
 });
 

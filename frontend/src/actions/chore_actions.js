@@ -4,6 +4,7 @@ export const RECEIVE_CHORES = "RECEIVE_CHORES";
 export const RECEIVE_USER_CHORES = "RECEIVE_USER_CHORES";
 export const RECEIVE_NEW_CHORE = "RECEIVE_NEW_CHORE";
 export const REMOVE_CHORE = 'REMOVE_CHORE';
+export const RECEIVE_FILTERED_CHORES = "RECEIVE_FILTERED_CHORES";
 
 export const receiveChores = chores => ({
   type: RECEIVE_CHORES,
@@ -24,6 +25,16 @@ export const removeChore = choreId => ({
   type: REMOVE_CHORE,
   choreId
 })
+
+export const receiveFilteredChores = (priority, chores) => {
+  return {
+    type: RECEIVE_FILTERED_CHORES,
+    filteredChores:
+      priority === "All"
+        ? chores.data
+        : chores.data.filter((chore) => chore.priority === priority),
+  };
+};
 
 // thunk actions
 export const fetchAllChores = () => dispatch => (
@@ -49,3 +60,11 @@ export const deleteChore = choreId => dispatch => (
     .then(() => dispatch(removeChore(choreId)))
     .catch(err => console.log(err))
 )
+
+export const fetchFilteredChores = (priority) => (dispatch) => {
+  return ChoreAPIUtil.getChores()
+    .then((chores) => {
+      return dispatch(receiveFilteredChores(priority, chores));
+    })
+    .catch((err) => console.log(err));
+};

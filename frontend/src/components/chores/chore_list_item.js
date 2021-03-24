@@ -9,14 +9,16 @@ class ChoreListItem extends React.Component {
   render() {
     const chore = this.props.chore;
     return (
-        <div className="Postbox-Container">
-          <p>{chore.body}</p>
-          <button
-            onClick={() => this.props.deleteChore(chore._id)}
-            className="delete"
-          >Delete this chore
-          </button>
-        </div>
+      <div className="Postbox-Container">
+        <p>{chore.body}</p>
+        <p>Priority: {chore.priority}</p>
+        <button
+          onClick={() => this.props.deleteChore(chore._id)}
+          className="delete"
+        >
+          Delete this chore
+        </button>
+      </div>
     );
   }
 }
