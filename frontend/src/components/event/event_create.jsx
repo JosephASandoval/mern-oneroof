@@ -118,11 +118,11 @@ class EventForm extends React.Component {
     return (
       <div>
         <form className="event-create-form">
-          <h1 className="event-create-header">Host An Event</h1>
+          <h1 className="event-create-header">Create New Meeting</h1>
 
           <div className="input-field-event-create-container">
             <label className="event-create-label">
-              Event Name:&nbsp;&nbsp;
+              Meeting Name:&nbsp;&nbsp;
             </label>
             <input
               type="text"

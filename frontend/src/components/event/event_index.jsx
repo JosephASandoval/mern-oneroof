@@ -52,7 +52,7 @@ class EventIndex extends React.Component {
                           </span>
                         </div>
                         <div className="date-index">
-                          Event Name:&nbsp;
+                          Meeting Name:&nbsp;
                           <Link id="event-name" to={`/events/${event._id}`}>
                             {event.name}
                           </Link>
@@ -122,7 +122,7 @@ class EventIndex extends React.Component {
                           </span>
                         </div>
                         <div className="date-index">
-                          Event Name:&nbsp;
+                          Meeting Name:&nbsp;
                           <Link id="event-name" to={`/events/${event._id}`}>
                             {event.name}
                           </Link>

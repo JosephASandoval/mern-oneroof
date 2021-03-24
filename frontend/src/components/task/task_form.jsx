@@ -124,7 +124,7 @@ class TaskForm extends React.Component {
               <input
                 type="text"
                 onChange={this.update("name")}
-                placeholder="Name of your task (max 26 characters)"
+                placeholder="Name of your task"
                 maxLength="26"
               />
             </div>
@@ -163,7 +163,6 @@ class TaskForm extends React.Component {
                     <option value="" selected disabled>
                       Please select
                     </option>
-                    <option value="Posts">Posts</option>
                     <option value="Chores">Chores</option>
                     <option value="Expenses">Expenses</option>
                   </select>
@@ -173,7 +172,7 @@ class TaskForm extends React.Component {
           </div>
           <div className="task-middle">
             <div className="task-tip">
-              <h3>Task Tip:</h3>
+              <h3>Task Tips:</h3>
               <textarea
                 cols="26"
                 rows="10"
@@ -182,7 +181,7 @@ class TaskForm extends React.Component {
               />
             </div>
             <div className="task-owner">
-              <h3>Task Owner:</h3>
+              <h3>Task Creator:</h3>
               <h5>
                 <img
                   className="task-owner-pic"

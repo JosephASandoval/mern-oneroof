@@ -68,7 +68,7 @@ class EditEvent extends React.Component {
 
           <div className="input-field-event-edit-container">
             <label label className="event-create-label">
-              Event Name:&nbsp;&nbsp;
+              Meeting Name:&nbsp;&nbsp;
             </label>
             <input
               type="text"

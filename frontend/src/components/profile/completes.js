@@ -18,12 +18,6 @@ class Completes extends React.Component {
     }
     return (
       <div>
-        <br></br>
-        <div className="button-container">
-          <Link to="/">
-            <button id="add-task-button">See More Tasks</button>
-          </Link>
-        </div>
         <div>
           {!this.props.tasksCompleted ? (
             <div>

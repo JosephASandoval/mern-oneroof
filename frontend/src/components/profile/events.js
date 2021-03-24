@@ -22,7 +22,7 @@ class Events extends React.Component {
       <div>
         <div className="button-container">
           <Link to="/events/new">
-            <button id="add-event-button">Host An Event</button>
+            <button id="add-event-button">Create New Meeting</button>
           </Link>
         </div>
         <div className="hosting-events">
@@ -57,7 +57,7 @@ class Events extends React.Component {
                             </span>
                           </div>
                           <div className="date-index">
-                            Event Name:&nbsp;
+                            Meeting Name:&nbsp;
                             <Link id="event-name" to={`/events/${event._id}`}>
                               {event.name}
                             </Link>
@@ -133,7 +133,7 @@ class Events extends React.Component {
                           </span>
                         </div>
                         <div className="date-index">
-                          Event Name:&nbsp;
+                          Meeting Name:&nbsp;
                           <Link id="event-name" to={`/events/${event._id}`}>
                             {event.name}
                           </Link>

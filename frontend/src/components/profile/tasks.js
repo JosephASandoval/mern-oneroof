@@ -21,7 +21,7 @@ class Tasks extends React.Component {
         <br></br>
         <div className="button-container">
           <Link to="/tasks/new">
-            <button id="add-task-button">Add A Task</button>
+            <button id="add-task-button">Create New Task</button>
           </Link>
         </div>
         <ul className="task-wrap">

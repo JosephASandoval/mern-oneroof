@@ -55,7 +55,7 @@ class EventShow extends React.Component {
             </div>
             <div className="event-info-show">
               <div>
-                <label id="event-label">Event Name:</label>
+                <label id="event-label">Meeting Name:</label>
                 {this.props.event.name}{" "}
               </div>
               <div>
@@ -155,7 +155,7 @@ class EventShow extends React.Component {
             </div>
             <div className="event-info-show">
               <div>
-                <label id="event-label">Event Name:</label>
+                <label id="event-label">Meeting Name:</label>
                 {this.props.event.name}{" "}
               </div>
               <div>
