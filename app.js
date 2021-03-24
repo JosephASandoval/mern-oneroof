@@ -36,6 +36,11 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 require("./config/passport")(passport);
 
+// sendgrid config
+app.use(express.urlencoded({ extended: false }));
+app.use("/src", express.static(path.join(__dirname, "src")));
+app.set("view engine", "ejs");
+
 // db config
 mongoose
   .connect(db, {
