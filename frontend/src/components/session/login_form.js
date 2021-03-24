@@ -64,8 +64,6 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="form-container-session">
-        <h1>OneRoof</h1>
-
         <form onSubmit={this.handleSubmit}>
           <div className="form">
             <h2>Login</h2>
@@ -102,16 +100,6 @@ class LoginForm extends React.Component {
             <div className="session-errors">{this.renderErrors()}</div>
           </div>
         </form>
-
-        <br></br>
-        <div className="signup-option">
-          <label>Not a User?</label>
-          <br></br>
-          <Link to="/signup">
-            {" "}
-            <button className="signup-button input-field">Sign Up</button>
-          </Link>
-        </div>
       </div>
     );
   }

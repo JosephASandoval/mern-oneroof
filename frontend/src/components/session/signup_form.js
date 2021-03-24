@@ -111,7 +111,6 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="form-container-session-sign">
-        <h1>OneRoof</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form">
             <h2>Sign Up</h2>
@@ -195,7 +194,7 @@ class SignupForm extends React.Component {
               </label>
             </div>
 
-            <button className="submit-button">Submit</button>
+            <button className="submit-button-login input-field">Submit</button>
             <button
               className="login-demo-button"
               onClick={this.handleDemoLogin}
@@ -205,16 +204,6 @@ class SignupForm extends React.Component {
             <div className="session-errors">{this.renderErrors()}</div>
           </div>
         </form>
-
-        <br></br>
-        <div className="signup-option">
-          <label>Already a User?</label>
-          <br></br>
-          <Link to="/login">
-            {" "}
-            <button className="login-button input-field">Login</button>
-          </Link>
-        </div>
       </div>
     );
   }
