@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
 const Message = require("./models/Message");
+//
 
 const users = require("./routes/api/users");
 const houses = require("./routes/api/houses");
@@ -22,7 +23,6 @@ const passport = require("passport");
 const path = require("path");
 const images = require("./routes/api/images"); // upload
 // const { Socket } = require("dgram");
-
 
 // tell our server to load the static build folder in production
 if (process.env.NODE_ENV === "production") {
@@ -47,13 +47,13 @@ require("./config/passport")(passport);
 
 // db config
 mongoose
-.connect(db, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true,
-})
-.then(() => console.log("Connected to MongoDB successfully"))
-.catch((err) => console.log(err));
+  .connect(db, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+  })
+  .then(() => console.log("Connected to MongoDB successfully"))
+  .catch((err) => console.log(err));
 
 // api backend routes
 app.get("/", (req, res) => {
@@ -103,3 +103,4 @@ io.on("connection", (socket) => {
 http.listen(port, () => {
   console.log("listening on *:" + port);
 });
+//
