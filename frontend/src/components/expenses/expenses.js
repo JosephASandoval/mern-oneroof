@@ -9,7 +9,6 @@ class Expenses extends React.Component {
         this.state = {
             expenses: [],
         }
-
     }
 
     componentDidMount() {

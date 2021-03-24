@@ -13,6 +13,8 @@ import HouseContainer from './house/house_container';
 import PostComposeContainer from "./posts/post_compose_container";
 import ChoreListContainer from './chores/chore_list_container';
 import ExpensesContainer from './expenses/expenses_container';
+import ChatContainer from './chat/chat_container';
+
 import ChoreFilter from "./chores/chore_filter";
 
 const App = () => (
@@ -22,18 +24,24 @@ const App = () => (
       <AuthRoute exact path="/" component={Splash} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/new_house" component={HouseCreateContainer} />
+      <ProtectedRoute
+        exact
+        path="/new_house"
+        component={HouseCreateContainer}
+      />
       <ProtectedRoute exact path="/houses" component={HouseContainer} />
       <ProtectedRoute exact path="/posts">
         <PostComposeContainer />
         <PostsContainer />
       </ProtectedRoute>
-      <ProtectedRoute exact path="/profile" component={ProfileContainer}/>
-      <ProtectedRoute exact path='/chores' component={ChoreListContainer}>
-        <ChoreListContainer/>
+      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path="/chores" component={ChoreListContainer}>
+        <ChoreListContainer />
       </ProtectedRoute>
-      <ProtectedRoute exact path='/expenses' component={ExpensesContainer}/>
+      <ProtectedRoute exact path="/chores" component={ChoreListContainer} />
+      <ProtectedRoute exact path="/expenses" component={ExpensesContainer} />
     </Switch>
+    <ProtectedRoute exact path="" component={ChatContainer} />
   </div>
 );
 

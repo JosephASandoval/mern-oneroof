@@ -51,7 +51,11 @@ class ChoreList extends React.Component {
           <ul>
             
             {chores.map((chore) => (
-              <ChoreListItem deleteChore={deleteChore} key={chore._id} chore={chore} />
+              <ChoreListItem
+                deleteChore={deleteChore}
+                key={chore._id}
+                chore={chore}
+              />
             ))}
           </ul>
         </div>

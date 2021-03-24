@@ -11,12 +11,15 @@ const ChoreSchema = new Schema({
     ref: "House",
   },
   is_done: {
-      type: Boolean,
-      default: false,
+    type: Boolean,
+    default: false,
   },
   body: {
     type: String,
     required: true,
+  },
+  imageUrl: {
+    type: String,
   },
   date: {
     type: Date,
@@ -24,8 +27,8 @@ const ChoreSchema = new Schema({
   },
   priority: {
     type: String,
-    default: null
-  }
+    default: null,
+  },
 });
 
 module.exports = Chore = mongoose.model("chore", ChoreSchema);
