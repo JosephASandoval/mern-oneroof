@@ -34,8 +34,6 @@
 }
 
 #meeting-label {
-  padding: 20px;
-  padding-left: 0px;
   font-family: "roboto", sans-serif;
   font-weight: bolder;
   font-size: 25px;
@@ -130,6 +128,7 @@
 
 .hosting-text {
   color: white;
+  background-color: rgb(22,49,114);
 }
 
 .join-show-meeting-button {
