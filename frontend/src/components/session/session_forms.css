@@ -3,6 +3,10 @@
   font-family: sans-serif;
 }
 
+body {
+  background: #d6e4f0;
+}
+
 .page {
   display: flex;
   align-items: center;

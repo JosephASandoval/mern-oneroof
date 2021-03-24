@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import Chat from "./chat";
 
 const mSTP = (state) => {
-  const name = state.session.currentUser.username;
+  const name = state.session.currentUser.user.username;
   return {
     name,
   };

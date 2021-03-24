@@ -1,6 +1,5 @@
 import React from "react";
 import io from "socket.io-client";
-
 import BottomBar from "./bottom_bar";
 import "./chat.css";
 
@@ -41,15 +40,15 @@ class Chat extends React.Component {
   }
 
   // Save the message the user is typing in the input field.
-  handleContent(meeting) {
+  handleContent(event) {
     this.setState({
-      content: meeting.target.value,
+      content: event.target.value,
     });
   }
 
-  handleSubmit(meeting) {
+  handleSubmit(event) {
     // Prevent the form to reload the current page.
-    meeting.preventDefault();
+    event.preventDefault();
 
     // Send the new message to the server.
     this.socket.emit("message", {
