@@ -17,7 +17,12 @@ https://github.com/socketio/socket.io
 
 ## Features
 ### Live Chat
+Using the technology of socket.io, users are able to send live messages to other housemates who are also currently logged on to the app. 
 
 ### CRUD Tasks
 
+### Meeting
+Users are able to set up and join/unjoin meetings. Meetings have specific details such as beginning and end times, location, image, and subject.
+
 ### User Interface
+Users have a dashboard where they are able to upload images for chores/meetings and search for specific tasks by name.
