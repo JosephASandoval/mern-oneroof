@@ -15,15 +15,10 @@ const Message = require("./models/Message");
 
 // required routes
 const users = require("./routes/api/users");
-const houses = require("./routes/api/houses");
-const posts = require("./routes/api/posts");
-const chores = require("./routes/api/chores");
-const expenses = require("./routes/api/expenses");
 const photos = require("./routes/api/photos");
-const invitations = require("./routes/api/invitations");
 const joins = require("./routes/api/joins");
 const tasks = require("./routes/api/tasks");
-const events = require("./routes/api/events");
+const meetings = require("./routes/api/meetings");
 const completes = require("./routes/api/completes");
 const comments = require("./routes/api/comment");
 
@@ -66,13 +61,8 @@ app.get("/", (req, res) => {
 // routers
 app.use("/api/photos", photos);
 app.use("/api/users", users);
-app.use("/api/houses", houses);
-app.use("/api/posts", posts);
-app.use("/api/invitations", invitations);
-app.use("/api/chores", chores);
-app.use("/api/expenses", expenses);
 app.use("/api/tasks", tasks);
-app.use("/api/events", events);
+app.use("/api/meetings", meetings);
 app.use("/api/completes", completes);
 app.use("/api/joins", joins);
 app.use("/api/comments", comments);

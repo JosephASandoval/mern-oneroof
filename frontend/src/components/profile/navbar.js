@@ -2,18 +2,18 @@ import React from "react";
 import { Tabs, Tab } from "@material-ui/core";
 import TasksContainer from "./tasks_container";
 import CompletesContainer from "./completes_container";
-import ChoresContainer from "../category-nav/chores_container";
-import ExpensesContainer from "../category-nav/expenses_container";
-import EventsContainer from "./events_container";
-import EventIndexContainer from "../event/event_index_container";
+import ChoresContainer from "../category_navbar/chores_container";
+import ExpensesContainer from "../category_navbar/expenses_container";
+import MeetingsContainer from "./meetings_container";
+import MeetingIndexContainer from "../meeting/meeting_index_container";
 import ChatContainer from "../chat/chat_container";
 import "./navbar.css";
-import "../category-nav/category_navbar.css";
+import "../category_navbar/category_navbar.css";
 
 const NavBar = () => {
   const [selectedTab, setSelectedTab] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (meeting, newValue) => {
     setSelectedTab(newValue);
   };
 
@@ -42,8 +42,10 @@ const NavBar = () => {
       <div className="tab">{selectedTab === 1 && <CompletesContainer />} </div>
       <div className="tab">{selectedTab === 2 && <ChoresContainer />}</div>
       <div className="tab">{selectedTab === 3 && <ExpensesContainer />}</div>
-      <div className="tab">{selectedTab === 4 && <EventsContainer />}</div>
-      <div className="tab">{selectedTab === 5 && <EventIndexContainer />}</div>
+      <div className="tab">{selectedTab === 4 && <MeetingsContainer />}</div>
+      <div className="tab">
+        {selectedTab === 5 && <MeetingIndexContainer />}
+      </div>
       <div className="tab">{selectedTab === 6 && <ChatContainer />}</div>
     </div>
   );

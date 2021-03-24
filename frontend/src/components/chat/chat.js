@@ -41,15 +41,15 @@ class Chat extends React.Component {
   }
 
   // Save the message the user is typing in the input field.
-  handleContent(event) {
+  handleContent(meeting) {
     this.setState({
-      content: event.target.value,
+      content: meeting.target.value,
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit(meeting) {
     // Prevent the form to reload the current page.
-    event.preventDefault();
+    meeting.preventDefault();
 
     // Send the new message to the server.
     this.socket.emit("message", {

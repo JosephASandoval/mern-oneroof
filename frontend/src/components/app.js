@@ -1,60 +1,40 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Route, Switch } from "react-router-dom";
-
 import Modal from "./modal/modal";
 import SplashContainer from "./splash/splash_container";
-import NavBarContainer from "./nav/navbar_container";
+import MainNavBarContainer from "./main_navbar/main_navbar_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
-import PostsContainer from "./posts/posts_container";
-import PostComposeContainer from "./posts/post_compose_container";
-import ChoreListContainer from "./chores/chore_list_container";
-import ExpensesContainer from "./expenses/expenses_container";
 import Footer from "./footer/footer";
-// import HouseCreateContainer from "./house/house_create_container";
-// import HouseContainer from "./house/house_container";
-// import ChoreFilter from "./chores/chore_filter";
-
 import ProfileContainer from "./profile/profile_container";
-import EventContainer from "./event/event_create_container";
-import EventShowContainer from "./event/event_show_container";
-import EventEditContainer from "./event/event_edit_container";
+import MeetingContainer from "./meeting/meeting_create_container";
+import MeetingShowContainer from "./meeting/meeting_show_container";
+import MeetingEditContainer from "./meeting/meeting_edit_container";
 import TaskFormContainer from "./task/task_form_container";
 import TaskShowContainer from "./task/task_show_container";
 import TaskEditContainer from "./task/task_edit_container";
-import EventIndexContainer from "./event/event_index_container";
+import MeetingIndexContainer from "./meeting/meeting_index_container";
 import "./session/css_reset.css";
 
 const App = () => (
   <div>
     <Modal />
-    <NavBarContainer />
+    <MainNavBarContainer />
     <Switch>
-      {/* <ProtectedRoute
-        exact
-        path="/new_house"
-        component={HouseCreateContainer}
-      />
-      <ProtectedRoute exact path="/houses" component={HouseContainer} /> */}
-      <ProtectedRoute exact path="/posts">
-        <PostComposeContainer />
-        <PostsContainer />
-      </ProtectedRoute>
-      <ProtectedRoute exact path="/chores" component={ChoreListContainer}>
-        <ChoreListContainer />
-      </ProtectedRoute>
-      <ProtectedRoute exact path="/expenses" component={ExpensesContainer} />
-
       <ProtectedRoute exact path="/tasks/new" component={TaskFormContainer} />
-      <ProtectedRoute exact path="/events/new" component={EventContainer} />
-      <Route exact path="/events/:eventId" component={EventShowContainer} />
+      <ProtectedRoute exact path="/meetings/new" component={MeetingContainer} />
+      <Route
+        exact
+        path="/meetings/:meetingId"
+        component={MeetingShowContainer}
+      />
       <Route exact path="/tasks/:taskId" component={TaskShowContainer} />
-      <Route exact path="/events" component={EventIndexContainer} />
+      <Route exact path="/meetings" component={MeetingIndexContainer} />
       <ProtectedRoute
         exact
-        path="/events/:eventId/edit"
-        component={EventEditContainer}
+        path="/meetings/:meetingId/edit"
+        component={MeetingEditContainer}
       />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute
@@ -62,7 +42,6 @@ const App = () => (
         path="/tasks/:taskId/edit"
         component={TaskEditContainer}
       />
-
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/" component={SplashContainer} />

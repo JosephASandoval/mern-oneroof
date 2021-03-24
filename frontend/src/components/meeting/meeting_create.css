@@ -1,0 +1,76 @@
+* {
+  outline: none;
+  font-family: sans-serif;
+}
+
+.meeting-create-form {
+  margin-top: 50px;
+  flex-direction: column;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 120px;
+}
+
+.input-field-meeting-create {
+  flex-direction: row;
+  width: 180px;
+  padding: 5px;
+  border: 5px;
+  border: 1px solid lightgray;
+  justify-content: center;
+}
+
+.input-field-meeting-create-container {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 150px;
+}
+
+.meeting-create-header {
+  text-align: center;
+  font-family: "roboto", sans-serif;
+}
+
+.meeting-create-label {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "roboto", sans-serif;
+}
+
+.go-back {
+  margin-top: 10px;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  width: 400px;
+  margin-left: 105px;
+  cursor: pointer;
+  background-color: #163172;
+}
+
+.go-back:hover {
+  background-color: #1e56a0;
+}
+
+.host-meeting-button {
+  margin-top: 20px;
+  background-color: #163172;
+  padding: 7px;
+  color: white;
+  width: 400px;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-left: 105px;
+  cursor: pointer;
+}
+
+.host-meeting-button:hover {
+  background-color: #1e56a0;
+}

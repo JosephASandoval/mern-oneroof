@@ -6,7 +6,7 @@ const JoinSchema = new Schema({
     type: String,
     required: true,
   },
-  eventId: {
+  meetingId: {
     type: String,
     required: true,
   },

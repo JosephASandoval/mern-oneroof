@@ -7,7 +7,7 @@ export const joinSelector = (state, ownProps) => {
   let res = [];
   arr.forEach((obj) => {
     if (
-      obj.eventId === ownProps.event._id &&
+      obj.meetingId === ownProps.meeting._id &&
       obj.joinerId === state.session.currentUser.user._id
     ) {
       res.push(obj);
@@ -25,7 +25,7 @@ export const joinSelector2 = (state, ownProps) => {
   let res = [];
   arr.forEach((obj) => {
     if (
-      obj.eventId === ownProps &&
+      obj.meetingId === ownProps &&
       obj.joinerId === state.session.currentUser.user._id
     ) {
       res.push(obj);
@@ -36,18 +36,18 @@ export const joinSelector2 = (state, ownProps) => {
 
 export const countSelector = (state) => {
   let arr = Object.values(state.entities.joins);
-  let res = { eventId: 0 };
+  let res = { meetingId: 0 };
   arr.forEach((obj) => {
-    if (res[obj.eventId] === undefined) {
-      res[obj.eventId] = 1;
+    if (res[obj.meetingId] === undefined) {
+      res[obj.meetingId] = 1;
     } else {
-      res[obj.eventId] += 1;
+      res[obj.meetingId] += 1;
     }
   });
   return res;
 };
 
-export const eventSelector = (state) => {
+export const meetingSelector = (state) => {
   if (state.session.currentUser.user === undefined) {
     return null;
   }
@@ -60,15 +60,15 @@ export const eventSelector = (state) => {
     }
   });
 
-  let eventList = [];
+  let meetingList = [];
   res.forEach((id) => {
-    eventList.push(id.eventId);
+    meetingList.push(id.meetingId);
   });
 
-  let arr2 = Object.values(state.entities.events);
+  let arr2 = Object.values(state.entities.meetings);
   let result = [];
   arr2.forEach((pojo) => {
-    if (eventList.includes(pojo._id)) {
+    if (meetingList.includes(pojo._id)) {
       result.push(pojo);
     }
   });

@@ -34,7 +34,7 @@ const UserSchema = new Schema(
     completedTasks: [
       { type: Schema.Types.ObjectId, ref: "tasks", required: false },
     ],
-    eventsParticipating: [
+    meetingsParticipating: [
       { type: Schema.Types.ObjectId, ref: "users", required: false },
     ],
   },

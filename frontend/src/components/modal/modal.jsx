@@ -1,12 +1,10 @@
 import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
-import HomePageModalLoginContainer from "../category-nav/home_page_modal_login_container";
-import EventLoginContainer from "../event/event_modal_login_container";
+import HomePageModalLoginContainer from "../category_navbar/home_page_modal_login_container";
+import MeetingLoginContainer from "../meeting/meeting_modal_login_container";
 
-// class Modal extends React.Component {
 function Modal({ modal, closeModal }) {
-  // let {modal } = this.props
   if (!modal) {
     return null;
   }
@@ -16,8 +14,8 @@ function Modal({ modal, closeModal }) {
     case "LogIn":
       component = <HomePageModalLoginContainer />;
       break;
-    case "eventLogIn":
-      component = <EventLoginContainer />;
+    case "meetingLogIn":
+      component = <MeetingLoginContainer />;
       break;
     default:
       return null;

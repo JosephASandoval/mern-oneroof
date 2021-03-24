@@ -58,7 +58,7 @@ export const clearTasks = () => ({
   type: CLEAR_TASK,
 });
 
-// Thunk action creators
+// thunk action creators
 
 export const getTasks = () => (dispatch) => {
   return TaskApiUtil.getTasks()

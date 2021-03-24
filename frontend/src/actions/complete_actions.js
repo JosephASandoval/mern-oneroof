@@ -6,8 +6,6 @@ export const RECEIVE_COMPLETE = "RECEIVE_COMPLETE";
 export const REMOVE_COMPLETE = "REMOVE_COMPLETE";
 export const CLEAR_COMPLETES = "CLEAR_COMPLETES";
 
-// Regular action creators
-
 export const receiveAllCompletes = (completes) => {
   return {
     type: RECEIVE_ALL_COMPLETES,

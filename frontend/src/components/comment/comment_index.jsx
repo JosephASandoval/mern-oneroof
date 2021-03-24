@@ -30,11 +30,6 @@ class CommentIndex extends React.Component {
       this.props.clearComments();
       this.props.getTaskComments(this.props.task._id);
     }
-    // debugger;
-    // if(this.props.comments[0].taskId !== this.props.task._id) {
-    //     this.props.getTaskComments(this.props.task._id)
-    // }
-    // this.props.getTaskComments(this.props.task._id);
   }
 
   handleComment(e) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./footer.css";
 
 class Footer extends React.Component {
@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <div className="footer">
         <div className="footer-list-div">
           <ul className="footer-list">
-            Developed by:
+            Developers:
             <li>
               <a href="" target="_blank">
                 Annie
@@ -33,7 +33,7 @@ class Footer extends React.Component {
                 href="https://github.com/JosephASandoval/mern-oneroof"
                 target="_blank"
               >
-                Github Repo
+                Project Repo
               </a>
             </li>
           </ul>

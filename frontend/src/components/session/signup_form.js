@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { uploadPhoto } from "../../util/photo_api_util";
-import { Link } from "react-router-dom";
 import "./css_reset.css";
 import "./session_forms.css";
 

@@ -48,7 +48,6 @@ class TaskForm extends React.Component {
   }
   handleClick(e) {
     e.preventDefault();
-    // this.props.createTask(this.state).then((task) => console.log(task));
     if (this.state.photoFile) {
       const data = new FormData();
       data.append("file", this.state.photoFile);
@@ -198,7 +197,6 @@ class TaskForm extends React.Component {
             <h3>Instructions:</h3>
             <div className="inst-form-inputs">
               <input type="submit" value="+" />
-              {/* &nbsp;&nbsp;&nbsp; */}
               <input
                 className="add-instruction-input"
                 type="text"

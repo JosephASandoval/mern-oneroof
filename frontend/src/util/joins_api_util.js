@@ -8,8 +8,8 @@ export const getUserJoins = (joinerId) => {
   return axios.get(`/api/joins/joiner/${joinerId}`);
 };
 
-export const getEventJoins = (eventId) => {
-  return axios.get(`/api/joins/events/${eventId}`);
+export const getMeetingJoins = (meetingId) => {
+  return axios.get(`/api/joins/meetings/${meetingId}`);
 };
 
 export const getJoin = (joinId) => {

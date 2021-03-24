@@ -3,12 +3,10 @@ import * as JoinApiUtil from "../util/joins_api_util";
 export const RECEIVE_ALL_JOINS = "RECEIVE_ALL_JOINS";
 export const RECEIVE_JOIN_ERRORS = "RECEIVE_JOIN_ERRORS";
 export const RECEIVE_USER_JOINS = "RECEIVE_USER_JOINS";
-export const RECEIVE_EVENT_JOINS = "RECEIVE_EVENT_JOINS";
+export const RECEIVE_MEETING_JOINS = "RECEIVE_MEETING_JOINS";
 export const RECEIVE_JOIN = "RECEIVE_JOIN";
 export const REMOVE_JOIN = "REMOVE_JOIN";
 export const CLEAR_JOIN_ERRORS = "CLEAR_JOIN_ERRORS";
-
-// Regular action creators
 
 export const receiveAllJoins = (joins) => {
   return {
@@ -24,9 +22,9 @@ export const receiveUserJoins = (joins) => {
   };
 };
 
-export const receiveEventJoins = (joins) => {
+export const receiveMeetingJoins = (joins) => {
   return {
-    type: RECEIVE_EVENT_JOINS,
+    type: RECEIVE_MEETING_JOINS,
     joins,
   };
 };
@@ -54,7 +52,7 @@ export const clearErrors = () => ({
   type: CLEAR_JOIN_ERRORS,
 });
 
-// Thunk action creators
+// thunk action creators
 
 export const getJoins = () => (dispatch) => {
   return JoinApiUtil.getJoins()
@@ -68,9 +66,9 @@ export const getUserJoins = (userId) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const getEventJoins = (eventId) => (dispatch) => {
-  return JoinApiUtil.getEventJoins(eventId)
-    .then((joins) => dispatch(receiveEventJoins(joins)))
+export const getMeetingJoins = (meetingId) => (dispatch) => {
+  return JoinApiUtil.getMeetingJoins(meetingId)
+    .then((joins) => dispatch(receiveMeetingJoins(joins)))
     .catch((err) => console.log(err));
 };
 

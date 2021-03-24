@@ -22,7 +22,6 @@ const taskReducer = (state = {}, action) => {
       for (j = 0; j < action.tasks.data.length; j++) {
         newState[action.tasks.data[j]._id] = action.tasks.data[j];
       }
-      // newState.user = action.tasks.data;
       return newState;
     case RECEIVE_TASK:
       return Object.assign(newState, {

@@ -59,7 +59,7 @@ class TaskShow extends React.Component {
     const task = this.props.task;
     const author = this.props.authors[task.authorId];
 
-    // Sorting through Completes = Starts Here
+    // sorting through completes
     const completes = Object.values(this.props.completes);
     const completeIds = Object.keys(this.props.completes);
     let peopleCompleted = [];
@@ -74,7 +74,7 @@ class TaskShow extends React.Component {
         ? null
         : peopleCompleted.indexOf(this.props.currentUser.user._id);
     let completeId = completeIds[idx];
-    // Sorting through Completes - Ends Here
+    // sorting through completes
 
     const userOnlyBtns =
       this.props.currentUser === undefined ? null : this.props.currentUser

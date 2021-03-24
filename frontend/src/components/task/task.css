@@ -2,14 +2,11 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  /* color: #333; */
-  /* font-size: 20px; */
   list-style: none;
   font-family: sans-serif;
 }
 
 .form-container {
-  /* border: 1px black solid; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -41,7 +38,6 @@
 .task-errors {
   margin: 0 auto;
   margin-bottom: 30px;
-  /* border: 1px black solid; */
   display: flex;
   justify-content: center;
   width: 650px;
@@ -197,7 +193,6 @@
 .task-owner {
   display: flex;
   flex-direction: column;
-  /* margin-right: 35px; */
 }
 
 .task-owner h3 {

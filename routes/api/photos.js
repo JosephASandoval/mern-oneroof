@@ -66,8 +66,6 @@ router.post("/upload", upload.single("file"), function (req, res) {
     if (err) {
       res.status(500).json({ error: true, Message: err });
     } else {
-      // res.send({data});
-
       let newFileUploaded = {
         description: req.body.description,
         fileLink: s3FileURL + file.originalname,

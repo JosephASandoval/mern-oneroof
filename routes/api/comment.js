@@ -4,7 +4,6 @@ const router = express.Router();
 const validateCommentInput = require("../../validation/comments");
 const Comment = require("../../models/Comment");
 
-// RETRIEVE ALL COMMENTS
 router.get("/", (req, res) => {
   Comment.find()
     .then((comments) => res.json(comments))
@@ -13,7 +12,6 @@ router.get("/", (req, res) => {
     );
 });
 
-// DELETE COMMENT
 router.delete("/:id", (req, res) => {
   Comment.findByIdAndDelete(req.params.id)
     .then((comment) => res.json(`Comment successfully deleted`))
@@ -22,7 +20,6 @@ router.delete("/:id", (req, res) => {
     );
 });
 
-// CREATE NEW COMMENT
 router.post("/new", (req, res) => {
   const { errors, isValid } = validateCommentInput(req.body);
   const newComment = new Comment({
@@ -38,7 +35,6 @@ router.post("/new", (req, res) => {
   newComment.save().then((comment) => res.json(comment));
 });
 
-// RETRIEVE COMMENTS BY TASKID
 router.get("/:taskId", (req, res) => {
   Comment.find({ taskId: req.params.taskId })
     .then((comments) => {
@@ -51,7 +47,6 @@ router.get("/:taskId", (req, res) => {
     );
 });
 
-// RETRIEVE ONE COMMENT
 router.get("/:id", (req, res) => {
   Comment.findById(req.params.id)
     .then((comment) => res.json(comment))
@@ -60,7 +55,6 @@ router.get("/:id", (req, res) => {
     );
 });
 
-// UPDATE COMMENT
 router.patch("/edit/:id", (req, res) => {
   mongoose.set("useFindAndModify", false);
   const { errors, isValid } = validateCommentInput(req.body);

@@ -10,7 +10,7 @@ import {
 import CommentIndex from "./comment_index";
 import { withRouter } from "react-router-dom";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
     comments: Object.values(state.entities.comments),

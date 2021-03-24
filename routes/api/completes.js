@@ -4,7 +4,6 @@ const router = express.Router();
 const validateCompleteInput = require("../../validation/completes");
 const Complete = require("../../models/Complete");
 
-//CREATE COMPLETE
 router.post("/new", (req, res) => {
   const { errors, isValid } = validateCompleteInput(req.body);
 
@@ -20,7 +19,6 @@ router.post("/new", (req, res) => {
   newComplete.save().then((complete) => res.json(complete));
 });
 
-//UPDATE COMPLETES
 router.patch("/edit/:id", (req, res) => {
   mongoose.set("useFindAndModify", false);
   const { errors, isValid } = validateCompleteInput(req.body);
@@ -34,7 +32,6 @@ router.patch("/edit/:id", (req, res) => {
   }).then((complete) => res.json(complete));
 });
 
-// RETRIEVE ALL COMPLETES (Added by Kevin)
 router.get("/", (req, res) => {
   Complete.find()
     .then((completes) => res.json(completes))
@@ -43,7 +40,6 @@ router.get("/", (req, res) => {
     );
 });
 
-// RETRIEVE COMPLETES OF ONE TASK (Added by Kevin)
 router.get(`/task/:taskId`, (req, res) => {
   Complete.find({ taskId: req.params.taskId })
     .then((completes) => {
@@ -56,7 +52,6 @@ router.get(`/task/:taskId`, (req, res) => {
     );
 });
 
-// DELETE COMPLETE (Added by Kevin)
 router.delete("/:id", (req, res) => {
   Complete.findByIdAndDelete(req.params.id)
     .then((complete) => res.json("Complete successfully deleted"))

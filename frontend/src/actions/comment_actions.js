@@ -6,8 +6,6 @@ export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const CLEAR_COMMENTS = "CLEAR COMMENTS";
 
-// Regular action creators
-
 export const receiveAllComments = (comments) => {
   return {
     type: RECEIVE_ALL_COMMENTS,
@@ -42,7 +40,7 @@ export const clearComments = () => {
   };
 };
 
-// Thunk action reactors
+// thunk action creators
 
 export const getComments = () => (dispatch) => {
   return CommentApiutil.getComments()

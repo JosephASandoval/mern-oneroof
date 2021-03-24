@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
 import "./session_forms.css";
 
 class LoginForm extends React.Component {
@@ -38,7 +37,6 @@ class LoginForm extends React.Component {
       password: this.state.password,
     };
     this.props.login(user, this.props.history);
-    // .then(() => this.props.history.push(this.props.redirectLink))
   }
 
   handleDemoLogin(e) {
@@ -48,7 +46,6 @@ class LoginForm extends React.Component {
       password: "demouser",
     };
     this.props.login(user);
-    // .then(() => this.props.history.push(this.props.redirectLink))
   }
 
   renderErrors() {

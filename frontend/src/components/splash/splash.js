@@ -17,7 +17,6 @@ class Splash extends React.Component {
               housemates can better coordinate house chores, expenses, and
               communication.
             </li>
-            {/* <li><img src='logo_word.png' alt='LOGO' className='logo-img-word'/></li> */}
           </ul>
         </div>
         <div>

@@ -35,12 +35,12 @@ export const updateUser = (userId) => (dispatch) => {
   );
 };
 
-export const join = (event) => (dispatch) =>
-  UserAPIUtil.join(event)
+export const join = (meeting) => (dispatch) =>
+  UserAPIUtil.join(meeting)
     .then((user) => dispatch(receiveUser(user.data)))
     .catch((err) => console.log(err));
 
-export const unjoin = (event) => (dispatch) =>
-  UserAPIUtil.unjoin(event)
+export const unjoin = (meeting) => (dispatch) =>
+  UserAPIUtil.unjoin(meeting)
     .then((user) => dispatch(receiveUser(user.data)))
     .catch((err) => console.log(err));

@@ -1,0 +1,163 @@
+* {
+  outline: none;
+  font-family: sans-serif;
+}
+
+.meeting-show-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.meeting-photo-show {
+  padding: 20px;
+  height: 600px;
+  width: 600px;
+  object-fit: cover;
+}
+
+.meeting-info-show {
+  margin-top: 20px;
+  padding: 20px;
+  height: 560px;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: white;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+#meeting-label {
+  padding: 20px;
+  padding-left: 0px;
+  font-family: "roboto", sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+#meeting-label-des {
+  overflow-wrap: break-word;
+}
+
+.delete-show-meeting-button {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: rgb(148, 0, 0);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "roboto", sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 250px;
+}
+
+.delete-show-meeting-button:hover {
+  background-color: rgb(201, 0, 0);
+}
+
+.edit-show-meeting-button {
+  margin-top: 10px;
+  background-color: #163172;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "roboto", sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 250px;
+}
+
+.edit-show-meeting-button:hover {
+  background-color: #1e56a0;
+}
+
+.goback-show-meeting-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #163172;
+  color: white;
+  width: 250px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.goback-show-meeting-button:hover {
+  background-color: #1e56a0;
+}
+
+.meeting-index-login-first {
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+  background-color: #163172;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  width: 230px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.meeting-index-login-first:hover {
+  background-color: #1e56a0;
+}
+
+.join-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #163172;
+  color: white;
+  width: 250px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
+
+.join-button:hover {
+  background-color: #1e56a0;
+}
+
+.hosting-text {
+  color: white;
+}
+
+.join-show-meeting-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #163172;
+  color: white;
+  width: 250px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.join-show-meeting-button:hover {
+  background-color: #1e56a0;
+}
+
+.unjoin-show-meeting-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgb(148, 0, 0);
+  color: white;
+  width: 250px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.unjoin-show-meeting-button:hover {
+  background-color: rgb(201, 0, 0);
+}

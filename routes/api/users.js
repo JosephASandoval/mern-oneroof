@@ -26,21 +26,18 @@ router.get(
   }
 );
 
-//get all users
 router.get("/", (req, res) => {
   User.find()
     .then((users) => res.json(users))
     .catch((err) => console.log(err));
 });
 
-// get user
 router.get("/:id", (req, res) => {
   User.findById(req.params.id)
     .then((user) => res.json(user))
     .catch((err) => console.log(err));
 });
 
-// edit a user
 router.patch("/edit/:id", (req, res) => {
   mongoose.set("useFindAndModify", false);
   User.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((user) =>
@@ -48,7 +45,6 @@ router.patch("/edit/:id", (req, res) => {
   );
 });
 
-// signup
 router.post("/signup", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -58,7 +54,6 @@ router.post("/signup", (req, res) => {
 
   User.findOne({ email: req.body.email }).then((user) => {
     if (user) {
-      // if user exists
       errors.email = "Email already exists";
       return res.status(400).json(errors);
     } else {
@@ -100,7 +95,6 @@ router.post("/signup", (req, res) => {
   });
 });
 
-// login
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
@@ -119,11 +113,6 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
-        // const payload = {
-        //   id: user.id,
-        //   username: user.username,
-        //   email: user.email,
-        // };
         const payload = { user };
         jwt.sign(
           payload,
