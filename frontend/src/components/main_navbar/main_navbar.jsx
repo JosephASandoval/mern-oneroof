@@ -32,12 +32,16 @@ class MainNavBar extends React.Component {
       return (
         <div className="right-navbar-loggedin">
           <Link to={`/profile`}>
-            <span>
-              <img
-                className="navbar-profile-pic"
-                src={this.props.currentUser.user.photoUrl}
-              ></img>
-            </span>
+            <img
+              className="navbar-profile-pic"
+              src={this.props.currentUser.user.photoUrl}
+            ></img>
+          </Link>
+          <Link to="/tasks/new">
+            <button className="logout-btn">Create Task</button>
+          </Link>
+          <Link to="/meetings/new">
+            <button className="logout-btn">Create Meeting</button>
           </Link>
           <button className="logout-btn" onClick={this.logoutUser}>
             &nbsp;&nbsp;Logout&nbsp;
@@ -48,7 +52,7 @@ class MainNavBar extends React.Component {
       return (
         <div className="splash-navbar-container">
           <Link className="link-word" to="/ourteam">
-              Our Team
+            Our Team
           </Link>
           <Link className="link-word" to={"/signup"}>
             Signup
