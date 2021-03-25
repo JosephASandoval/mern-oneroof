@@ -29,7 +29,7 @@
   flex-direction: column;
   font-family: sans-serif;
   font-size: 20px;
-  background-color: white;
+  background-color: none;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
 }
 

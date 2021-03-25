@@ -18,12 +18,6 @@ class Tasks extends React.Component {
     }
     return (
       <div>
-        <br></br>
-        <div className="button-container">
-          <Link to="/tasks/new">
-            <button id="add-task-button">Create New Task</button>
-          </Link>
-        </div>
         <ul className="task-wrap">
           {Object.values(this.props.tasks).map((task, i) => (
             <li className="task-list" key={i}>
