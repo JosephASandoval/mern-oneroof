@@ -82,12 +82,9 @@ class Team extends React.Component {
             <div className='project'>
               <span id='name'>Project Repo</span>
               <a
-                href="https://github.com/JosephASandoval/mern-oneroof"
-                target="_blank"
+                href="https://github.com/JosephASandoval/mern-oneroof" target="_blank"
               >
                   <FontAwesomeIcon icon={faGithub} />
-
-                {/* <img src='github_logo.png' alt='github link' className='team-img' /> */}
               </a>
             </div>
           </div>
