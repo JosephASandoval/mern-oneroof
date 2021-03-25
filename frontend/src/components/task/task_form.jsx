@@ -104,12 +104,6 @@ class TaskForm extends React.Component {
     }
     return (
       <div className="form-container">
-        <input
-          className="save-task-btn"
-          type="submit"
-          value="Save Task"
-          onClick={this.handleClick}
-        />
         <div className="task-errors">{this.renderErrors()}</div>
         <form id="task_form" className="task-form-cont">
           <div className="task-top">
@@ -212,11 +206,12 @@ class TaskForm extends React.Component {
             </ul>
           </form>
         </div>
-        <div className="go-back-container">
-          <Link to="/profile">
-            <button className="task-create-go-back-btn">Go Back</button>
-          </Link>
-        </div>
+        <input
+          className="save-task-btn"
+          type="submit"
+          value="Save Task"
+          onClick={this.handleClick}
+        />
       </div>
     );
   }

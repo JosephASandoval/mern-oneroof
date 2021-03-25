@@ -97,6 +97,7 @@
   height: 30px;
   font-size: 16px;
   font-family: sans-serif;
+  border-radius: 5px;
 }
 
 .task-info {
@@ -197,6 +198,7 @@
   padding-top: 5px;
   font-size: 16px;
   font-family: sans-serif;
+  border-radius: 5px;
 }
 
 .task-owner {
@@ -334,6 +336,20 @@
 
 .inst-form input[type="submit"]:hover {
   color: #c0c0c0;
+}
+
+.inst-form input[value="+"] {
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #163172;
+  color: white;
+  width: 40px;
+  cursor: pointer;
+}
+
+.inst-form input[value="+"]:hover {
+  background-color: #1e56a0;
 }
 
 .go-back-container {
