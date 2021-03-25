@@ -7,7 +7,6 @@ module.exports = function validateTaskInput(data) {
   //VALID TEXT
   data.authorId = validText(data.authorId) ? data.authorId : "";
   data.name = validText(data.name) ? data.name : "";
-  data.tip = validText(data.tip) ? data.tip : "";
   data.workTime = validText(data.workTime) ? data.workTime : "";
   data.difficulty = validText(data.difficulty) ? data.difficulty : "";
   data.category = validText(data.category) ? data.category : "";
@@ -29,10 +28,6 @@ module.exports = function validateTaskInput(data) {
 
   if (Validator.isEmpty(data.name)) {
     errors.name = "Task name is required";
-  }
-
-  if (Validator.isEmpty(data.tip)) {
-    errors.tip = "Task tip is required";
   }
 
   if (Validator.isEmpty(data.workTime)) {

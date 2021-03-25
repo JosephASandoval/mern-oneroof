@@ -15,7 +15,6 @@ router.post("/new", (req, res) => {
   const newTask = new Task({
     authorId: req.body.authorId,
     name: req.body.name,
-    tip: req.body.tip,
     instructions: req.body.instructions,
     comments: req.body.comments,
     workTime: req.body.workTime,

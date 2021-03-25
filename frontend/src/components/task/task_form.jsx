@@ -9,7 +9,6 @@ class TaskForm extends React.Component {
     this.state = {
       authorId: this.props.currentUser._id,
       name: "",
-      tip: "",
       instructions: this.props.instructions,
       comments: [],
       workTime: "",
@@ -56,7 +55,6 @@ class TaskForm extends React.Component {
         let newTask = {
           authorId: this.state.authorId,
           name: this.state.name,
-          tip: this.state.tip,
           instructions: this.state.instructions,
           comments: this.state.comments,
           workTime: this.state.workTime,
@@ -168,15 +166,6 @@ class TaskForm extends React.Component {
             </div>
           </div>
           <div className="task-middle">
-            <div className="task-tip">
-              <h3>Task Tips:</h3>
-              <textarea
-                cols="26"
-                rows="10"
-                onChange={this.update("tip")}
-                placeholder="Write your tip about this task"
-              />
-            </div>
             <div className="task-owner">
               <h3>Task Creator:</h3>
               <h5>

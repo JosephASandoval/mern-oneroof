@@ -11,10 +11,6 @@ const TaskSchema = new Schema(
       type: String,
       required: true,
     },
-    tip: {
-      type: String,
-      required: true,
-    },
     instructions: {
       type: Array,
       required: true,
