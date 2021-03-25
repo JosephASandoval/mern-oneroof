@@ -11,8 +11,18 @@ body {
   margin-right: 300px;
 }
 
+.chat-header{
+  background-image: linear-gradient(to bottom right, #6387f6, #9385f8);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
 h1 {
+  background: transparent;
   font-size: x-large;
+  border-radius: 20px;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 #chat {
@@ -35,12 +45,13 @@ h1 {
 }
 
 #chat-type-box {
+  font-size: 1em;
   margin-left: 15px;
-  border-radius: 10px;
+  border-radius: 7px;
   margin-bottom: 10px;
 }
 #msg-reminder {
-  font-size: small;
+  font-size: 0.8em;
   /* padding: 0px; */
   margin-left: 4px;
 }

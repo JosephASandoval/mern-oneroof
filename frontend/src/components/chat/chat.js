@@ -80,7 +80,9 @@ class Chat extends React.Component {
   render() {
     return (
       <div className="chat-container">
-        <h1>Live Chat</h1>
+        <div className='chat-header'>
+          <h1>Live Chat</h1>
+        </div>
         <div id="chat">
           {this.state.chat.map((el, index) => {
             return (
