@@ -86,9 +86,9 @@ class Chat extends React.Component {
         <div id="chat">
           {this.state.chat.map((el, index) => {
             return (
-              <div key={index} id="msg">
-                <span id="msg-author">{el.name}: </span>
-                <span id="msg-content">{el.content}</span>
+              <div key={index} className="msg">
+                <p className="msg-author">{el.name} </p>
+                <p><span className="msg-content">{el.content}</span></p>
               </div>
             );
           })}

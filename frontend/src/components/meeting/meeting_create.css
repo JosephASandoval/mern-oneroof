@@ -1,6 +1,11 @@
 * {
   outline: none;
-  font-family: sans-serif;
+  font-family: "Inder", sans-serif;
+  background: none;
+}
+
+div{
+  background: none;
 }
 
 .meeting-create-form {
@@ -23,6 +28,7 @@
   border: 5px;
   border: 1px solid lightgray;
   justify-content: center;
+
 }
 
 .input-field-meeting-create-container {
@@ -30,19 +36,24 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 150px;
+
 }
 
 .meeting-create-header {
   text-align: center;
-  font-family: "roboto", sans-serif;
+  font-family: "Inder", sans-serif;
 }
 
 .meeting-create-label {
   font-size: 20px;
-  font-weight: bold;
-  font-family: "roboto", sans-serif;
+  /* font-weight: bold; */
+  font-family: "Inder", sans-serif;
+  background:transparent;
 }
 
+.none{
+  background: none;
+}
 .go-back {
   margin-top: 10px;
   font-size: 15px;
@@ -53,6 +64,8 @@
   margin-left: 105px;
   cursor: pointer;
   background-color: #163172;
+  font-family: "Inder", sans-serif;
+
 }
 
 .go-back:hover {
@@ -69,6 +82,8 @@
   font-size: 15px;
   margin-left: 105px;
   cursor: pointer;
+  font-family: "Inder", sans-serif;
+
 }
 
 .host-meeting-button:hover {
