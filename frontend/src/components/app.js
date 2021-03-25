@@ -6,7 +6,7 @@ import SplashContainer from "./splash/splash_container";
 import MainNavBarContainer from "./main_navbar/main_navbar_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
-import Footer from "./footer/footer";
+import Team from "./team/team";
 import ProfileContainer from "./profile/profile_container";
 import MeetingContainer from "./meeting/meeting_create_container";
 import MeetingShowContainer from "./meeting/meeting_show_container";
@@ -24,6 +24,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute exact path="/tasks/new" component={TaskFormContainer} />
       <ProtectedRoute exact path="/meetings/new" component={MeetingContainer} />
+      <Route exact path='/ourteam' component={Team} />
       <Route
         exact
         path="/meetings/:meetingId"
@@ -46,7 +47,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/" component={SplashContainer} />
     </Switch>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 

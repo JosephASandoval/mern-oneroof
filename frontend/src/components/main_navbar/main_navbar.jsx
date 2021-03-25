@@ -47,6 +47,9 @@ class MainNavBar extends React.Component {
     } else {
       return (
         <div className="splash-navbar-container">
+          <Link className="link-word" to="/ourteam">
+              Our Team
+          </Link>
           <Link className="link-word" to={"/signup"}>
             Signup
           </Link>
