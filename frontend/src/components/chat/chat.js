@@ -81,7 +81,7 @@ class Chat extends React.Component {
     return (
       <div className="chat-container">
         <div className='chat-header'>
-          <h1>Live Chat</h1>
+          <span id='live-chat-title'>Live Chat &nbsp;<img id='chat-img' src='chat.png' /></span>
         </div>
         <div id="chat">
           {this.state.chat.map((el, index) => {
