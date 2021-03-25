@@ -43,9 +43,12 @@ class MainNavBar extends React.Component {
           <Link to="/meetings/new">
             <button className="logout-btn">Create Meeting</button>
           </Link>
-          <button className="logout-btn" onClick={this.logoutUser}>
-            &nbsp;&nbsp;Logout&nbsp;
-          </button>
+            <button className="logout-btn" onClick={this.logoutUser}>
+              &nbsp;&nbsp;Logout&nbsp;
+            </button>
+          <Link to="/ourteam">
+            <button className="logout-btn">Our Team</button>
+          </Link>
         </div>
       );
     } else {

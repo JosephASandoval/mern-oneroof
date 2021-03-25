@@ -81,14 +81,14 @@ class Chat extends React.Component {
     return (
       <div className="chat-container">
         <div className='chat-header'>
-          <h1>Live Chat</h1>
+          <span id='live-chat-title'>Live Chat &nbsp;<img id='chat-img' src='chat.png' /></span>
         </div>
         <div id="chat">
           {this.state.chat.map((el, index) => {
             return (
-              <div key={index} id="msg">
-                <span id="msg-author">{el.name}: </span>
-                <span id="msg-content">{el.content}</span>
+              <div key={index} className="msg">
+                <p className="msg-author">{el.name} </p>
+                <p><span className="msg-content">{el.content}</span></p>
               </div>
             );
           })}

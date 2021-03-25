@@ -202,7 +202,6 @@ class MeetingForm extends React.Component {
               type="file"
               className="input-field-meeting-create textbox"
               name=""
-              id=""
               onChange={this.handlePhotoFile}
             />
           </div>
@@ -218,8 +217,7 @@ class MeetingForm extends React.Component {
             </div>
 
             <div>
-              <Link to="/profile">
-                {" "}
+              <Link to="/profile" className='none'>
                 <button className="go-back">Go back</button>
               </Link>
             </div>

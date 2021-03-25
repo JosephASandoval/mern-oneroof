@@ -3,11 +3,12 @@
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: sans-serif;
+  font-family: "Inder", sans-serif;
 }
 
+
 html {
-  background-color: rgb(252, 247, 241);
+  /* background-color: rgb(252, 247, 241); */
   width: auto;
 }
 
@@ -15,12 +16,13 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(121, 217, 207, 0);
+  background: transparent;
+  /* background-color: rgba(121, 217, 207, 0); */
   height: 50px;
   width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 2px 6px -6px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 2px 6px -6px rgba(0, 0, 0, 0.15); */
   font-size: 16px;
   font-family: sans-serif;
 }
@@ -37,7 +39,7 @@ html {
 
 .navbar-parent {
   background-color: #d6e4f0;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15); */
   min-width: 1280px;
   display: flex;
   flex-direction: row;
@@ -87,7 +89,7 @@ NavBar {
 
 .right-navbar-loggedin {
   display: flex;
-  width: 200px;
+  width: 320px;
   justify-content: space-between;
   margin-right: 50px;
   background-color: rgba(255, 255, 255, 0);
@@ -125,7 +127,7 @@ NavBar {
   background-color: white;
   display: none;
   position: absolute;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   z-index: 1;
   overflow-y: auto;
   overflow-x: hidden;
