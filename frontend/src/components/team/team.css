@@ -26,6 +26,13 @@
   color: #163172;
 }
 
+#name {
+  background: red;
+}
+.footer-img {
+  height: 30px;
+  border-radius: 10px;
+}
 body {
   overflow-x: hidden;
 }
