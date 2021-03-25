@@ -12,7 +12,7 @@
   align-items: center;
   width: 1280px;
   margin: 0 auto;
-  background: #fff;
+  background: none;
   margin-top: 40px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -108,6 +108,7 @@
   border-bottom-right-radius: 0;
   padding: 15px 15px 0 15px;
   background-color: #fff;
+  background-color: #f6f6f6;
   border-bottom: 0;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
   object-fit: cover;
@@ -125,6 +126,7 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   background-color: #fff;
+  background-color: #f6f6f6;
   border-top: 0;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
 }

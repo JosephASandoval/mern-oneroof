@@ -20,11 +20,6 @@ class Meetings extends React.Component {
     }
     return (
       <div>
-        <div className="button-container">
-          <Link to="/meetings/new">
-            <button id="add-meeting-button">Create New Meeting</button>
-          </Link>
-        </div>
         <div className="hosting-meetings">
           <ul>
             {Object.values(this.props.meetings).map((meeting, i) => {

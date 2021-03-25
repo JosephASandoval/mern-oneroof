@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #fff;
+  background-color: none;
   height: auto;
   width: 1280px;
   margin: 0 auto;
