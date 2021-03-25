@@ -8,7 +8,7 @@ class Team extends React.Component {
     return (
       <>
        <div className='project'>
-              <span id='name'>Project Repo</span>
+              <a href="https://github.com/JosephASandoval/mern-oneroof" id='name'>Project Repo</a>
               <a
                 href="https://github.com/JosephASandoval/mern-oneroof" target="_blank"
               >
@@ -17,6 +17,7 @@ class Team extends React.Component {
       </div>
       <div className="team-page-container">
         <h1>Meet the Developers</h1>
+        <br></br><br></br><br></br><br></br>
         <div className='teammate-container'>
           <div className='teammate'>
               <h2>Annie Xu</h2>
