@@ -142,10 +142,14 @@ class TaskForm extends React.Component {
                     <option value="" selected disabled>
                       Please select
                     </option>
-                    <option value="0.5 hr">0.5 hr</option>
-                    <option value="1 hr">1 hr</option>
-                    <option value="1.5 hr">1.5 hr</option>
-                    <option value="2+ hrs">2+ hrs</option>
+                    <option value="15 min">15 min</option>
+                    <option value="30 min">30 min</option>
+                    <option value="45 min">45 min</option>
+                    <option value="60 min">60 min</option>
+                    <option value="75 min">75 min</option>
+                    <option value="90 min">90 min</option>
+                    <option value="105 min">105 min</option>
+                    <option value="120 min">120 min</option>
                   </select>
                 </div>
               </label>

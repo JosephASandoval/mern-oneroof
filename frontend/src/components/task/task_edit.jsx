@@ -122,10 +122,14 @@ class TaskEdit extends React.Component {
                   onChange={this.update("workTime")}
                   value={this.state.workTime}
                 >
-                  <option value="0.5 hr">0.5 hr</option>
-                  <option value="1 hr">1 hr</option>
-                  <option value="1.5 hr">1.5 hr</option>
-                  <option value="2+ hrs">2+ hr</option>
+                  <option value="15 min">15 min</option>
+                  <option value="30 min">30 min</option>
+                  <option value="45 min">45 min</option>
+                  <option value="60 min">60 min</option>
+                  <option value="75 min">75 min</option>
+                  <option value="90 min">90 min</option>
+                  <option value="105 min">105 min</option>
+                  <option value="120 min">120 min</option>
                 </select>
               </label>
               <label>
@@ -134,16 +138,14 @@ class TaskEdit extends React.Component {
                   onChange={this.update("category")}
                   value={this.state.category}
                 >
-                  <option value="Bathroom">Bathroom</option>
-                  <option value="Kitchen">Kitchen</option>
-                  <option value="Garage">Garage</option>
-                  <option value="Livingroom">Livingroom</option>
-                  <option value="Noodle">Laundry</option>
+                  <option value="" selected disabled>
+                    Please select
+                  </option>
+                  <option value="Chores">Chores</option>
+                  <option value="Expenses">Expenses</option>
                 </select>
               </label>
-              <label>
-                Completes: {!task.numCompletes ? "0" : task.numCompletes}
-              </label>
+              <label>Completed? {task.numCompletes !== 0 ? `yes` : `no`}</label>
             </div>
           </div>
           <div className="task-edit-bottom">
@@ -179,14 +181,6 @@ class TaskEdit extends React.Component {
               </div>
             </div>
             <div className="task-edit-bottom-right">
-              <label className="task-edit-tip">Task Tip </label>
-              <textarea
-                cols="26"
-                rows="10"
-                value={this.state.tip}
-                onChange={this.update("tip")}
-                placeholder="Write your tip about this task"
-              />
               <div className="task-edit-buttons">
                 <button
                   className="task-edit-delete"

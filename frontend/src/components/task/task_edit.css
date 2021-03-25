@@ -8,7 +8,7 @@
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+  background-color: none;
 }
 
 .task-edit {
@@ -36,6 +36,7 @@
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  background-color: white;
 }
 
 .task-edit-img {
@@ -55,6 +56,10 @@
   align-items: center;
   padding-top: 5px;
   font-family: sans-serif;
+}
+
+.task-edit-name > input {
+  background-color: #f1f1f3;
 }
 
 .task-edit-top-right {
@@ -83,7 +88,7 @@
 }
 
 .task-edit-save {
-  background-color: rgb(3, 39, 201);
+  background-color: #163172;
   border-radius: 4px;
   color: white;
   width: 100px;
@@ -193,10 +198,6 @@
   font-size: 20px;
   padding-left: 5px;
   cursor: pointer;
-}
-
-.task-edit-tip {
-  margin-bottom: 5px;
 }
 
 .task-edit-bottom-right textarea {
