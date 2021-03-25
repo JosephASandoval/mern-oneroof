@@ -10,7 +10,7 @@ export default function BottomBar(props) {
           id="chat-type-box"
           onChange={props.handleContent}
           value={props.content}
-          placeholder="Type here ..."
+          placeholder="Write a message..."
         />
         <span id="msg-reminder">press Enter to send</span>
       </form>
