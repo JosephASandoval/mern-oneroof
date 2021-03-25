@@ -9,7 +9,7 @@ class Splash extends React.Component {
           <div className="splash-img-container">
             <img src="splash.png" alt="splash-img" className="splash-img" />
           </div>
-          <p> Welcome to ONEROOF</p>
+          <p id="welcome"> Welcome to ONEROOF</p>
           <ul className="welcome-msg">
             <li>
               OneRoof, a housemate organization tool, is an online application
@@ -18,10 +18,8 @@ class Splash extends React.Component {
               communication.
             </li>
           </ul>
-        </div>
-        <div>
           <footer>
-            <p>Copyright &copy; 2021 ONEROOF</p>
+            <p id='footer'>Copyright &copy; 2021 ONEROOF</p>
           </footer>
         </div>
       </>

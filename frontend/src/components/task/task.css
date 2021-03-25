@@ -4,7 +4,9 @@
   text-decoration: none;
   list-style: none;
   font-family: sans-serif;
+  background: none;
 }
+
 
 .form-container {
   display: flex;
@@ -63,6 +65,7 @@
   align-items: center;
   margin: 0 auto;
   width: 950px;
+  background: none;
 }
 
 .task-top {
@@ -110,16 +113,20 @@
 
 .difficulty-option-container {
   display: flex;
+  background: none;
 }
 
 .difficulty-option-container h3 {
   margin-right: 15px;
+  background: none;
 }
 
 .difficulty-option-container select {
   font-size: 16px;
   border-radius: 20px;
   padding: 2px;
+  background: none;
+
 }
 
 .work-time-option-container {
@@ -128,6 +135,7 @@
 
 .work-time-option-container h3 {
   margin-right: 15px;
+
 }
 
 .work-time-option-container select {
@@ -142,6 +150,7 @@
 
 .category-option-container h3 {
   margin-right: 15px;
+  background: none;
 }
 
 .category-option-container select {
@@ -179,6 +188,8 @@
 
 .task-tip h3 {
   margin-bottom: 10px;
+  background: none;
+
 }
 
 .task-tip textarea {
@@ -195,6 +206,8 @@
 
 .task-owner h3 {
   margin-bottom: 10px;
+  background: none;
+
 }
 
 .task-owner h5 {
@@ -294,10 +307,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: none;
+
 }
 
 .inst-form h3 {
   margin-left: 85px;
+  background: none;
+
 }
 
 .inst-form li {

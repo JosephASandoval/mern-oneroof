@@ -6,6 +6,15 @@ import "./team.css";
 class Team extends React.Component {
   render() {
     return (
+      <>
+       <div className='project'>
+              <span id='name'>Project Repo</span>
+              <a
+                href="https://github.com/JosephASandoval/mern-oneroof" target="_blank"
+              >
+                  <FontAwesomeIcon icon={faGithub} />
+              </a>
+      </div>
       <div className="team-page-container">
         <h1>Meet the Developers</h1>
         <div className='teammate-container'>
@@ -78,17 +87,10 @@ class Team extends React.Component {
                 </a>
               </div>
             </div>
-
-            <div className='project'>
-              <span id='name'>Project Repo</span>
-              <a
-                href="https://github.com/JosephASandoval/mern-oneroof" target="_blank"
-              >
-                  <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </div>
           </div>
-      </div>
+        </div>
+
+      </>
     );
   }
 }

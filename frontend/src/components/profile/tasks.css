@@ -1,3 +1,7 @@
+div {
+  background: none;
+}
+
 #add-task-button {
   background-color: #004485;
   padding: 10px;
@@ -37,7 +41,7 @@
   margin-top: 30px;
   width: 390px;
   border-radius: 10px;
-  background-color: white;
+  background-color:white;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -51,6 +55,7 @@
 .task-list {
   padding: 10px;
   padding-bottom: 0px;
+  background: none;
 }
 
 * {
