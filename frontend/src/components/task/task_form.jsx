@@ -104,8 +104,8 @@ class TaskForm extends React.Component {
     }
     return (
       <div className="form-container">
-        <div className="task-errors">{this.renderErrors()}</div>
         <form id="task_form" className="task-form-cont">
+          <h1 className="task-create-header">Create New Task</h1>
           <div className="task-top">
             <div className="task-pic-name">
               <input
@@ -212,6 +212,7 @@ class TaskForm extends React.Component {
           value="Save Task"
           onClick={this.handleClick}
         />
+        <div>{this.renderErrors()}</div>
       </div>
     );
   }

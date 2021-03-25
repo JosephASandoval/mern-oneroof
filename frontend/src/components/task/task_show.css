@@ -217,31 +217,15 @@
   object-fit: cover;
 }
 
-.task-show-owner-tip-cont h4 {
-  margin-bottom: 10px;
-}
-
-.task-show-go-back-btn {
+.comments-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  width: 400px;
-  cursor: pointer;
-  border: none;
-  background-color: #163172;
-}
-
-.task-show-go-back-btn:hover {
-  background-color: #1e56a0;
-}
-
-.task-show-go-back-btn-text {
-  text-decoration: none;
-  color: white;
+  flex-direction: column;
+  width: 725px;
+  margin-top: 30px;
   font-family: sans-serif;
   font-size: 16px;
+  border: 1px #e2e1e1 solid;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  border-radius: 10px;
 }

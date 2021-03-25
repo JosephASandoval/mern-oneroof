@@ -76,22 +76,6 @@
   background-color: #1e56a0;
 }
 
-.goback-show-meeting-button {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #163172;
-  color: white;
-  width: 250px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-}
-
-.goback-show-meeting-button:hover {
-  background-color: #1e56a0;
-}
-
 .meeting-index-login-first {
   text-align: center;
   justify-content: center;

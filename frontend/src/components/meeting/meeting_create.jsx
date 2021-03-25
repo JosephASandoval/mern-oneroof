@@ -215,12 +215,6 @@ class MeetingForm extends React.Component {
                 onClick={this.handleClick}
               />
             </div>
-
-            <div>
-              <Link to="/profile" className='none'>
-                <button className="go-back">Go back</button>
-              </Link>
-            </div>
           </div>
           <div className="errors">{this.renderErrors()}</div>
         </form>

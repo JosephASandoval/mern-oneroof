@@ -51,12 +51,12 @@ class MeetingShow extends React.Component {
             </div>
             <div className="meeting-info-show">
               <div>
-                <label id="meeting-label">Meeting Name:</label>
+                <label id="meeting-label">Meeting Name: </label>
                 {this.props.meeting.name}{" "}
               </div>
               <div>
                 {" "}
-                <label id="meeting-label">Date:</label>
+                <label id="meeting-label">Date: </label>
                 {Object.values(this.props.meeting.date)
                   .slice(5, 10)
                   .concat(
@@ -66,29 +66,21 @@ class MeetingShow extends React.Component {
               </div>
               <div>
                 {" "}
-                <label id="meeting-label">From:</label>
+                <label id="meeting-label">From: </label>
                 {this.props.meeting.startTime} to {this.props.meeting.endTime}
               </div>
               <div>
-                <label id="meeting-label">Location or Link:</label>
+                <label id="meeting-label">Location or Link: </label>
                 {this.props.meeting.location}
               </div>
               <div>
-                <label id="meeting-label">Description:</label>
+                <label id="meeting-label">Description: </label>
                 {this.props.meeting.description}
               </div>
               <div className="buttons">
                 {this.props.currentUser.user._id ===
                 this.props.meeting.hostId ? (
                   <div>
-                    <div>
-                      <button
-                        onClick={this.props.history.goBack}
-                        className="goback-show-meeting-button"
-                      >
-                        &nbsp;Go back
-                      </button>
-                    </div>
                     <div>
                       <Link to={`/meetings/${this.props.meeting._id}/edit`}>
                         <button className="edit-show-meeting-button">
@@ -122,14 +114,6 @@ class MeetingShow extends React.Component {
                         Join
                       </button>
                     )}
-                    <div>
-                      <button
-                        onClick={this.props.history.goBack}
-                        className="goback-show-meeting-button"
-                      >
-                        &nbsp;Go back
-                      </button>
-                    </div>
                   </div>
                 )}
               </div>

@@ -199,6 +199,7 @@ NavBar {
   z-index: 1000;
 }
 
+/* here */
 .right-navbar-loggedin a {
   display: flex;
   align-items: center;
@@ -237,7 +238,7 @@ NavBar {
 
 .splash-navbar-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -259,6 +260,9 @@ NavBar {
   width: 80px;
   border-style: none;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .link-word:hover {

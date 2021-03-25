@@ -128,7 +128,10 @@ class TaskShow extends React.Component {
                 </h4>
               </li>
               <li>
-                <h4>Number Completed:&nbsp;&nbsp;{peopleCompleted.length}</h4>
+                <h4>
+                  Completed?&nbsp;&nbsp;
+                  {peopleCompleted.length !== 0 ? `yes` : `no`}
+                </h4>
               </li>
               {completeBtn}
               {userOnlyBtns}
@@ -153,17 +156,12 @@ class TaskShow extends React.Component {
                   <h4>{author.username}</h4>
                 </div>
               </div>
-              <div className="task-show-owner-tip-cont">
-                <h4>Task Tip:</h4>
-                {task.tip}
-              </div>
             </div>
           </div>
         </div>
-        <CommentShowContainer task={task} authors={this.props.authors} />
-        <Link className="task-show-go-back-btn-text" to="/profile">
-          <button className="task-show-go-back-btn">Go Back</button>
-        </Link>
+        <div className="comments-container">
+          <CommentShowContainer task={task} authors={this.props.authors} />
+        </div>
       </div>
     );
   }

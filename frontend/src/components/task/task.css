@@ -112,6 +112,11 @@
   border-radius: 5px;
 }
 
+.meeting-create-header {
+  text-align: center;
+  font-family: "Inder", sans-serif;
+}
+
 .difficulty-option-container {
   display: flex;
   background: none;
