@@ -121,7 +121,6 @@
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
   transition-duration: 1s;
-  transition: transform .5s ease;
   z-index: 3;
  }
 
