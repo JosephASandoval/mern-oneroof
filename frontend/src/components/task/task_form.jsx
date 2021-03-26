@@ -115,7 +115,6 @@ class TaskForm extends React.Component {
                 type="text"
                 onChange={this.update("name")}
                 placeholder="Name of your task"
-                maxLength="26"
               />
             </div>
             <div className="task-info">

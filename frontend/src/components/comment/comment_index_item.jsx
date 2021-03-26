@@ -29,7 +29,7 @@ class CommentIndexItem extends React.Component {
       <div className="indiv-comment-main">
         <img src={author.photoUrl} alt="" />
         <div className="indiv-comment-body">
-          <p>{author.username}&nbsp;wrote:</p>
+          <p>{author.username}:</p>
           {comment.body}
           {deleteButton}
         </div>
