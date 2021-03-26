@@ -6,7 +6,6 @@
   font-family: "Inder", sans-serif;
 }
 
-
 html {
   width: auto;
 }
@@ -49,6 +48,10 @@ html {
   background-color: #d6e4f0;
 }
 
+.logo-img-word {
+  border-radius: 5px;
+}
+
 .logo-img-word:hover {
   transform: none;
 }
@@ -85,6 +88,8 @@ NavBar {
 
 .right-navbar-loggedin {
   display: flex;
+  flex-direction: row;
+  position: relative;
   width: 320px;
   justify-content: space-between;
   margin-right: 50px;
@@ -199,7 +204,6 @@ NavBar {
   z-index: 1000;
 }
 
-/* here */
 .right-navbar-loggedin a {
   display: flex;
   align-items: center;

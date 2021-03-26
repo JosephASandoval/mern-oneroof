@@ -1,10 +1,10 @@
 import React from "react";
 import { Tabs, Tab } from "@material-ui/core";
-import CompletesContainer from "./completes_container";
 import ChoresContainer from "./chores_container";
 import ExpensesContainer from "./expenses_container";
-import MeetingsContainer from "./meetings_container";
+import CompletesContainer from "./completes_container";
 import MeetingIndexContainer from "../meeting/meeting_index_container";
+import MeetingsContainer from "./meetings_container";
 import ChatContainer from "../chat/chat_container";
 import "./navbar.css";
 

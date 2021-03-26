@@ -2,19 +2,22 @@
   background: none;
 }
 body {
-  background:none;
+  background: none;
   padding: 16px;
 }
 
 .chat-container {
-  border: rgba(0, 0, 0, 0.54) dotted 3px;
   border-radius: 20px;
   margin-top: 50px;
   margin-left: 300px;
   margin-right: 300px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  color: #000;
 }
 
-.chat-header{
+.chat-header {
   display: flex;
   background-image: linear-gradient(to bottom right, #6387f6, #9385f8);
   background-image: linear-gradient(to bottom right, #9ac6c5, #7785ac);
@@ -51,12 +54,12 @@ body {
 
 .msg-author {
   color: gray;
-  font-size: 12px;;
+  font-size: 12px;
   margin: 3px;
 }
 
 .msg-content {
-  background-color:#a5e6ba;
+  background-color: #a5e6ba;
   border-radius: 10px;
   font-size: 15px;
   padding: 2px;
