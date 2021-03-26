@@ -119,12 +119,12 @@ class TaskShow extends React.Component {
             <ul>
               <li>
                 <h4>
-                  Difficulty:&nbsp;&nbsp;<span>{task.difficulty}</span>
+                  Work Time:&nbsp;&nbsp;<span>{task.workTime}</span>
                 </h4>
               </li>
               <li>
                 <h4>
-                  Work Time:&nbsp;&nbsp;<span>{task.workTime}</span>
+                  Difficulty:&nbsp;&nbsp;<span>{task.difficulty}</span>
                 </h4>
               </li>
               <li>

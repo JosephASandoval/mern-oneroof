@@ -106,22 +106,12 @@ class TaskEdit extends React.Component {
             </div>
             <div className="task-edit-top-right">
               <label>
-                Difficulty:
-                <select
-                  onChange={this.update("difficulty")}
-                  value={this.state.difficulty}
-                >
-                  <option value="easy">Easy</option>
-                  <option value="medium">Medium</option>
-                  <option value="hard">Hard</option>
-                </select>
-              </label>
-              <label>
                 Work Time:
                 <select
                   onChange={this.update("workTime")}
                   value={this.state.workTime}
                 >
+                  <option value="< 15 min">15 min</option>
                   <option value="15 min">15 min</option>
                   <option value="30 min">30 min</option>
                   <option value="45 min">45 min</option>
@@ -130,6 +120,18 @@ class TaskEdit extends React.Component {
                   <option value="90 min">90 min</option>
                   <option value="105 min">105 min</option>
                   <option value="120 min">120 min</option>
+                  <option value="> 120 min">120 min</option>
+                </select>
+              </label>
+              <label>
+                Difficulty:
+                <select
+                  onChange={this.update("difficulty")}
+                  value={this.state.difficulty}
+                >
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
                 </select>
               </label>
               <label>

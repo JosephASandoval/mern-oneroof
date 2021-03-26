@@ -122,6 +122,26 @@ class TaskForm extends React.Component {
             </div>
             <div className="task-info">
               <label>
+                <div className="work-time-option-container">
+                  <h3>Work Time:</h3>
+                  <select onChange={this.update("workTime")}>
+                    <option value="" selected disabled>
+                      Please select
+                    </option>
+                    <option value="< 15 min">15 min</option>
+                    <option value="15 min">15 min</option>
+                    <option value="30 min">30 min</option>
+                    <option value="45 min">45 min</option>
+                    <option value="60 min">60 min</option>
+                    <option value="75 min">75 min</option>
+                    <option value="90 min">90 min</option>
+                    <option value="105 min">105 min</option>
+                    <option value="120 min">120 min</option>
+                    <option value="> 120 min">120 min</option>
+                  </select>
+                </div>
+              </label>
+              <label>
                 <div className="difficulty-option-container">
                   <h3>Difficulty:</h3>
                   <select onChange={this.update("difficulty")}>
@@ -131,24 +151,6 @@ class TaskForm extends React.Component {
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
-                  </select>
-                </div>
-              </label>
-              <label>
-                <div className="work-time-option-container">
-                  <h3>Work Time:</h3>
-                  <select onChange={this.update("workTime")}>
-                    <option value="" selected disabled>
-                      Please select
-                    </option>
-                    <option value="15 min">15 min</option>
-                    <option value="30 min">30 min</option>
-                    <option value="45 min">45 min</option>
-                    <option value="60 min">60 min</option>
-                    <option value="75 min">75 min</option>
-                    <option value="90 min">90 min</option>
-                    <option value="105 min">105 min</option>
-                    <option value="120 min">120 min</option>
                   </select>
                 </div>
               </label>
