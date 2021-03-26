@@ -119,6 +119,8 @@ class MeetingForm extends React.Component {
       <div>
         <form className="meeting-create-form">
           <h1 className="meeting-create-header">Create New Meeting</h1>
+          <br />
+          <br />
 
           <div className="input-field-meeting-create-container">
             <label className="meeting-create-label">

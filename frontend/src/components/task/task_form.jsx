@@ -103,6 +103,9 @@ class TaskForm extends React.Component {
       <div className="form-container">
         <form id="task_form" className="task-form-cont">
           <h1 className="task-create-header">Create New Task</h1>
+          <br />
+          <br />
+
           <div className="task-top">
             <div className="task-pic-name">
               <input
