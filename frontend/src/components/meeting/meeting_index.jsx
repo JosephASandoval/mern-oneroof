@@ -47,17 +47,14 @@ class MeetingIndex extends React.Component {
                         </div>
                         <div className="date-index">
                           Meeting Name:&nbsp;
-                          <Link
-                            id="meeting-name"
-                            to={`/meetings/${meeting._id}`}
-                          >
-                            {meeting.name}
-                          </Link>
+                          <span id="meeting-index-info">{meeting.name}</span>
                         </div>
                         <div className="date-index">
                           Participating:&nbsp;
-                          <span className="meeting-index-info">
-                            {this.props.count[meeting._id]}
+                          <span id="meeting-index-info">
+                            {this.props.count[meeting._id]
+                              ? this.props.count[meeting._id]
+                              : "0"}
                           </span>
                         </div>
                         <div className="date-index">

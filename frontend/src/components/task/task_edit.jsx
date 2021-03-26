@@ -145,7 +145,6 @@ class TaskEdit extends React.Component {
                   <option value="Expenses">Expenses</option>
                 </select>
               </label>
-              <label>Completed? {task.numCompletes !== 0 ? `yes` : `no`}</label>
             </div>
           </div>
           <div className="task-edit-bottom">

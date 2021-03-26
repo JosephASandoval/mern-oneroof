@@ -172,7 +172,7 @@ class MeetingForm extends React.Component {
 
           <div className="input-field-meeting-create-container">
             <label className="meeting-create-label">
-              Location:&nbsp;&nbsp;
+              Location or Link:&nbsp;&nbsp;
             </label>
             <input
               type="text"
