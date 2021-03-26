@@ -7,6 +7,8 @@ class Team extends React.Component {
   render() {
     return (
       <>
+      <div className="team-page-container">
+        <h1>Meet the Developers</h1>
        <div className='project'>
               <a href="https://github.com/JosephASandoval/mern-oneroof" id='name'>Project Repo</a>
               <a
@@ -15,9 +17,7 @@ class Team extends React.Component {
                   <FontAwesomeIcon icon={faGithub} />
               </a>
       </div>
-      <div className="team-page-container">
-        <h1>Meet the Developers</h1>
-        <br></br><br></br><br></br><br></br>
+        <br></br><br></br><br></br>
         <div className='teammate-container'>
           <div className='teammate'>
               <h2>Annie Xu</h2>

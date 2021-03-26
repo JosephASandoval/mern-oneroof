@@ -11,7 +11,7 @@ import "./navbar.css";
 const NavBar = () => {
   const [selectedTab, setSelectedTab] = React.useState(0);
 
-  const handleChange = (newValue) => {
+  const handleChange = (meeting, newValue) => {
     setSelectedTab(newValue);
   };
 
