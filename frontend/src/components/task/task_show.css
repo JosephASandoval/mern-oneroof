@@ -113,6 +113,16 @@
   object-fit: cover;
 }
 
+.task-pic img:hover {
+  border: 5px solid #f4f4f4;
+  transform: scale(2.0);
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  z-index: 3;
+ }
+
 .task-pic h4 {
   font-family: sans-serif;
   display: flex;
