@@ -1,7 +1,6 @@
 import React from "react";
 import "./task.css";
 import { uploadPhoto } from "../../util/photo_api_util";
-import { Link } from "react-router-dom";
 
 class TaskForm extends React.Component {
   constructor(props) {
