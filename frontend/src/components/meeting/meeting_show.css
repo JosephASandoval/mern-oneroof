@@ -46,7 +46,7 @@
 .delete-show-meeting-button {
   margin-top: 10px;
   margin-bottom: 30px;
-  background-color: rgb(148, 0, 0);
+  background-color: #722416;
   color: white;
   padding: 10px;
   font-size: 16px;
@@ -57,7 +57,7 @@
 }
 
 .delete-show-meeting-button:hover {
-  background-color: rgb(201, 0, 0);
+  background-color: #a02d1e;
 }
 
 .edit-show-meeting-button {
@@ -134,7 +134,7 @@
 .unjoin-show-meeting-button {
   margin-top: 10px;
   padding: 10px;
-  background-color: rgb(148, 0, 0);
+  background-color: #722416;
   color: white;
   width: 250px;
   font-size: 16px;
@@ -142,5 +142,5 @@
 }
 
 .unjoin-show-meeting-button:hover {
-  background-color: rgb(201, 0, 0);
+  background-color: #a02d1e;
 }

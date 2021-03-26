@@ -112,6 +112,8 @@ class SignupForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="form">
             <h2>Sign Up</h2>
+            <br />
+            <br />
 
             <div className="signup-inputs">
               <label>
@@ -191,6 +193,8 @@ class SignupForm extends React.Component {
                 />
               </label>
             </div>
+            <br />
+            <br />
 
             <button className="submit-button-login input-field">Submit</button>
             <button

@@ -376,3 +376,7 @@
 .task-create-go-back-btn:hover {
   background-color: #1e56a0;
 }
+
+.task-create-header {
+  font-family: "Inder", sans-serif;
+}

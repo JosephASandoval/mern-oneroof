@@ -43,25 +43,25 @@ class MainNavBar extends React.Component {
           <Link to="/meetings/new">
             <button className="logout-btn">Create Meeting</button>
           </Link>
-            <button className="logout-btn" onClick={this.logoutUser}>
-              &nbsp;&nbsp;Logout&nbsp;
-            </button>
+          <button className="logout-btn" onClick={this.logoutUser}>
+            &nbsp;&nbsp;Logout&nbsp;
+          </button>
           <Link to="/ourteam">
-            <button className="logout-btn">Our Team</button>
+            <button className="our-team">Our Team</button>
           </Link>
         </div>
       );
     } else {
       return (
         <div className="splash-navbar-container">
-          <Link className="link-word" to="/ourteam">
-            Our Team
-          </Link>
-          <Link className="link-word" to={"/signup"}>
+          <Link className="link-word" to="/signup">
             Signup
           </Link>
-          <Link className="link-word" to={"/login"}>
+          <Link className="link-word" to="/login">
             Login
+          </Link>
+          <Link className="our-team" to="/ourteam">
+            Our Team
           </Link>
         </div>
       );

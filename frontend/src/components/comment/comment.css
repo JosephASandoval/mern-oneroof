@@ -58,7 +58,7 @@
 }
 
 .comment-delete-btn {
-  background-color: rgb(148, 0, 0);
+  background-color: #722416;
   cursor: pointer;
   border-radius: 5px;
   color: #fff;
@@ -72,7 +72,7 @@
 }
 
 .comment-delete-btn:hover {
-  background-color: rgb(201, 0, 0);
+  background-color: #a02d1e;
 }
 
 .comment-section {

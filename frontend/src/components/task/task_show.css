@@ -75,7 +75,7 @@
 }
 
 .user-only-btn-delete {
-  background-color: rgb(148, 0, 0);
+  background-color: #722416;
   border: 1px #333 solid;
   color: #fff;
   text-align: center;
@@ -90,7 +90,7 @@
 }
 
 .user-only-btn-delete:hover {
-  background-color: rgb(201, 0, 0);
+  background-color: #a02d1e;
 }
 
 .task-pic {
