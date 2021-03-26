@@ -17,11 +17,11 @@ https://github.com/socketio/socket.io
 
 ## Features
 ### Live Chat
-![Screen Shot 2021-03-26 at 11 41 15](https://user-images.githubusercontent.com/68726214/112679817-d7c8da80-8e29-11eb-911c-3c53678e541b.png)
+![Screen Shot 2021-03-26 at 15 07 55](https://user-images.githubusercontent.com/68726214/112697744-79a9f080-8e45-11eb-838f-edb2fa291374.png)
 Using the technology of socket.io, users are able to send live messages to other housemates who are also currently logged on to the app. 
 
 ### CRUD Tasks
-![Screen Shot 2021-03-26 at 11 42 42](https://user-images.githubusercontent.com/68726214/112679821-d9929e00-8e29-11eb-9241-40f7517b943c.png)
+![Screen Shot 2021-03-26 at 15 09 35](https://user-images.githubusercontent.com/68726214/112697749-7adb1d80-8e45-11eb-944f-70466ff09044.png)
 Users can upload chores to be completed for the house. Once created, users have the ability to edit chores and delete them as needed. 
 
 ### Meeting
