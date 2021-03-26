@@ -1,4 +1,3 @@
-import { SavingsPlans } from "aws-sdk";
 import React from "react";
 
 export default function BottomBar(props) {

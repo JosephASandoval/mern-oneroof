@@ -71,7 +71,7 @@ app.use("/api/comments", comments);
 io.on("connection", (socket) => {
   // Get the last 10 messages from the database.
   Message.find()
-    .sort({ createdAt: -1 })
+    .sort({ date: -1 })
     .limit(10)
     .exec((err, messages) => {
       if (err) return console.error(err);
