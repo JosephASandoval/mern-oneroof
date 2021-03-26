@@ -1,4 +1,5 @@
-# OneRoof
+![Screen Shot 2021-03-26 at 15 13 57](https://user-images.githubusercontent.com/68726214/112697990-ec1ad080-8e45-11eb-8cfa-9f4b9c331e50.png)
+
 [OneRoof Live](http://mern-oneroof.herokuapp.com/#/)
 
 ## Description
@@ -18,6 +19,7 @@ https://github.com/socketio/socket.io
 ## Features
 ### Live Chat
 ![Screen Shot 2021-03-26 at 15 07 55](https://user-images.githubusercontent.com/68726214/112697744-79a9f080-8e45-11eb-838f-edb2fa291374.png)
+<br />
 Using the technology of socket.io, users are able to send live messages to other housemates who are also currently logged on to the app. 
 
 ### CRUD Tasks
