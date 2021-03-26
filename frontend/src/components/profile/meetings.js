@@ -26,17 +26,92 @@ class Meetings extends React.Component {
               if (this.props.currentUser._id === meeting.hostId) {
                 return (
                   <li key={i}>
-                    <div className="meeting-index-parent">
-                      <div className="meeting-index-parent-info">
-                        <div>
+                    <Link to={`/meetings/${meeting._id}`}>
+                      <div className="meeting-index-parent">
+                        <div className="meeting-index-parent-info">
                           <div>
-                            <Link to={`/meetings/${meeting._id}`}>
-                              {" "}
+                            <div>
                               <img
                                 className="meeting-index-photo"
                                 src={meeting.photoUrl}
                               ></img>
+                            </div>
+                          </div>
+                          <div className="meeting-index-description-list">
+                            <div className="date-index">
+                              Date:&nbsp;
+                              <span id="meeting-index-info">
+                                {Object.values(meeting.date)
+                                  .slice(5, 10)
+                                  .concat(
+                                    "-",
+                                    Object.values(meeting.date).slice(0, 4)
+                                  )}
+                              </span>
+                            </div>
+                            <div className="date-index">
+                              Meeting Name:&nbsp;
+                              <span id="meeting-index-info">
+                                {meeting.name}
+                              </span>
+                            </div>
+                            <div className="date-index">
+                              Partcipating:&nbsp;
+                              <span className="meeting-index-info">
+                                {this.props.count[meeting._id]}
+                              </span>
+                            </div>
+                            <div className="date-index">
+                              From:&nbsp;
+                              <span id="meeting-index-info">
+                                {meeting.startTime} to {meeting.endTime}
+                              </span>
+                            </div>
+                            <div className="date-index">
+                              Location:&nbsp;
+                              <span id="meeting-index-info">
+                                {meeting.location}
+                              </span>
+                            </div>
+                            <div className="date-index">
+                              Hosted by:&nbsp;
+                              <span id="meeting-index-info">
+                                {this.props.users[meeting.hostId].username}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="index-hosting-button">
+                            <Link
+                              className="hosting-meeting-txt"
+                              to={`/meetings/${meeting._id}`}
+                            >
+                              Hosting
                             </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </div>
+
+        <div className="participating-meetings hosting-meetings ">
+          <ul>
+            {this.props.meetingJoined.map((meeting, i) => {
+              return (
+                <li key={i}>
+                  <Link to={`/meetings/${meeting._id}`}>
+                    <div className="meeting-index-parent">
+                      <div className="meeting-index-parent-info">
+                        <div>
+                          <div>
+                            <img
+                              className="meeting-index-photo"
+                              src={meeting.photoUrl}
+                            ></img>
                           </div>
                         </div>
                         <div className="meeting-index-description-list">
@@ -85,97 +160,17 @@ class Meetings extends React.Component {
                             </span>
                           </div>
                         </div>
-                        <div className="index-hosting-button">
+                        <div className="index-participating-button">
                           <Link
-                            className="hosting-meeting-txt"
+                            className="participating-meeting-txt"
                             to={`/meetings/${meeting._id}`}
                           >
-                            Hosting
+                            Participating
                           </Link>
                         </div>
                       </div>
                     </div>
-                  </li>
-                );
-              }
-            })}
-          </ul>
-        </div>
-
-        <div className="participating-meetings hosting-meetings ">
-          <ul>
-            {this.props.meetingJoined.map((meeting, i) => {
-              return (
-                <li key={i}>
-                  <div className="meeting-index-parent">
-                    <div className="meeting-index-parent-info">
-                      <div>
-                        <div>
-                          <Link to={`/meetings/${meeting._id}`}>
-                            {" "}
-                            <img
-                              className="meeting-index-photo"
-                              src={meeting.photoUrl}
-                            ></img>
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="meeting-index-description-list">
-                        <div className="date-index">
-                          Date:&nbsp;
-                          <span id="meeting-index-info">
-                            {Object.values(meeting.date)
-                              .slice(5, 10)
-                              .concat(
-                                "-",
-                                Object.values(meeting.date).slice(0, 4)
-                              )}
-                          </span>
-                        </div>
-                        <div className="date-index">
-                          Meeting Name:&nbsp;
-                          <Link
-                            id="meeting-name"
-                            to={`/meetings/${meeting._id}`}
-                          >
-                            {meeting.name}
-                          </Link>
-                        </div>
-                        <div className="date-index">
-                          Partcipating:&nbsp;
-                          <span className="meeting-index-info">
-                            {this.props.count[meeting._id]}
-                          </span>
-                        </div>
-                        <div className="date-index">
-                          From:&nbsp;
-                          <span id="meeting-index-info">
-                            {meeting.startTime} to {meeting.endTime}
-                          </span>
-                        </div>
-                        <div className="date-index">
-                          Location:&nbsp;
-                          <span id="meeting-index-info">
-                            {meeting.location}
-                          </span>
-                        </div>
-                        <div className="date-index">
-                          Hosted by:&nbsp;
-                          <span id="meeting-index-info">
-                            {this.props.users[meeting.hostId].username}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="index-participating-button">
-                        <Link
-                          className="participating-meeting-txt"
-                          to={`/meetings/${meeting._id}`}
-                        >
-                          Participating
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                  </Link>
                 </li>
               );
             })}

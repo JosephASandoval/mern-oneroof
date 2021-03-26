@@ -31,7 +31,13 @@
   background-color: white;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
   width: 100%;
+  transition: all 0.2s ease-in-out;
 }
+
+.meeting-index-parent:hover {
+  transform: scale(1.1);
+}
+
 .meeting-index-parent-info {
   display: flex;
   flex-direction: row;
