@@ -1,10 +1,9 @@
 ![Screen Shot 2021-03-26 at 15 13 57](https://user-images.githubusercontent.com/68726214/112697990-ec1ad080-8e45-11eb-8cfa-9f4b9c331e50.png)
 
-[OneRoof Live](http://mern-oneroof.herokuapp.com/#/)
+[Live Site](http://mern-oneroof.herokuapp.com/#/)
 
 ## Description
-OneRoof is an application that allows users to 
-The purpose of OneRoof is to allow users to make announcements, and log expenses and to-dos. This app will make living arrangement coordination and communication much easier for households.		
+The purpose of OneRoof is to allow users to make announcements, and log expenses and to-dos. This app will make living arrangement coordination and communication much easier for households. Given each developer's past experience living with others in college, they came together to create a platform that would have help themin their school days.
 
 ## Technology:
 * MongoDB
@@ -24,10 +23,12 @@ Using the technology of socket.io, users are able to send live messages to other
 
 ### CRUD Tasks
 ![Screen Shot 2021-03-26 at 15 09 35](https://user-images.githubusercontent.com/68726214/112697749-7adb1d80-8e45-11eb-944f-70466ff09044.png)
+<br />
 Users can upload chores to be completed for the house. Once created, users have the ability to edit chores and delete them as needed. 
 
 ### Meeting
 ![Screen Shot 2021-03-26 at 11 43 02](https://user-images.githubusercontent.com/68726214/112679823-da2b3480-8e29-11eb-987b-b769a552154f.png)
+<br />
 Users are able to set up and join/unjoin meetings. Meetings have specific details such as beginning and end times, location, image, and subject.
 
 ### User Interface
